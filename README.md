@@ -1,2 +1,1 @@
-# institute-of-evil---game
-
+# institute-of-evil-game

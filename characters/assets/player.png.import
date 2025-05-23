@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3k07ycenunfa"
-path="res://.godot/imported/costas-fotor-bg-remover-2025041275714.png-c075f0ac8050dcef541cd7f855237657.ctex"
+uid="uid://s113i12svy1a"
+path="res://.godot/imported/player.png-63673ba2988ecd7be1ccd2eed57a8f26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/costas-fotor-bg-remover-2025041275714.png"
-dest_files=["res://.godot/imported/costas-fotor-bg-remover-2025041275714.png-c075f0ac8050dcef541cd7f855237657.ctex"]
+source_file="res://characters/assets/player.png"
+dest_files=["res://.godot/imported/player.png-63673ba2988ecd7be1ccd2eed57a8f26.ctex"]
 
 [params]
 
