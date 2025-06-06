@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://bkccprknuokgw"]
+[gd_scene load_steps=30 format=3 uid="uid://bkccprknuokgw"]
 
-[ext_resource type="Script" uid="uid://bdt4s56qavxuu" path="res://characters/scripts/character.gd" id="1_d43pk"]
+[ext_resource type="Script" uid="uid://bdt4s56qavxuu" path="res://characters/scripts/player.gd" id="1_d43pk"]
 [ext_resource type="Texture2D" uid="uid://s113i12svy1a" path="res://characters/assets/player.png" id="2_830i6"]
+[ext_resource type="PackedScene" uid="uid://b4u5o5lvnewvv" path="res://characters/scenes/inimigo.tscn" id="3_830i6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkhd4"]
 size = Vector2(12, 4)
@@ -579,7 +580,7 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_0l03n")
 states/walk/position = Vector2(515, 175)
 graph_offset = Vector2(0, -255.667)
 
-[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree")]
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree")]
 script = ExtResource("1_d43pk")
 _animation_tree = NodePath("AnimationTree")
 
@@ -603,3 +604,6 @@ tree_root = SubResource("AnimationNodeStateMachine_avg1j")
 anim_player = NodePath("../Animation")
 parameters/idle/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(0, 0)
+
+[node name="inimigo" parent="." instance=ExtResource("3_830i6")]
+position = Vector2(278, 202)
