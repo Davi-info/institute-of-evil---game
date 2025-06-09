@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dks8dk0cix0nc"]
+[gd_scene load_steps=3 format=3 uid="uid://dks8dk0cix0nc"]
 
 [ext_resource type="PackedScene" uid="uid://bkccprknuokgw" path="res://characters/scenes/character.tscn" id="1_46lwt"]
+[ext_resource type="PackedScene" uid="uid://b4u5o5lvnewvv" path="res://characters/scenes/inimigo.tscn" id="2_x25rp"]
 
 [node name="TestLevel" type="Node2D"]
 
 [node name="Character" parent="." instance=ExtResource("1_46lwt")]
 position = Vector2(78, 81)
+
+[node name="inimigo" parent="." instance=ExtResource("2_x25rp")]

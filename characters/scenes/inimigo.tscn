@@ -12,8 +12,6 @@ radius = 438.292
 [node name="inimigo" type="CharacterBody2D" groups=["inimigos"]]
 collision_layer = 8
 script = ExtResource("1_d7ogv")
-speed = null
-intervalo_ataque = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0.772549, 0.0470588, 1)
