@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://bkccprknuokgw"]
 
 [ext_resource type="Script" uid="uid://bdt4s56qavxuu" path="res://characters/scripts/player.gd" id="1_d43pk"]
-[ext_resource type="Texture2D" uid="uid://s113i12svy1a" path="res://characters/assets/player.png" id="2_830i6"]
+[ext_resource type="Texture2D" uid="uid://bdgcr6e84bsk2" path="res://characters/assets/player def.png" id="2_d43pk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkhd4"]
 size = Vector2(12, 4)
@@ -589,7 +589,7 @@ shape = SubResource("RectangleShape2D_rkhd4")
 
 [node name="Texture" type="Sprite2D" parent="."]
 position = Vector2(-0.5, -17)
-texture = ExtResource("2_830i6")
+texture = ExtResource("2_d43pk")
 hframes = 6
 vframes = 10
 metadata/_edit_lock_ = true

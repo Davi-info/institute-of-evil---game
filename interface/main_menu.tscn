@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbum7uvwdjp08"]
+[gd_scene load_steps=5 format=3 uid="uid://dbum7uvwdjp08"]
 
 [ext_resource type="Script" uid="uid://dxass45ew1qun" path="res://interface/main_menu.gd" id="1_g8ogf"]
+[ext_resource type="Texture2D" uid="uid://bfntrobr53p8y" path="res://interface/ibpi_image.png" id="2_wwcsp"]
+[ext_resource type="Texture2D" uid="uid://dvbeq56hl471o" path="res://interface/Titulo do jogo2.png" id="3_i5udr"]
+[ext_resource type="Theme" uid="uid://cmkavla7jpxqo" path="res://interface/default_btn.tres" id="4_bjm56"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -20,25 +23,50 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.184314, 0.176471, 0.192157, 1)
 
+[node name="TextureRect" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wwcsp")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = 8.0
+offset_right = -40.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_i5udr")
+expand_mode = 2
+
 [node name="MadeBy" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -78.0
-offset_top = -26.0
-offset_right = 79.0
-offset_bottom = -4.0
-grow_horizontal = 2
+offset_left = -157.0
+offset_top = -22.0
+grow_horizontal = 0
 grow_vertical = 0
 alignment = 1
 
 [node name="Credits" type="Label" parent="MadeBy"]
 layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+theme = ExtResource("4_bjm56")
 theme_override_font_sizes/font_size = 7
-text = "Made by TheEquip"
+text = "Made by J.I.W.D.D"
 
 [node name="MainContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -47,16 +75,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.0
-offset_top = -64.0
-offset_right = 82.0
-offset_bottom = 64.0
+offset_left = -41.0
+offset_top = -28.0
+offset_right = 41.0
+offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="GameName" type="Label" parent="MainContainer"]
-layout_mode = 2
-text = "Institute of evil game"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainContainer"]
 layout_mode = 2
@@ -64,24 +88,24 @@ size_flags_horizontal = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
 
 [node name="Play" type="Button" parent="MainContainer/HBoxContainer/VBoxContainer" groups=["button"]]
 layout_mode = 2
 focus_mode = 0
+theme = ExtResource("4_bjm56")
 text = "Jogar"
-flat = true
 
 [node name="Controls" type="Button" parent="MainContainer/HBoxContainer/VBoxContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
 focus_mode = 0
+theme = ExtResource("4_bjm56")
 text = "Controles
 "
-flat = true
 
 [node name="Exit" type="Button" parent="MainContainer/HBoxContainer/VBoxContainer" groups=["button"]]
 layout_mode = 2
 focus_mode = 0
+theme = ExtResource("4_bjm56")
 text = "Sair"
-flat = true
