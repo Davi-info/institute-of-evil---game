@@ -604,3 +604,8 @@ tree_root = SubResource("AnimationNodeStateMachine_avg1j")
 anim_player = NodePath("../Animation")
 parameters/idle/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(0, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
