@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bkccprknuokgw"]
+[gd_scene load_steps=30 format=3 uid="uid://bkccprknuokgw"]
 
 [ext_resource type="Script" uid="uid://bdt4s56qavxuu" path="res://characters/scripts/player.gd" id="1_d43pk"]
 [ext_resource type="Texture2D" uid="uid://bdgcr6e84bsk2" path="res://characters/assets/player def.png" id="2_d43pk"]
@@ -509,6 +509,23 @@ tracks/1/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_ul3cn"]
+resource_name = "death"
+length = 0.17
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 38, 38]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0l03n"]
 _data = {
 &"RESET": SubResource("Animation_830i6"),
@@ -516,6 +533,7 @@ _data = {
 &"attack_left": SubResource("Animation_x3d4i"),
 &"attack_right": SubResource("Animation_qugp5"),
 &"attack_up": SubResource("Animation_2v7w8"),
+&"death": SubResource("Animation_ul3cn"),
 &"idle_down": SubResource("Animation_d43pk"),
 &"idle_left": SubResource("Animation_4xkrw"),
 &"idle_right": SubResource("Animation_2bk7e"),
