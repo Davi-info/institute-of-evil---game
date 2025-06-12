@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var _state_machine
+var is_dead: bool = false
 var _is_attacking: bool = false
 
 @export_category('Variables')
@@ -16,6 +17,8 @@ func _ready() -> void:
 	_state_machine = _animation_tree['parameters/playback']
 	
 func _physics_process(_delta: float) -> void:
+	if is_dead:
+		return
 	_move()
 	_animate()
 	move_and_slide()
@@ -42,3 +45,10 @@ func _animate() -> void:
 		return
 	
 	_state_machine.travel('idle')
+
+func die() -> void:
+	is_dead = true
+	_state_machine.travel('death')
+	await get_tree().create_timer(1.0).timeout
+	get_tree().reload_current_scene()
+	

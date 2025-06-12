@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bkccprknuokgw"]
+[gd_scene load_steps=35 format=3 uid="uid://bkccprknuokgw"]
 
 [ext_resource type="Script" uid="uid://bdt4s56qavxuu" path="res://characters/scripts/player.gd" id="1_d43pk"]
 [ext_resource type="Texture2D" uid="uid://bdgcr6e84bsk2" path="res://characters/assets/player def.png" id="2_d43pk"]
@@ -203,6 +203,22 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ul3cn"]
+resource_name = "death"
+length = 0.17
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 38, 38]
 }
 
 [sub_resource type="Animation" id="Animation_d43pk"]
@@ -509,23 +525,6 @@ tracks/1/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_ul3cn"]
-resource_name = "death"
-length = 0.17
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Texture:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [36, 37, 38, 38, 38]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0l03n"]
 _data = {
 &"RESET": SubResource("Animation_830i6"),
@@ -543,6 +542,29 @@ _data = {
 &"walk_right": SubResource("Animation_abat6"),
 &"walk_up": SubResource("Animation_16a6m")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0l03n"]
+animation = &"death"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mxm01"]
+animation = &"death"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_16a6m"]
+animation = &"death"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3tlm5"]
+animation = &"death"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_abat6"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_0l03n")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_mxm01")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_16a6m")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_3tlm5")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iivho"]
 animation = &"idle_down"
@@ -591,13 +613,15 @@ blend_point_3/pos = Vector2(1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_avg1j"]
+states/death/node = SubResource("AnimationNodeBlendSpace2D_abat6")
+states/death/position = Vector2(441, -158.667)
 states/idle/node = SubResource("AnimationNodeBlendSpace2D_ul3cn")
 states/idle/position = Vector2(515, 100)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_0l03n")
 states/walk/position = Vector2(515, 175)
 graph_offset = Vector2(0, -255.667)
 
-[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree")]
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree") groups=["player"]]
 position = Vector2(217, 202)
 script = ExtResource("1_d43pk")
 _animation_tree = NodePath("AnimationTree")
@@ -620,6 +644,7 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_avg1j")
 anim_player = NodePath("../Animation")
+parameters/death/blend_position = Vector2(0, 0.967033)
 parameters/idle/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(0, 0)
 
