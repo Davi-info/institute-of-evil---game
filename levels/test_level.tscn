@@ -5,7 +5,8 @@
 
 [node name="TestLevel" type="Node2D"]
 
+[node name="inimigo" parent="." instance=ExtResource("2_x25rp")]
+position = Vector2(166, 70)
+
 [node name="Character" parent="." instance=ExtResource("1_46lwt")]
 position = Vector2(78, 81)
-
-[node name="inimigo" parent="." instance=ExtResource("2_x25rp")]
