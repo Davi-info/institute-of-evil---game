@@ -9,7 +9,7 @@ func _ready():
 func on_button_pressed(button: Button) -> void:
 	match button.name:
 		'Play':
-			var _game: bool = get_tree().change_scene_to_file("res://levels/test_level.tscn")
+			var _game: bool = get_tree().change_scene_to_file("res://levels/level_1.tscn")
 		'Controls':
 			var _controls: bool = get_tree().change_scene_to_file("res://interface/controls_view.tscn")
 		'Exit':
