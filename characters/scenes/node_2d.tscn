@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2cw63laex41o"]
+
+[ext_resource type="PackedScene" uid="uid://c2a16bjv4mnau" path="res://characters/scenes/acc.tscn" id="1_i6du3"]
+[ext_resource type="Texture2D" uid="uid://b1o1sq1dy5jv4" path="res://terrain/assets/1.png" id="2_fff0e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0aci"]
+size = Vector2(12, 14)
+
+[node name="acc" type="Node2D"]
+
+[node name="acc" parent="." instance=ExtResource("1_i6du3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="acc"]
+shape = SubResource("RectangleShape2D_j0aci")
+
+[node name="Sprite2D" type="Sprite2D" parent="acc"]
+texture = ExtResource("2_fff0e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="acc"]
+root_node = NodePath("../CollisionShape2D")

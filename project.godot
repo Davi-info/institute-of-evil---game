@@ -14,6 +14,10 @@ config/name="Institute of Evil"
 run/main_scene="uid://bkccprknuokgw"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
+[autoload]
+
+GameState="*res://characters/scripts/GameState.gd"
+
 [display]
 
 window/size/viewport_width=320

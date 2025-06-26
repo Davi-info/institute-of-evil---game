@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cnsep4u3pqr4"]
+[gd_scene load_steps=27 format=3 uid="uid://cnsep4u3pqr4"]
 
 [ext_resource type="Script" uid="uid://c5cr2ohdsf3vi" path="res://levels/level_1.gd" id="1_betor"]
 [ext_resource type="Texture2D" uid="uid://cnk6i0n751or0" path="res://terrain/assets/room_builder.png" id="1_gwceb"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://w55nm5lo3r7t" path="res://terrain/interiors/Floor_1_16x16.png" id="8_nmsli"]
 [ext_resource type="Texture2D" uid="uid://dwelwk5sc5i1c" path="res://terrain/interiors/Floor_3_16x16.png" id="9_betor"]
 [ext_resource type="Texture2D" uid="uid://be4f3bb601ltr" path="res://terrain/interiors/Tileset_16x16_2.png" id="10_vjtdm"]
-[ext_resource type="PackedScene" uid="uid://c2a16bjv4mnau" path="res://characters/scenes/acc.tscn" id="13_betor"]
 [ext_resource type="PackedScene" uid="uid://csk08sfgmcwkv" path="res://characters/scenes/inimigo_fase2.tscn" id="14_vjtdm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_betor"]
@@ -5484,54 +5483,9 @@ layer_5/tile_data = PackedInt32Array(-65514, 720899, 24, -65513, 786435, 24, 22,
 
 [node name="player" parent="." instance=ExtResource("7_nmsli")]
 position = Vector2(48, 45)
+_move_speed = null
+_friction = null
+_acceleration = null
 
 [node name="inimigo" parent="." instance=ExtResource("14_vjtdm")]
-position = Vector2(300, -158)
-
-[node name="inimigo2" parent="." instance=ExtResource("14_vjtdm")]
-position = Vector2(178, -86)
-
-[node name="inimigo3" parent="." instance=ExtResource("14_vjtdm")]
-position = Vector2(346, -91)
-
-[node name="inimigo4" parent="." instance=ExtResource("14_vjtdm")]
-position = Vector2(199, -136)
-
-[node name="inimigo5" parent="." instance=ExtResource("14_vjtdm")]
-position = Vector2(193, -214)
-
-[node name="inimigo6" parent="." instance=ExtResource("14_vjtdm")]
-position = Vector2(120, -186)
-
-[node name="inimigo7" parent="." instance=ExtResource("14_vjtdm")]
-position = Vector2(172, -139)
-
-[node name="acc" parent="." instance=ExtResource("13_betor")]
-position = Vector2(96, -139)
-
-[node name="acc" parent="acc" instance=ExtResource("13_betor")]
-position = Vector2(112, 31)
-
-[node name="acc2" parent="." instance=ExtResource("13_betor")]
-position = Vector2(212, 32)
-
-[node name="acc3" parent="." instance=ExtResource("13_betor")]
-position = Vector2(324, 63)
-
-[node name="acc4" parent="." instance=ExtResource("13_betor")]
-position = Vector2(280, 31)
-
-[node name="acc5" parent="." instance=ExtResource("13_betor")]
-position = Vector2(178, 31)
-
-[node name="acc6" parent="." instance=ExtResource("13_betor")]
-position = Vector2(112, 31)
-
-[node name="acc7" parent="." instance=ExtResource("13_betor")]
-position = Vector2(112, 31)
-
-[node name="acc8" parent="." instance=ExtResource("13_betor")]
-position = Vector2(163, -37)
-
-[node name="acc9" parent="." instance=ExtResource("13_betor")]
-position = Vector2(178, -3)
+position = Vector2(177, -87)

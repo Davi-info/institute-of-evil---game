@@ -48,7 +48,23 @@ func _animate() -> void:
 
 func die() -> void:
 	is_dead = true
-	_state_machine.travel('death')
+	_state_machine.travel("death")
+
+	# Espera a animação de morte (1 segundo)
 	await get_tree().create_timer(1.0).timeout
-	get_tree().reload_current_scene()
-	
+
+	# Reduz tentativas antes de recarregar ou mudar cena
+	GameState.tentativas -= 1
+
+	if GameState.tentativas > 0:
+		# Volta para o início da fase atual
+		match GameState.fase_atual:
+			"fase1":
+				get_tree().change_scene_to_file("res://levels/level_1.tscn")
+			"fase2":
+				get_tree().change_scene_to_file("res://levels/level_2.tscn")
+			"fase3":
+				get_tree().change_scene_to_file("res://levels/level_3.tscn")
+	else:
+		# Vai para a tela de Game Over
+		get_tree().change_scene_to_file("res://interface/gameover.tscn")
