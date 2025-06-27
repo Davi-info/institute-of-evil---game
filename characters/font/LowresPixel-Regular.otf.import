@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://ccgaq0p16rr5f"
-path="res://.godot/imported/RevMiniPixel.ttf-855de218df70cfd0797ef92810c3c616.fontdata"
+uid="uid://cljcb2xcjxvlt"
+path="res://.godot/imported/LowresPixel-Regular.otf-8e2570afd2f81ef98bf635d03145eb92.fontdata"
 
 [deps]
 
-source_file="res://interface/menu/RevMiniPixel.ttf"
-dest_files=["res://.godot/imported/RevMiniPixel.ttf-855de218df70cfd0797ef92810c3c616.fontdata"]
+source_file="res://characters/font/LowresPixel-Regular.otf"
+dest_files=["res://.godot/imported/LowresPixel-Regular.otf-8e2570afd2f81ef98bf635d03145eb92.fontdata"]
 
 [params]
 

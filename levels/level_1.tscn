@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cnsep4u3pqr4"]
+[gd_scene load_steps=30 format=3 uid="uid://cnsep4u3pqr4"]
 
 [ext_resource type="Texture2D" uid="uid://cnk6i0n751or0" path="res://terrain/assets/room_builder.png" id="1_gwceb"]
 [ext_resource type="Script" uid="uid://chh2gm6x73hf" path="res://levels/level_1.gd" id="1_nmsli"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b4u5o5lvnewvv" path="res://characters/scenes/inimigo_fase1.tscn" id="14_vjtdm"]
 [ext_resource type="PackedScene" uid="uid://c2a16bjv4mnau" path="res://characters/scenes/acc.tscn" id="15_bgw3c"]
 [ext_resource type="PackedScene" uid="uid://bouaq1aw0rx2o" path="res://interface/hud.tscn" id="16_bgw3c"]
+[ext_resource type="PackedScene" uid="uid://ceeyt3otuh1q0" path="res://interface/pause_menu.tscn" id="16_lrvbd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_betor"]
 texture = ExtResource("1_gwceb")
@@ -5509,6 +5510,8 @@ position = Vector2(216, 22)
 
 [node name="acc5" parent="." instance=ExtResource("15_bgw3c")]
 position = Vector2(166, -11)
+
+[node name="pause_menu" parent="acc5" instance=ExtResource("16_lrvbd")]
 
 [node name="HUD" parent="." instance=ExtResource("16_bgw3c")]
 
