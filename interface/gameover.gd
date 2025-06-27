@@ -7,7 +7,8 @@ func _process(delta: float):
 	pass
 
 
-func _on_restart_pressed() -> void:
+func _on_restart_pressed() -> void:	
+	GameState.reset()
 	get_tree().change_scene_to_file("res://levels/level_1.tscn")
 
 

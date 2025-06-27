@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0iyxvg63dl76"]
+[gd_scene load_steps=8 format=3 uid="uid://c0iyxvg63dl76"]
 
 [ext_resource type="Script" uid="uid://crnr0l66ljxgx" path="res://interface/gameover.gd" id="1_7roy0"]
 [ext_resource type="Texture2D" uid="uid://x0csq7hb10x" path="res://characters/assets/ChatGPT Image 26 de jun. de 2025, 09_54_32.png" id="1_foatc"]
+[ext_resource type="Theme" uid="uid://dflyw1gojgi00" path="res://characters/temas/new_theme.tres" id="3_668k2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7roy0"]
 
@@ -105,6 +106,7 @@ grow_vertical = 2
 [node name="restart" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
+theme = ExtResource("3_668k2")
 theme_override_colors/font_disabled_color = Color(0, 0.933333, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0.745098, 0, 1)
 text = "Tentar de novo"
@@ -115,6 +117,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_7roy0")
 
 [node name="Sair" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_668k2")
 text = "	M	enu Principal
 "
 
