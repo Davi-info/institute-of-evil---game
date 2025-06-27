@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cty0bb0qlu7db"]
+
+[ext_resource type="Script" uid="uid://o12uv0w3dopn" path="res://interface/vidas.gd" id="1_16c7m"]
+
+[sub_resource type="GDScript" id="GDScript_mqdpr"]
+script/source = "extends CanvasLayer
+
+@onready var tentativas_label = $TentativasLabel
+
+func _ready() -> void:
+	# Mostra o valor atual ao carregar
+	atualizar_tentativas()
+
+func atualizar_tentativas() -> void:
+	tentativas_label.text = \"Vidas =%d\" % GameState.tentativas
+"
+
+[node name="vidas" type="Node2D"]
+script = ExtResource("1_16c7m")
+
+[node name="HUB" type="CanvasLayer" parent="."]
+script = SubResource("GDScript_mqdpr")
+
+[node name="TentativasLabel" type="Label" parent="HUB"]
+offset_right = 69.0
+offset_bottom = 23.0
+size_flags_horizontal = 0
+text = "Vidas = 5"

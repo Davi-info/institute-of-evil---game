@@ -5511,6 +5511,3 @@ position = Vector2(216, 22)
 position = Vector2(166, -11)
 
 [node name="HUD" parent="." instance=ExtResource("16_bgw3c")]
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)

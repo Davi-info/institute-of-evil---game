@@ -10,10 +10,10 @@ size = Vector2(12, 14)
 
 [node name="acc" parent="." instance=ExtResource("1_i6du3")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="acc"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="acc"]
 shape = SubResource("RectangleShape2D_j0aci")
 
-[node name="Sprite2D" type="Sprite2D" parent="acc"]
+[node name="Sprite2D2" type="Sprite2D" parent="acc"]
 texture = ExtResource("2_fff0e")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="acc"]
