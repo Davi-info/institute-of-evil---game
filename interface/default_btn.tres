@@ -20,6 +20,7 @@ default_font_size = 0
 /styles/hover = SubResource("StyleBoxFlat_i5udr")
 /styles/normal = SubResource("StyleBoxFlat_bjm56")
 Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 0, 1)
 Button/fonts/font = ExtResource("1_0c3la")
 Button/styles/hover = SubResource("StyleBoxFlat_i2iwl")
 Button/styles/normal = SubResource("StyleBoxFlat_7p3jo")
