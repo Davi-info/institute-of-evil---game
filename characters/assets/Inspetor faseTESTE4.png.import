@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://cgubiqhgc35cv"
+=======
+uid="uid://cjy0mf56vada7"
+>>>>>>> 48bebc5f389f9d89a908d394405af061b1fa6b76
 path="res://.godot/imported/Inspetor faseTESTE4.png-4b688b855ef74de43e5b53067251d42c.ctex"
 metadata={
 "vram_texture": false

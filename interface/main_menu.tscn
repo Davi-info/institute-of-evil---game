@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dbum7uvwdjp08"]
 
-[ext_resource type="Script" uid="uid://dxass45ew1qun" path="res://interface/main_menu.gd" id="1_g8ogf"]
-[ext_resource type="Texture2D" uid="uid://bfntrobr53p8y" path="res://interface/ibpi_image.png" id="2_wwcsp"]
-[ext_resource type="Texture2D" uid="uid://dvbeq56hl471o" path="res://interface/Titulo do jogo2.png" id="3_i5udr"]
-[ext_resource type="Theme" uid="uid://cmkavla7jpxqo" path="res://interface/default_btn.tres" id="4_bjm56"]
+[ext_resource type="Script" uid="uid://dxass45ew1qun" path="res://characters/scripts/main_menu.gd" id="1_g8ogf"]
+[ext_resource type="Texture2D" uid="uid://bfntrobr53p8y" path="res://characters/assets/ibpi_image.png" id="2_wwcsp"]
+[ext_resource type="Texture2D" uid="uid://dvbeq56hl471o" path="res://characters/assets/Titulo do jogo2.png" id="3_i5udr"]
+[ext_resource type="Theme" uid="uid://cmkavla7jpxqo" path="res://characters/temas/default_btn.tres" id="4_bjm56"]
 [ext_resource type="Theme" uid="uid://dflyw1gojgi00" path="res://characters/temas/new_theme.tres" id="5_i5udr"]
 [ext_resource type="AudioStream" uid="uid://cramc3yt513oo" path="res://sounds/menu/institute of evil 2.mp3" id="6_bjm56"]
 

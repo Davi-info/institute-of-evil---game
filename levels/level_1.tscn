@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://cnsep4u3pqr4"]
+[gd_scene load_steps=31 format=3 uid="uid://cnsep4u3pqr4"]
 
 [ext_resource type="Texture2D" uid="uid://cnk6i0n751or0" path="res://terrain/assets/room_builder.png" id="1_gwceb"]
-[ext_resource type="Script" uid="uid://chh2gm6x73hf" path="res://levels/level_1.gd" id="1_nmsli"]
+[ext_resource type="Script" uid="uid://chh2gm6x73hf" path="res://characters/scripts/level_1.gd" id="1_nmsli"]
 [ext_resource type="Texture2D" uid="uid://3t41q7ylqrds" path="res://terrain/assets/interiors.png" id="2_l53as"]
+[ext_resource type="PackedScene" uid="uid://bdwj0fli3evae" path="res://interface/transition.tscn" id="2_oqlok"]
 [ext_resource type="Texture2D" uid="uid://ch5du68pykwx2" path="res://terrain/assets/interiors1-1.png" id="3_3sk1a"]
 [ext_resource type="Texture2D" uid="uid://dls2w1goh0jn8" path="res://terrain/interiors/Wall_1_16x16.png" id="3_aerfg"]
 [ext_resource type="Texture2D" uid="uid://cwu33fhwy4dwf" path="res://terrain/assets/interiors1.png" id="4_08mmt"]
@@ -5467,6 +5468,20 @@ sources/10 = SubResource("TileSetAtlasSource_jkxa6")
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_nmsli")
 
+[node name="Transition" parent="." instance=ExtResource("2_oqlok")]
+visible = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+offset_left = -563.0
+offset_top = -699.0
+offset_right = 970.0
+offset_bottom = 380.0
+color = Color(0, 0, 0, 1)
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_jkxa6")
 collision_animatable = true
@@ -5511,9 +5526,6 @@ position = Vector2(216, 22)
 [node name="acc5" parent="." instance=ExtResource("15_bgw3c")]
 position = Vector2(166, -11)
 
-[node name="pause_menu" parent="acc5" instance=ExtResource("16_lrvbd")]
+[node name="pause_menu" parent="." instance=ExtResource("16_lrvbd")]
 
 [node name="HUD" parent="." instance=ExtResource("16_bgw3c")]
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
