@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgdfmp3ctjuiq"
-path="res://.godot/imported/Lowres Pixel - 1.jpg-8cdcd2053aaaf9972a673d1fecd54322.ctex"
+uid="uid://cjy0mf56vada7"
+path="res://.godot/imported/Inspetor faseTESTE4.png-4b688b855ef74de43e5b53067251d42c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/font/Lowres Pixel - 1.jpg"
-dest_files=["res://.godot/imported/Lowres Pixel - 1.jpg-8cdcd2053aaaf9972a673d1fecd54322.ctex"]
+source_file="res://characters/assets/Inspetor faseTESTE4.png"
+dest_files=["res://.godot/imported/Inspetor faseTESTE4.png-4b688b855ef74de43e5b53067251d42c.ctex"]
 
 [params]
 

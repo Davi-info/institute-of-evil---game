@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvbeq56hl471o"
-path="res://.godot/imported/Titulo do jogo2.png-9a1bb8247a3686acb35b2156ce9fd300.ctex"
+uid="uid://3ygtbyoys3va"
+path="res://.godot/imported/Inspetor faseTESTE2.png-e8a134ac0739a7117a19f9bce9e77d45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interface/Titulo do jogo2.png"
-dest_files=["res://.godot/imported/Titulo do jogo2.png-9a1bb8247a3686acb35b2156ce9fd300.ctex"]
+source_file="res://characters/assets/Inspetor faseTESTE2.png"
+dest_files=["res://.godot/imported/Inspetor faseTESTE2.png-e8a134ac0739a7117a19f9bce9e77d45.ctex"]
 
 [params]
 

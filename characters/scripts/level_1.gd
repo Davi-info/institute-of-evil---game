@@ -9,3 +9,7 @@ func _ready() -> void:
 	var hud = hud_scene.instantiate()
 	hud.name = "HUD"
 	add_child(hud)
+	
+	var transition_scene = preload("res://interface/transition.tscn")
+	var transition = transition_scene.instantiate()
+	add_child(transition)

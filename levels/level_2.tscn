@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://ct8koxmmqdxqa"]
 
-[ext_resource type="Script" uid="uid://brg3soqrjl3jg" path="res://levels/level_2.gd" id="1_5orea"]
+[ext_resource type="Script" uid="uid://brg3soqrjl3jg" path="res://characters/scripts/level_2.gd" id="1_5orea"]
 [ext_resource type="Texture2D" uid="uid://dmbjqumkun0y7" path="res://terrain/CoolSchool_for_MV_MZ/CoolSchool_tileset.png" id="2_bt44k"]
 [ext_resource type="Texture2D" uid="uid://c76ska6m5tbdm" path="res://terrain/assets/interiors2.png" id="2_gwceb"]
 [ext_resource type="Texture2D" uid="uid://1bbya4it7qh8" path="res://terrain/assets/interiors3.png" id="3_l53as"]

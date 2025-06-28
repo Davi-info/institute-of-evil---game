@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5ssiiwsdapm2"
-path="res://.godot/imported/Inspetor faseTESTE3.png-0ee9bb0355de6d70b29fd3f38edba2b7.ctex"
+uid="uid://bfntrobr53p8y"
+path="res://.godot/imported/ibpi_image.png-83eb052f27bb49222efe5a74880cac4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/scenes/Inspetor faseTESTE3.png"
-dest_files=["res://.godot/imported/Inspetor faseTESTE3.png-0ee9bb0355de6d70b29fd3f38edba2b7.ctex"]
+source_file="res://characters/assets/ibpi_image.png"
+dest_files=["res://.godot/imported/ibpi_image.png-83eb052f27bb49222efe5a74880cac4e.ctex"]
 
 [params]
 
