@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2a16bjv4mnau"]
+
+[ext_resource type="Script" uid="uid://bkao6xndjbp3" path="res://characters/scripts/acc.gd" id="1_5fkae"]
+[ext_resource type="Texture2D" uid="uid://5s5ru6vgqojs" path="res://characters/assets/ChatGPT Image 25 de jun. de 2025, 11_20_51.png" id="2_h1pxc"]
+
+[sub_resource type="Animation" id="Animation_8m1hj"]
+resource_name = "acc"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sftgm"]
+_data = {
+&"acc": SubResource("Animation_8m1hj")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6660q"]
+size = Vector2(39.7772, 51.942)
+
+[node name="acc" type="Area2D"]
+script = ExtResource("1_5fkae")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, 2.99999)
+scale = Vector2(0.0584989, 0.0283203)
+texture = ExtResource("2_h1pxc")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_sftgm")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2.99999)
+scale = Vector2(0.527941, 0.47168)
+shape = SubResource("RectangleShape2D_6660q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
