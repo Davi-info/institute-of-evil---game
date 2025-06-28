@@ -21,4 +21,6 @@ func _on_resume_btn_pressed() -> void:
 
 
 func _on_menu_prin_btn_2_pressed() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://interface/main_menu.tscn")
+	MusicMenu.play_music()

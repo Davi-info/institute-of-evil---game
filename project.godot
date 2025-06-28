@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 [autoload]
 
 GameState="*res://characters/scripts/GameState.gd"
+MusicMenu="*res://sounds/menu/music_menu.tscn"
 
 [display]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://bgu3o0w1uy741"]
 
 [ext_resource type="Script" uid="uid://h3rdgy7mdtdv" path="res://characters/scripts/inimigo.gd" id="1_nwcns"]
-[ext_resource type="Texture2D" uid="uid://5ssiiwsdapm2" path="res://characters/scenes/Inspetor faseTESTE3.png" id="2_nwcns"]
+[ext_resource type="Texture2D" uid="uid://c64qu2ymmpckt" path="res://characters/assets/Inspetor faseTESTE3.png" id="2_nwcns"]
 
 [sub_resource type="Animation" id="Animation_rrcal"]
 length = 0.001
@@ -296,6 +296,7 @@ _animation = NodePath("Animation")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0.772549, 0.0470588, 1)
 self_modulate = Color(0.658824, 0.741176, 1, 1)
+rotation = -0.0081758
 scale = Vector2(0.941693, 0.911394)
 texture = ExtResource("2_nwcns")
 hframes = 6

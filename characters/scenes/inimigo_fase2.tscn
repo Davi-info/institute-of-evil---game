@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://csk08sfgmcwkv"]
 
 [ext_resource type="Script" uid="uid://h3rdgy7mdtdv" path="res://characters/scripts/inimigo.gd" id="1_dqejm"]
-[ext_resource type="Texture2D" uid="uid://3ygtbyoys3va" path="res://characters/scenes/Inspetor faseTESTE2.png" id="2_dqejm"]
+[ext_resource type="Texture2D" uid="uid://cu74o6pg37ib" path="res://characters/assets/Inspetor faseTESTE2.png" id="2_dqejm"]
 
 [sub_resource type="Animation" id="Animation_rrcal"]
 length = 0.001
