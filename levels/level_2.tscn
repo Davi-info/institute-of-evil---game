@@ -5299,3 +5299,6 @@ position = Vector2(208, 0)
 
 [node name="inimigo4" parent="." instance=ExtResource("15_0ourt")]
 position = Vector2(151, -27)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)

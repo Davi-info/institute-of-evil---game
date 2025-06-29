@@ -3309,3 +3309,6 @@ position = Vector2(19, 25)
 _move_speed = null
 _friction = null
 _acceleration = null
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
