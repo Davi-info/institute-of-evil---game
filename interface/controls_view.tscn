@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://4dp7vlfp7fw1"]
 
 [ext_resource type="PackedScene" uid="uid://b800xvwqmbvnj" path="res://interface/back_button.tscn" id="1_b65ba"]
-[ext_resource type="Texture2D" uid="uid://bfntrobr53p8y" path="res://interface/ibpi_image.png" id="1_p3ho7"]
+[ext_resource type="Texture2D" uid="uid://bfntrobr53p8y" path="res://characters/assets/ibpi_image.png" id="1_p3ho7"]
 [ext_resource type="Theme" uid="uid://cmkavla7jpxqo" path="res://interface/default_btn.tres" id="2_pq82a"]
 [ext_resource type="AudioStream" uid="uid://cn7f24fpkk6mt" path="res://sounds/menu/Button-Hover-Sound.mp3" id="4_pq82a"]
 
