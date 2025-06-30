@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cnsep4u3pqr4"]
+[gd_scene load_steps=31 format=3 uid="uid://cnsep4u3pqr4"]
 
 [ext_resource type="Texture2D" uid="uid://cnk6i0n751or0" path="res://terrain/assets/room_builder.png" id="1_gwceb"]
 [ext_resource type="Script" uid="uid://chh2gm6x73hf" path="res://levels/level_1.gd" id="1_nmsli"]
