@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://duudhlwgmypxy"]
+[gd_scene load_steps=27 format=3 uid="uid://duudhlwgmypxy"]
 
 [ext_resource type="Script" uid="uid://h3rdgy7mdtdv" path="res://characters/scripts/inimigo.gd" id="1_ayhmu"]
-[ext_resource type="Texture2D" uid="uid://cjy0mf56vada7" path="res://characters/scenes/Inspetor faseTESTE4.png" id="2_ayhmu"]
+[ext_resource type="Texture2D" uid="uid://bly83ye1apa8g" path="res://characters/assets/Inspetor faseTESTE4.png" id="2_ayhmu"]
+[ext_resource type="AudioStream" uid="uid://cc7l7rx7molv2" path="res://sounds/Inimigos/1.ogg" id="3_2ww2x"]
 
 [sub_resource type="Animation" id="Animation_rrcal"]
 length = 0.001
