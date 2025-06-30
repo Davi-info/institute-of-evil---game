@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://bgu3o0w1uy741"]
+[gd_scene load_steps=27 format=3 uid="uid://bgu3o0w1uy741"]
 
 [ext_resource type="Script" uid="uid://h3rdgy7mdtdv" path="res://characters/scripts/inimigo.gd" id="1_nwcns"]
-[ext_resource type="Texture2D" uid="uid://5ssiiwsdapm2" path="res://characters/scenes/Inspetor faseTESTE3.png" id="2_nwcns"]
+[ext_resource type="Texture2D" uid="uid://b663hj26a048i" path="res://characters/assets/Inspetor faseTESTE3.png" id="2_nwcns"]
+[ext_resource type="AudioStream" uid="uid://cc7l7rx7molv2" path="res://sounds/Inimigos/1.ogg" id="3_h45ap"]
 
 [sub_resource type="Animation" id="Animation_rrcal"]
 length = 0.001
@@ -157,7 +158,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4, 0.5),
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4, 0.533333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [24, 25, 26, 27, 28]
