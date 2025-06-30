@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://djqrhydeug1u6"]
+
+[ext_resource type="PackedScene" uid="uid://b4qp3r72ce57a" path="res://sounds/menu/music_menu.tscn" id="1_txl7d"]
+
+[node name="MusicController" type="Node2D"]
+
+[node name="MusicMenu" parent="." instance=ExtResource("1_txl7d")]

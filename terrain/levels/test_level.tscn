@@ -1,0 +1,109 @@
+[gd_scene load_steps=22 format=3 uid="uid://dks8dk0cix0nc"]
+
+[ext_resource type="PackedScene" uid="uid://bkccprknuokgw" path="res://characters/scenes/character.tscn" id="1_46lwt"]
+[ext_resource type="PackedScene" uid="uid://b4u5o5lvnewvv" path="res://characters/scenes/inimigo_fase1.tscn" id="2_x25rp"]
+[ext_resource type="PackedScene" uid="uid://csk08sfgmcwkv" path="res://characters/scenes/inimigo_fase2.tscn" id="3_gmgay"]
+[ext_resource type="PackedScene" uid="uid://bgu3o0w1uy741" path="res://characters/scenes/inimigo_fase3.tscn" id="4_o6mel"]
+[ext_resource type="PackedScene" uid="uid://duudhlwgmypxy" path="res://characters/scenes/inimigo_fase4.tscn" id="5_e7anx"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x25rp"]
+animation = &"death"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gmgay"]
+animation = &"death"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w7r7j"]
+animation = &"death"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o6mel"]
+animation = &"death"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_abat6"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_x25rp")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_gmgay")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_w7r7j")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_o6mel")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e7anx"]
+animation = &"idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ur00s"]
+animation = &"idle_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wndkh"]
+animation = &"idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ly3hx"]
+animation = &"idle_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ul3cn"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_e7anx")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_ur00s")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_wndkh")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_ly3hx")
+blend_point_3/pos = Vector2(1, -0.1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4n8tn"]
+animation = &"walk_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wkb0e"]
+animation = &"walk_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_paa45"]
+animation = &"walk_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_axl34"]
+animation = &"walk_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_0l03n"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_4n8tn")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_wkb0e")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_paa45")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_axl34")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_8hjdj"]
+states/death/node = SubResource("AnimationNodeBlendSpace2D_abat6")
+states/death/position = Vector2(515, 27.333)
+states/idle/node = SubResource("AnimationNodeBlendSpace2D_ul3cn")
+states/idle/position = Vector2(515, 100)
+states/walk/node = SubResource("AnimationNodeBlendSpace2D_0l03n")
+states/walk/position = Vector2(515, 175)
+graph_offset = Vector2(0, -13.6547)
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Character" parent="." instance=ExtResource("1_46lwt")]
+position = Vector2(26, 50)
+
+[node name="inimigo" parent="." instance=ExtResource("2_x25rp")]
+position = Vector2(183, 20)
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_8hjdj")
+anim_player = NodePath("../Animation")
+parameters/death/blend_position = Vector2(0, 0.967033)
+parameters/idle/blend_position = Vector2(0, 0)
+parameters/walk/blend_position = Vector2(0, 0)
+
+[node name="inimigo2" parent="." instance=ExtResource("3_gmgay")]
+position = Vector2(220, 22)
+
+[node name="inimigo3" parent="." instance=ExtResource("4_o6mel")]
+position = Vector2(256, 20)
+
+[node name="inimigo4" parent="." instance=ExtResource("5_e7anx")]
+position = Vector2(292, 22)

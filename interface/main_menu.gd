@@ -45,6 +45,21 @@ func create_fade_overlay():
 	# Adiciona como filho do nó atual
 	add_child(fade_overlay)
 
+func create_fade_overlay():
+	# Cria um overlay preto que cobrirá toda a tela
+	fade_overlay = ColorRect.new()
+	fade_overlay.name = "FadeOverlay"
+	fade_overlay.color = Color.BLACK
+	fade_overlay.modulate.a = 0.0  # Começa invisível
+	
+	# Configura para cobrir toda a tela
+	fade_overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	fade_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	fade_overlay.z_index = 100  # Garante que fica na frente de tudo
+	
+	# Adiciona como filho do nó atual
+	add_child(fade_overlay)
+
 func on_button_pressed(button: Button) -> void:
 	match button.name:
 		'Play':
