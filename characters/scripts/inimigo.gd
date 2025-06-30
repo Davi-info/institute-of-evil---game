@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Inimigo
 
+var ja_falou: bool = false
 var _state_machine
 var _player_ref = null
 var _wander_direction := Vector2.ZERO
@@ -29,7 +30,23 @@ func _on_detection_area_body_entered(_body: Node2D) -> void:
 func _on_detection_area_body_exited(_body: Node2D) -> void:
 	if _body.is_in_group('player'):
 		_player_ref = null
+	if not ja_falou:
+			fala_engracada()
+			ja_falou = true
+			
+func fala_engracada():
+	print("Inimigo diz: Você não tem chance!")
 
+	var som = get_node_or_null("FalaInimigo")
+	if som:
+		if som.stream != null:
+			som.play()
+		else:
+			print("ERRO: Nenhum arquivo de áudio configurado no Stream de FalaInimigo!")
+	else:
+		print("ERRO: Nó FalaInimigo não encontrado no inimigo!")
+
+	
 func _physics_process(delta: float) -> void:
 	var move_dir = Vector2.ZERO
 

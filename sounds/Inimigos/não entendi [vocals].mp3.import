@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqj25qgig3oed"
+path="res://.godot/imported/não entendi [vocals].mp3-77fe6d0f2683de18ed3823c1f6aa81c3.mp3str"
+
+[deps]
+
+source_file="res://sounds/Inimigos/não entendi [vocals].mp3"
+dest_files=["res://.godot/imported/não entendi [vocals].mp3-77fe6d0f2683de18ed3823c1f6aa81c3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

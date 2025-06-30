@@ -9,4 +9,5 @@ func _on_mouse_exited() -> void:
 	modulate.a = 1.0
 
 func _on_mouse_entered() -> void:
+	$HouverSound.play()
 	modulate.a = 0.5

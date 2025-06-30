@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4qp3r72ce57a"]
+
+[ext_resource type="AudioStream" uid="uid://coxpw5jsu0ehd" path="res://sounds/menu/background music menu.mp3" id="1_6sgv5"]
+
+[sub_resource type="GDScript" id="GDScript_txl7d"]
+script/source = "extends AudioStreamPlayer2D
+
+func play_music():
+	play()
+
+func stop_music():
+	stop()
+	
+func _ready():
+	MusicMenu.play_music()
+	
+func on_button_pressed(button: Button) -> void:
+	match button.name:
+		'Play':
+			MusicMenu.stop_music()
+			get_tree().change_scene_to_file(\"res://levels/level_1.tscn\")
+		'Controls':
+			get_tree().change_scene_to_file(\"res://interface/controls_view.tscn\")
+		'Exit':
+			get_tree().quit()
+"
+
+[node name="MusicMenu" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_6sgv5")
+volume_db = -15.0
+autoplay = true
+script = SubResource("GDScript_txl7d")

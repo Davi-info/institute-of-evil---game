@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dlxq7axxt6afm"
+path="res://.godot/imported/queremos sua banana [vocals].mp3-330f7c5c7f600739509a983f68b57393.mp3str"
+
+[deps]
+
+source_file="res://sounds/Inimigos/queremos sua banana [vocals].mp3"
+dest_files=["res://.godot/imported/queremos sua banana [vocals].mp3-330f7c5c7f600739509a983f68b57393.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

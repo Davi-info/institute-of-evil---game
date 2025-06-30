@@ -1,7 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://b4u5o5lvnewvv"]
+[gd_scene load_steps=28 format=3 uid="uid://b4u5o5lvnewvv"]
 
 [ext_resource type="Script" uid="uid://h3rdgy7mdtdv" path="res://characters/scripts/inimigo.gd" id="1_d7ogv"]
 [ext_resource type="Texture2D" uid="uid://bkg8c1783mr1g" path="res://characters/assets/Inspetor fase1 TESTE.png" id="2_r30i3"]
+[ext_resource type="AudioStream" uid="uid://cc7l7rx7molv2" path="res://sounds/Inimigos/1.ogg" id="3_jpfsj"]
+[ext_resource type="AudioStream" uid="uid://bih355o5p0kd1" path="res://sounds/Inimigos/Dar banana VOCAL.mp3" id="4_capql"]
 
 [sub_resource type="Animation" id="Animation_rrcal"]
 length = 0.001
@@ -162,6 +164,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [24, 25, 26, 27, 28]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Passos inimigos")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_jpfsj")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ofayd"]
 resource_name = "walk_left"
@@ -179,6 +196,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [36, 37, 38, 39, 40]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Passos inimigos")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.103709,
+"start_offset": 0.0,
+"stream": ExtResource("3_jpfsj")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_5m2d4"]
 resource_name = "walk_right"
@@ -196,6 +228,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [30, 31, 32, 33, 34]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Passos inimigos")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_jpfsj")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_x81p5"]
 resource_name = "walk_up"
@@ -213,6 +260,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [42, 43, 44, 45, 46, 47]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Passos inimigos")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0915076,
+"start_offset": 0.0,
+"stream": ExtResource("3_jpfsj")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x81p5"]
 _data = {
@@ -282,8 +344,8 @@ states/walk/position = Vector2(556, 192)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7ogv"]
 size = Vector2(7, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrcal"]
-size = Vector2(20, 63.1213)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpfsj"]
+size = Vector2(39.5703, 57.7655)
 
 [node name="inimigo" type="CharacterBody2D" node_paths=PackedStringArray("_texture", "_animation") groups=["inimigos"]]
 position = Vector2(196, 79)
@@ -322,9 +384,20 @@ position = Vector2(39, 2)
 
 [node name="Collision" type="CollisionShape2D" parent="DetectionArea"]
 show_behind_parent = true
-position = Vector2(-39, 16)
+position = Vector2(-39, 9.7152)
 scale = Vector2(1.01453, 1.01392)
-shape = SubResource("RectangleShape2D_rrcal")
+shape = SubResource("RectangleShape2D_jpfsj")
+
+[node name="Passos inimigos" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
+autoplay = true
+max_distance = 300.0
+attenuation = 1.97462
+
+[node name="FalaInimigo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_capql")
+volume_db = -15.0
+attenuation = 1.93187
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

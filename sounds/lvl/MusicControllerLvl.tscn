@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://wtasjtowb23u"]
+
+[ext_resource type="AudioStream" uid="uid://b1u5gol0mujlw" path="res://sounds/lvl/background lvl 2.mp3" id="1_afj2r"]
+[ext_resource type="Script" uid="uid://oc7xudv05nhn" path="res://sounds/lvl/musiclvl.gd" id="2_afj2r"]
+
+[node name="MusicControllerLvl" type="Node2D"]
+
+[node name="Musiclvl" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_afj2r")
+volume_db = -15.0
+autoplay = true
+script = ExtResource("2_afj2r")

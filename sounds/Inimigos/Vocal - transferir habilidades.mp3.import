@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgh1w0emjl0f2"
+path="res://.godot/imported/Vocal - transferir habilidades.mp3-0b191076f0e6377b6935cb9658cfcf10.mp3str"
+
+[deps]
+
+source_file="res://sounds/Inimigos/Vocal - transferir habilidades.mp3"
+dest_files=["res://.godot/imported/Vocal - transferir habilidades.mp3-0b191076f0e6377b6935cb9658cfcf10.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
