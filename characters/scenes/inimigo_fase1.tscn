@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b4u5o5lvnewvv"]
+[gd_scene load_steps=28 format=3 uid="uid://b4u5o5lvnewvv"]
 
 [ext_resource type="Script" uid="uid://h3rdgy7mdtdv" path="res://characters/scripts/inimigo.gd" id="1_d7ogv"]
 [ext_resource type="Texture2D" uid="uid://bkg8c1783mr1g" path="res://characters/assets/Inspetor fase1 TESTE.png" id="2_r30i3"]
@@ -282,8 +282,8 @@ states/walk/position = Vector2(556, 192)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7ogv"]
 size = Vector2(7, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrcal"]
-size = Vector2(20, 63.1213)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpfsj"]
+size = Vector2(39.5703, 57.7655)
 
 [node name="inimigo" type="CharacterBody2D" node_paths=PackedStringArray("_texture", "_animation") groups=["inimigos"]]
 position = Vector2(196, 79)
@@ -322,9 +322,20 @@ position = Vector2(39, 2)
 
 [node name="Collision" type="CollisionShape2D" parent="DetectionArea"]
 show_behind_parent = true
-position = Vector2(-39, 16)
+position = Vector2(-39, 9.7152)
 scale = Vector2(1.01453, 1.01392)
-shape = SubResource("RectangleShape2D_rrcal")
+shape = SubResource("RectangleShape2D_jpfsj")
+
+[node name="Passos inimigos" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
+autoplay = true
+max_distance = 300.0
+attenuation = 1.97462
+
+[node name="FalaInimigo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_capql")
+volume_db = -15.0
+attenuation = 1.93187
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
