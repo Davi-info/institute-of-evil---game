@@ -5489,13 +5489,31 @@ layer_5/tile_data = PackedInt32Array(-65514, 720899, 24, -65513, 786435, 24, 22,
 position = Vector2(48, 45)
 
 [node name="inimigo" parent="." instance=ExtResource("14_vjtdm")]
-position = Vector2(-308, -249)
+position = Vector2(-317, -180)
+
+[node name="Point1" parent="inimigo/Waypoints" index="0"]
+position = Vector2(0, 13)
+
+[node name="Point2" parent="inimigo/Waypoints" index="1"]
+position = Vector2(130, 15)
 
 [node name="inimigo2" parent="." instance=ExtResource("14_vjtdm")]
-position = Vector2(124, -514)
+position = Vector2(87, -492)
+
+[node name="Point1" parent="inimigo2/Waypoints" index="0"]
+position = Vector2(-19, 3)
+
+[node name="Point2" parent="inimigo2/Waypoints" index="1"]
+position = Vector2(157, 5)
 
 [node name="inimigo3" parent="." instance=ExtResource("14_vjtdm")]
-position = Vector2(554, -247)
+position = Vector2(568, -215)
+
+[node name="Point1" parent="inimigo3/Waypoints" index="0"]
+position = Vector2(1, -8)
+
+[node name="Point2" parent="inimigo3/Waypoints" index="1"]
+position = Vector2(2, 102)
 
 [node name="acc" parent="." instance=ExtResource("15_bgw3c")]
 visible = false
@@ -5527,7 +5545,25 @@ color = Color(0, 0, 0, 1)
 [node name="MusicControllerLvl" parent="." instance=ExtResource("18_oqlok")]
 
 [node name="inimigo4" parent="." instance=ExtResource("14_vjtdm")]
-position = Vector2(167, -145)
+position = Vector2(233, -118)
+
+[node name="Point1" parent="inimigo4/Waypoints" index="0"]
+position = Vector2(50, 15)
+
+[node name="Point2" parent="inimigo4/Waypoints" index="1"]
+position = Vector2(-179, 16)
 
 [node name="inimigo5" parent="." instance=ExtResource("14_vjtdm")]
 position = Vector2(367, 14)
+
+[node name="Point1" parent="inimigo5/Waypoints" index="0"]
+position = Vector2(-119, 21)
+
+[node name="Point2" parent="inimigo5/Waypoints" index="1"]
+position = Vector2(-244, 19)
+
+[editable path="inimigo"]
+[editable path="inimigo2"]
+[editable path="inimigo3"]
+[editable path="inimigo4"]
+[editable path="inimigo5"]

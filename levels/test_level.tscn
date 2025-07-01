@@ -87,7 +87,16 @@ graph_offset = Vector2(0, -13.6547)
 position = Vector2(26, 50)
 
 [node name="inimigo" parent="." instance=ExtResource("2_x25rp")]
-position = Vector2(183, 20)
+position = Vector2(184, 18)
+
+[node name="AnimationTree" parent="inimigo" index="2"]
+parameters/walk/blend_position = Vector2(0, -0.978022)
+
+[node name="Point1" parent="inimigo/Waypoints" index="0"]
+position = Vector2(0, 56)
+
+[node name="Point2" parent="inimigo/Waypoints" index="1"]
+position = Vector2(114, 58)
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_8hjdj")
@@ -95,3 +104,5 @@ anim_player = NodePath("../Animation")
 parameters/death/blend_position = Vector2(0, 0.967033)
 parameters/idle/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(0, 0)
+
+[editable path="inimigo"]
