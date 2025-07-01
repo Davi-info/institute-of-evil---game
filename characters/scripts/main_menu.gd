@@ -3,14 +3,32 @@ extends Control
 # Nó para o fade overlay
 var fade_overlay: ColorRect
 
+# Referência para o som de hover (usando get_node_or_null para evitar erro)
+var hover_sound: AudioStreamPlayer2D
+
 func _ready():
-	# Cria o fade overlay
+		# Cria o fade overlay
 	create_fade_overlay()
+	
+	# Tenta encontrar o nó de som
+	hover_sound = get_node_or_null("HoverSound")
+	
+	# Debug - verifica se o nó de som existe
+	print("Verificando nó de som...")
+	if hover_sound:
+		print("HoverSound encontrado: ", hover_sound.name)
+		print("Stream configurado: ", hover_sound.stream != null)
+	else:
+		print("AVISO: HoverSound não encontrado!")
+		print("Criando AudioStreamPlayer automaticamente...")
+		create_hover_sound()
 	
 	for button in get_tree().get_nodes_in_group("button"):
 		button.pressed.connect(on_button_pressed.bind(button))
 		button.mouse_exited.connect(mouse_interaction.bind(button, "exited"))
 		button.mouse_entered.connect(mouse_interaction.bind(button, "entered"))
+	
+	print("Botões conectados: ", get_tree().get_nodes_in_group("button").size())
 
 func create_fade_overlay():
 	# Cria um overlay preto que cobrirá toda a tela
@@ -33,6 +51,9 @@ func on_button_pressed(button: Button) -> void:
 			# Desabilita todos os botões imediatamente
 			set_buttons_disabled(true)
 			
+			$SoundConfirm.play()
+			# Toca o som ao apertar botão
+			
 			# Toca o som E inicia o fade simultaneamente
 			$PlaySound.play()
 			
@@ -41,6 +62,7 @@ func on_button_pressed(button: Button) -> void:
 			
 			# Muda para o próximo nível
 			MusicMenu.stop_music()
+			
 			get_tree().change_scene_to_file("res://levels/level_1.tscn")
 			
 		'Controls':
@@ -68,7 +90,45 @@ func set_buttons_disabled(disabled: bool):
 	for button in get_tree().get_nodes_in_group("button"):
 		button.disabled = disabled
 
+func create_hover_sound():
+	# Cria um AudioStreamPlayer automaticamente se não existir
+	hover_sound = AudioStreamPlayer2D.new()
+	hover_sound.name = "HoverSound"
+	hover_sound.bus = "Master"  # ou "SFX" se você tiver esse bus
+	add_child(hover_sound)
+	print("AudioStreamPlayer criado automaticamente")
+	print("IMPORTANTE: Você precisa definir o arquivo de áudio no Inspector!")
+
+func play_hover_sound():
+	print("Executando play_hover_sound()")  # Debug
+	# Verifica se o nó de som existe antes de tocar
+	if hover_sound:
+		if hover_sound.stream != null:
+			print("Tocando som...")  # Debug
+			hover_sound.play()
+		else:
+			print("ERRO: Nenhum arquivo de áudio configurado no HoverSound!")
+			print("Configure um arquivo .ogg ou .wav na propriedade Stream")
+	else:
+		print("Aviso: Nó HoverSound não encontrado!")
+
+func play_hover_sound_for_button(button_name: String):
+	print("Som para botão: ", button_name)  # Debug
+	# Som específico para cada botão (opcional)
+	match button_name:
+		'Play':
+			play_hover_sound()
+		'Controls':
+			play_hover_sound()
+		'Exit':
+			play_hover_sound()
+		_:
+			print("Botão não reconhecido: ", button_name)
+			play_hover_sound()  # Toca mesmo assim
+
 func mouse_interaction(button: Button, state: String) -> void:
+	print("Mouse interaction: ", button.name, " - ", state)  # Debug
+	
 	# Só aplica o efeito se o botão não estiver desabilitado
 	if button.disabled:
 		return
@@ -78,3 +138,7 @@ func mouse_interaction(button: Button, state: String) -> void:
 			button.modulate.a = 1.0
 		'entered':
 			button.modulate.a = 0.5
+			# Toca som específico baseado no botão
+			print("Tentando tocar som para: ", button.name)  # Debug
+			play_hover_sound_for_button(button.name)
+			

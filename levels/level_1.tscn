@@ -1,7 +1,7 @@
 [gd_scene load_steps=31 format=3 uid="uid://cnsep4u3pqr4"]
 
 [ext_resource type="Texture2D" uid="uid://cnk6i0n751or0" path="res://terrain/assets/room_builder.png" id="1_gwceb"]
-[ext_resource type="Script" uid="uid://chh2gm6x73hf" path="res://levels/level_1.gd" id="1_nmsli"]
+[ext_resource type="Script" uid="uid://chh2gm6x73hf" path="res://characters/scripts/level_1.gd" id="1_nmsli"]
 [ext_resource type="Texture2D" uid="uid://3t41q7ylqrds" path="res://terrain/assets/interiors.png" id="2_l53as"]
 [ext_resource type="Texture2D" uid="uid://ch5du68pykwx2" path="res://terrain/assets/interiors1-1.png" id="3_3sk1a"]
 [ext_resource type="Texture2D" uid="uid://dls2w1goh0jn8" path="res://terrain/interiors/Wall_1_16x16.png" id="3_aerfg"]

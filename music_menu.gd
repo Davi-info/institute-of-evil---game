@@ -8,7 +8,6 @@ func stop_music():
 	
 func _ready():
 	MusicMenu.play_music()
-	MusicControllerLvl.stop_music()
 	
 func on_button_pressed(button: Button) -> void:
 	match button.name:

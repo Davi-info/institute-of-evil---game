@@ -1,6 +1,6 @@
-[gd_scene load_steps=48 format=3 uid="uid://dgx206aqybkl6"]
+[gd_scene load_steps=49 format=3 uid="uid://dgx206aqybkl6"]
 
-[ext_resource type="Script" uid="uid://b4onwkhpsp42f" path="res://levels/level_3.gd" id="1_8swdu"]
+[ext_resource type="Script" uid="uid://b4onwkhpsp42f" path="res://characters/scripts/level_3.gd" id="1_8swdu"]
 [ext_resource type="Texture2D" uid="uid://b7mnq8o44ixje" path="res://terrain/assets/caves-rails-tileset-beta-1.0.png" id="1_gew73"]
 [ext_resource type="Texture2D" uid="uid://cnk6i0n751or0" path="res://terrain/assets/room_builder.png" id="2_bmgug"]
 [ext_resource type="PackedScene" uid="uid://bkccprknuokgw" path="res://characters/scenes/character.tscn" id="3_20opy"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://b3uyrlcgmqpvk" path="res://terrain/assets/Tile_49.png" id="22_c3ijv"]
 [ext_resource type="Texture2D" uid="uid://di10430p1lgm2" path="res://terrain/assets/Tile_50.png" id="24_b1cs7"]
 [ext_resource type="Texture2D" uid="uid://cvm3gju6f21k1" path="res://terrain/assets/Tile_51.png" id="25_fxw2g"]
+[ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://sounds/lvl/MusicControllerLvl.tscn" id="25_xe1ru"]
 [ext_resource type="Texture2D" uid="uid://i0n4canc878a" path="res://terrain/assets/Tileset.png" id="26_kyq6o"]
 [ext_resource type="Texture2D" uid="uid://c0b67q7w8kgcs" path="res://terrain/assets/Objects.png" id="27_4gw27"]
 
@@ -3312,3 +3313,5 @@ _acceleration = null
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
+
+[node name="MusicControllerLvl" parent="." instance=ExtResource("25_xe1ru")]

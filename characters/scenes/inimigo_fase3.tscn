@@ -388,6 +388,7 @@ scale = Vector2(1.01453, 1.01392)
 shape = SubResource("RectangleShape2D_rrcal")
 
 [node name="Passos Inimigos" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
 max_distance = 300.0
 attenuation = 1.97462
 

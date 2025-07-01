@@ -390,7 +390,6 @@ shape = SubResource("RectangleShape2D_jpfsj")
 
 [node name="Passos inimigos" type="AudioStreamPlayer2D" parent="."]
 volume_db = -10.0
-autoplay = true
 max_distance = 300.0
 attenuation = 1.97462
 

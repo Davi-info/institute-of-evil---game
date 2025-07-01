@@ -1,9 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://4dp7vlfp7fw1"]
+[gd_scene load_steps=10 format=3 uid="uid://4dp7vlfp7fw1"]
 
 [ext_resource type="PackedScene" uid="uid://b800xvwqmbvnj" path="res://interface/back_button.tscn" id="1_b65ba"]
 [ext_resource type="Texture2D" uid="uid://bfntrobr53p8y" path="res://characters/assets/ibpi_image.png" id="1_p3ho7"]
-[ext_resource type="Theme" uid="uid://cmkavla7jpxqo" path="res://interface/default_btn.tres" id="2_pq82a"]
+[ext_resource type="FontFile" uid="uid://ccgaq0p16rr5f" path="res://characters/font/RevMiniPixel.ttf" id="2_pq82a"]
 [ext_resource type="AudioStream" uid="uid://cn7f24fpkk6mt" path="res://sounds/menu/Button-Hover-Sound.mp3" id="4_pq82a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i5udr"]
+bg_color = Color(0, 0, 0, 0.396078)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjm56"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2iwl"]
+bg_color = Color(0.611765, 0.631373, 0.654902, 0.74902)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7p3jo"]
+bg_color = Color(0, 0, 0, 0.760784)
+
+[sub_resource type="Theme" id="Theme_o35nb"]
+default_font = ExtResource("2_pq82a")
+default_font_size = 0
+/styles/hover = SubResource("StyleBoxFlat_i5udr")
+/styles/normal = SubResource("StyleBoxFlat_bjm56")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 0, 1)
+Button/fonts/font = ExtResource("2_pq82a")
+Button/styles/hover = SubResource("StyleBoxFlat_i2iwl")
+Button/styles/normal = SubResource("StyleBoxFlat_7p3jo")
 
 [node name="VBoxContainer" type="VBoxContainer"]
 anchors_preset = 8
@@ -59,7 +82,7 @@ alignment = 1
 [node name="Credits" type="Label" parent="Background/MadeBy"]
 layout_mode = 2
 size_flags_horizontal = 10
-theme = ExtResource("2_pq82a")
+theme = SubResource("Theme_o35nb")
 theme_override_font_sizes/font_size = 7
 text = "Made by J.I.W.D.D"
 horizontal_alignment = 2
@@ -67,7 +90,7 @@ horizontal_alignment = 2
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("2_pq82a")
+theme = SubResource("Theme_o35nb")
 text = "  CONTROLES:
 
 WSDA -  Andar
@@ -76,7 +99,7 @@ E - Interação
 
 [node name="Button" parent="." instance=ExtResource("1_b65ba")]
 layout_mode = 2
-theme = ExtResource("2_pq82a")
+theme = SubResource("Theme_o35nb")
 
 [node name="HouverSound" type="AudioStreamPlayer2D" parent="Button"]
 position = Vector2(0, -100)
