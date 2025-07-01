@@ -404,7 +404,7 @@ attenuation = 1.93187
 
 [node name="Point1" type="Marker2D" parent="Waypoints"]
 
-[node name="Point2" type="Marker2D" parent="Waypoints"]
+[node name="Ponto2" type="Marker2D" parent="Waypoints"]
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

@@ -5486,34 +5486,52 @@ layer_5/name = "Porta"
 layer_5/tile_data = PackedInt32Array(-65514, 720899, 24, -65513, 786435, 24, 22, 720899, 25, 23, 786435, 25)
 
 [node name="player" parent="." instance=ExtResource("7_nmsli")]
-position = Vector2(48, 45)
+position = Vector2(46, 70)
 
 [node name="inimigo" parent="." instance=ExtResource("14_vjtdm")]
 position = Vector2(-317, -180)
 
 [node name="Point1" parent="inimigo/Waypoints" index="0"]
-position = Vector2(0, 13)
+position = Vector2(-13, -1)
 
-[node name="Point2" parent="inimigo/Waypoints" index="1"]
-position = Vector2(130, 15)
+[node name="Ponto2" parent="inimigo/Waypoints" index="1"]
+position = Vector2(97, 1)
+
+[node name="Point3" type="Marker2D" parent="inimigo/Waypoints" index="2"]
+position = Vector2(94, 51)
+
+[node name="Point4" type="Marker2D" parent="inimigo/Waypoints" index="3"]
+position = Vector2(-12, 51)
 
 [node name="inimigo2" parent="." instance=ExtResource("14_vjtdm")]
 position = Vector2(87, -492)
 
 [node name="Point1" parent="inimigo2/Waypoints" index="0"]
-position = Vector2(-19, 3)
+position = Vector2(-9, -7)
 
-[node name="Point2" parent="inimigo2/Waypoints" index="1"]
-position = Vector2(157, 5)
+[node name="Ponto2" parent="inimigo2/Waypoints" index="1"]
+position = Vector2(158, -7)
+
+[node name="Point3" type="Marker2D" parent="inimigo2/Waypoints" index="2"]
+position = Vector2(157, 81)
+
+[node name="Point4" type="Marker2D" parent="inimigo2/Waypoints" index="3"]
+position = Vector2(-10, 81)
 
 [node name="inimigo3" parent="." instance=ExtResource("14_vjtdm")]
 position = Vector2(568, -215)
 
 [node name="Point1" parent="inimigo3/Waypoints" index="0"]
-position = Vector2(1, -8)
+position = Vector2(0, -7)
 
-[node name="Point2" parent="inimigo3/Waypoints" index="1"]
-position = Vector2(2, 102)
+[node name="Ponto2" parent="inimigo3/Waypoints" index="1"]
+position = Vector2(64, -7)
+
+[node name="Point3" type="Marker2D" parent="inimigo3/Waypoints" index="2"]
+position = Vector2(64, 86)
+
+[node name="Point4" type="Marker2D" parent="inimigo3/Waypoints" index="3"]
+position = Vector2(-5, 86)
 
 [node name="acc" parent="." instance=ExtResource("15_bgw3c")]
 visible = false
@@ -5536,6 +5554,7 @@ position = Vector2(216, 22)
 [node name="HUD" parent="." instance=ExtResource("16_bgw3c")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("18_oqlok")]
@@ -5544,19 +5563,34 @@ color = Color(0, 0, 0, 1)
 position = Vector2(233, -118)
 
 [node name="Point1" parent="inimigo4/Waypoints" index="0"]
-position = Vector2(50, 15)
+position = Vector2(-32, 14)
 
-[node name="Point2" parent="inimigo4/Waypoints" index="1"]
-position = Vector2(-179, 16)
+[node name="Ponto2" parent="inimigo4/Waypoints" index="1"]
+position = Vector2(-98, 12)
+
+[node name="Point3" type="Marker2D" parent="inimigo4/Waypoints" index="2"]
+position = Vector2(-97, -113)
+
+[node name="Point4" type="Marker2D" parent="inimigo4/Waypoints" index="3"]
+position = Vector2(-30, -113)
 
 [node name="inimigo5" parent="." instance=ExtResource("14_vjtdm")]
 position = Vector2(367, 14)
 
 [node name="Point1" parent="inimigo5/Waypoints" index="0"]
-position = Vector2(-119, 21)
+position = Vector2(-115, 12)
 
-[node name="Point2" parent="inimigo5/Waypoints" index="1"]
-position = Vector2(-244, 19)
+[node name="Ponto2" parent="inimigo5/Waypoints" index="1"]
+position = Vector2(-199, 12)
+
+[node name="Ponto3" type="Marker2D" parent="inimigo5/Waypoints" index="2"]
+position = Vector2(-197, -53)
+
+[node name="Ponto4" type="Marker2D" parent="inimigo5/Waypoints" index="3"]
+position = Vector2(-199, 12)
+
+[node name="Ponto5" type="Marker2D" parent="inimigo5/Waypoints" index="4"]
+position = Vector2(-115, 12)
 
 [editable path="inimigo"]
 [editable path="inimigo2"]
