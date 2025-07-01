@@ -13,16 +13,19 @@ const SEARCH_DURATION := 3.0
 var ja_falou: bool = false
 var _state_machine
 var _player_ref = null
-var _wander_direction := Vector2.ZERO
-var _wander_timer := 0.0
+
+@export var waypoints_path: NodePath = ^"Waypoints"
+var _patrol_index = 0
+var _patrol_points: Array[Vector2] = []
+var _patr#const WANDER_INTERVAL := 2.0ol_index := 0
+const POINT_THRESHOLD := 4.0   # distância para “chegou”
 
 @export_category('Objects')
 @export var _texture : Sprite2D = null
 @export var _animation : AnimationPlayer = null
 @export var _animation_tree: AnimationTree = null
 
-const SPEED := 30.0
-const WANDER_INTERVAL := 2.0
+const SPEED := 20.0
 
 func _ready() -> void:
 	if _animation_tree == null:
@@ -31,6 +34,14 @@ func _ready() -> void:
 		push_error("AnimationTree is not assigned and could not be found as a child.")
 		return
 	_state_machine = _animation_tree["parameters/playback"]
+	# Carregar pontos de patrulha
+	var wp_parent := get_node_or_null(waypoints_path)
+	if wp_parent:
+		for child in wp_parent.get_children():
+			if child is Node2D:
+				_patrol_points.append(child.global_position)
+	if _patrol_points.is_empty():
+		push_error("Nenhum waypoint encontrado! Adicione Position2D dentro de Waypoints.")
 
 func _on_detection_area_body_entered(_body: Node2D) -> void:
 	if _body.is_in_group('player'):
@@ -71,12 +82,50 @@ func _physics_process(delta: float) -> void:
 
 	match state:
 		PATROLLING:
-			_wander_timer -= delta
-			if _wander_timer <= 0.0:
-				_wander_timer = WANDER_INTERVAL
-				_wander_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+			if _patrol_points.is_empty():
+				velocity = Vector2.ZERO
+			else:
+				var target := _patrol_points[_patrol_index]
+				move_dir = global_position.direction_to(target)
+				velocity = move_dir * (SPEED * 0.5)
 
-			move_dir = _wander_direction
+				if global_position.distance_to(target) < POINT_THRESHOLD:
+					_patrol_index = (_patrol_index + 1) % _patrol_points.size()
+
+			if _player_ref and not _player_ref.is_dead:
+				state = CHASING
+
+		CHASING:
+			if _player_ref and not _player_ref.is_dead:
+				move_dir = global_position.direction_to(_player_ref.global_position)
+				var distance = global_position.distance_to(_player_ref.global_position)
+
+				if distance < 20:
+					_player_ref.die()
+					velocity = Vector2.ZERO
+					move_and_slide()
+					return
+
+				velocity = move_dir * SPEED
+			else:
+				state = SEARCHING
+				search_timer = SEARCH_DURATION
+
+		SEARCHING:
+			search_timer -= delta
+			if search_timer <= 0:
+				state = PATROLLING
+
+		IDLE:
+			velocity = Vector2.ZERO
+
+	# Aplica movimento e animação com a direção final calculada
+	move_and_slide()
+	_animate(move_dir)
+
+
+	match state:
+		PATROLLING:
 			velocity = move_dir * (SPEED * 0.5)
 
 			if _player_ref and not _player_ref.is_dead:
@@ -120,13 +169,6 @@ func _physics_process(delta: float) -> void:
 		move_dir = to_player
 		velocity = move_dir * SPEED
 	else:
-		# Wander randomly
-		_wander_timer -= delta
-		if _wander_timer <= 0.0:
-			_wander_timer = WANDER_INTERVAL
-			_wander_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
-
-		move_dir = _wander_direction
 		velocity = move_dir * (SPEED * 0.5)
 
 	move_and_slide()
@@ -134,8 +176,10 @@ func _physics_process(delta: float) -> void:
 
 func _animate(move_dir: Vector2) -> void:
 	if move_dir.length() > 0.1:
-		_animation_tree.set("parameters/Idle/blend_position", move_dir)
-		_animation_tree.set("parameters/walk/blend_position", move_dir)
+		var dir = move_dir.normalized()
+		_animation_tree.set("parameters/Idle/blend_position", dir)
+		_animation_tree.set("parameters/walk/blend_position", dir)
 		_state_machine.travel("walk")
 	else:
 		_state_machine.travel("idle")
+	print("Direção animação: ", move_dir)
