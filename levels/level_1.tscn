@@ -5489,27 +5489,32 @@ layer_5/tile_data = PackedInt32Array(-65514, 720899, 24, -65513, 786435, 24, 22,
 position = Vector2(48, 45)
 
 [node name="inimigo" parent="." instance=ExtResource("14_vjtdm")]
-position = Vector2(166, -30)
+position = Vector2(-308, -249)
 
 [node name="inimigo2" parent="." instance=ExtResource("14_vjtdm")]
-position = Vector2(156, 13)
+position = Vector2(124, -514)
 
 [node name="inimigo3" parent="." instance=ExtResource("14_vjtdm")]
-position = Vector2(282, 15)
+position = Vector2(554, -247)
 
 [node name="acc" parent="." instance=ExtResource("15_bgw3c")]
+visible = false
 position = Vector2(107, 24)
 
 [node name="acc2" parent="." instance=ExtResource("15_bgw3c")]
+visible = false
 position = Vector2(48, -130)
 
 [node name="acc3" parent="." instance=ExtResource("15_bgw3c")]
+visible = false
 position = Vector2(152, -97)
 
 [node name="acc4" parent="." instance=ExtResource("15_bgw3c")]
+visible = false
 position = Vector2(216, 22)
 
 [node name="acc5" parent="." instance=ExtResource("15_bgw3c")]
+visible = false
 position = Vector2(166, -11)
 
 [node name="pause_menu" parent="acc5" instance=ExtResource("16_lrvbd")]
@@ -5520,3 +5525,9 @@ position = Vector2(166, -11)
 color = Color(0, 0, 0, 1)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("18_oqlok")]
+
+[node name="inimigo4" parent="." instance=ExtResource("14_vjtdm")]
+position = Vector2(167, -145)
+
+[node name="inimigo5" parent="." instance=ExtResource("14_vjtdm")]
+position = Vector2(367, 14)

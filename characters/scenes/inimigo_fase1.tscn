@@ -342,7 +342,7 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_nmesb")
 states/walk/position = Vector2(556, 192)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7ogv"]
-size = Vector2(7, 4)
+size = Vector2(10.4697, 5.35215)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpfsj"]
 size = Vector2(39.5703, 57.7655)
@@ -376,7 +376,8 @@ parameters/walk/blend_position = Vector2(0, 0)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 show_behind_parent = true
-position = Vector2(0, -6)
+position = Vector2(-1.52588e-05, 0.5)
+scale = Vector2(0.573082, 0.934204)
 shape = SubResource("RectangleShape2D_d7ogv")
 
 [node name="DetectionArea" type="Area2D" parent="."]
