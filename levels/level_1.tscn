@@ -5502,6 +5502,16 @@ layer_4/tile_data = PackedInt32Array(-655346, 1, 53, -589810, 1, 54, -851962, 1,
 layer_5/name = "Porta"
 layer_5/tile_data = PackedInt32Array(-65514, 720899, 24, -65513, 786435, 24, 22, 720899, 25, 23, 786435, 25)
 
+[node name="EasterEggMarcosEDiretor" type="Sprite2D" parent="."]
+position = Vector2(123, -561)
+scale = Vector2(0.0177752, 0.0177753)
+texture = ExtResource("22_i6od7")
+
+[node name="EasterEggWillamys" type="Sprite2D" parent="."]
+position = Vector2(48, -1)
+scale = Vector2(0.0186966, 0.0186966)
+texture = ExtResource("21_udfhf")
+
 [node name="player" parent="." instance=ExtResource("7_nmsli")]
 position = Vector2(46, 70)
 
@@ -5588,6 +5598,7 @@ position = Vector2(216, 22)
 [node name="HUD" parent="." instance=ExtResource("16_bgw3c")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("18_oqlok")]
@@ -5628,16 +5639,6 @@ position = Vector2(-199, 12)
 
 [node name="Ponto5" type="Marker2D" parent="inimigo5/Waypoints" index="4"]
 position = Vector2(-115, 12)
-
-[node name="EasterEggWillamys" type="Sprite2D" parent="."]
-position = Vector2(48, -1)
-scale = Vector2(0.0186966, 0.0186966)
-texture = ExtResource("21_udfhf")
-
-[node name="EasterEggMarcosEDiretor" type="Sprite2D" parent="."]
-position = Vector2(123, -561)
-scale = Vector2(0.0177752, 0.0177753)
-texture = ExtResource("22_i6od7")
 
 [editable path="inimigo"]
 [editable path="inimigo2"]
