@@ -14,6 +14,9 @@ var ja_falou: bool = false
 var _state_machine
 var _player_ref = null
 
+@onready var attention_icon = get_node_or_null("AttentionIcon")
+@onready var detection_area = get_node("DetectionArea")
+
 @export var waypoints_path: NodePath = ^"Waypoints"
 var _patrol_index = 0
 var _patrol_points: Array[Vector2] = []
@@ -28,6 +31,12 @@ const POINT_THRESHOLD := 4.0   # distância para “chegou”
 const SPEED := 20.0
 
 func _ready() -> void:
+	if attention_icon:
+		attention_icon.visible = false
+
+	detection_area.body_entered.connect(_on_detection_area_body_entered)
+	detection_area.body_exited.connect(_on_detection_area_body_exited)
+	
 	if _animation_tree == null:
 		_animation_tree = $AnimationTree
 	if _animation_tree == null:
@@ -42,19 +51,40 @@ func _ready() -> void:
 				_patrol_points.append(child.global_position)
 	if _patrol_points.is_empty():
 		push_error("Nenhum waypoint encontrado! Adicione Position2D dentro de Waypoints.")
-
+	
 func _on_detection_area_body_entered(_body: Node2D) -> void:
+	
 	if _body.is_in_group('player'):
 		if has_line_of_sight_to(_body):
 			_player_ref = _body
-
+	
+	if _body.is_in_group("player") and _body.has_node("AttentionIcon"):
+		_body.get_node("AttentionIcon").visible = true
+		
+	if _body is Inimigo and attention_icon:
+		attention_icon.visible = true
+		
 func _on_detection_area_body_exited(_body: Node2D) -> void:
 	if _body.is_in_group('player'):
 		_player_ref = null
+	
+	if _body.is_in_group("player") and _body.has_node("AttentionIcon"):
+		_body.get_node("AttentionIcon").visible = false
+			
+	if _body is Inimigo and attention_icon:
+		var bodies = detection_area.get_overlapping_bodies()
+		var enemy_nearby = false
+		for b in bodies:
+			if b is Inimigo:
+				enemy_nearby = true
+				break
+		if not enemy_nearby:
+			attention_icon.visible = false
+			
 	if not ja_falou:
 			fala_engracada()
 			ja_falou = true
-			
+				
 func has_line_of_sight_to(target: Node2D) -> bool:
 	var space_state = get_world_2d().direct_space_state
 	var query = PhysicsRayQueryParameters2D.create(global_position, target.global_position)

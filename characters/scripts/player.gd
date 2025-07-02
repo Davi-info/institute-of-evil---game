@@ -4,6 +4,11 @@ class_name Player
 var _state_machine
 var is_dead: bool = false
 var _is_attacking: bool = false
+var alert_sound_playing: bool = false
+
+@onready var attention_icon = get_node("AttentionIcon")
+@onready var detection_area = get_node("DetectionArea")
+@onready var alert_sound = get_node("AlertSound") 
 
 @export_category("Variables")
 @export var _move_speed: float = 64.0
@@ -15,12 +20,45 @@ var _is_attacking: bool = false
 @export var _animation_tree: AnimationTree
 
 func _ready() -> void:
+	if not alert_sound:
+		alert_sound = AudioStreamPlayer2D.new()
+		add_child(alert_sound)
+		alert_sound.volume_db = -5.0  # Ajuste o volume conforme necessário
+		
 	_state_machine = _animation_tree.get("parameters/playback")
+	attention_icon.visible = false
+	detection_area.body_entered.connect(_on_detection_area_body_entered)
+	detection_area.body_exited.connect(_on_detection_area_body_exited)
 
+func _on_detection_area_body_entered(body):
+	if body is Inimigo:
+		attention_icon.visible = true
+		_play_alert_sound()
+		
+func _on_detection_area_body_exited(body):
+	if body is Inimigo:
+		var enemies_nearby = false
+		for b in detection_area.get_overlapping_bodies():
+			if b is Inimigo:
+				enemies_nearby = true
+				break
+		if not enemies_nearby:
+			attention_icon.visible = false
+			_stop_alert_sound()
+
+func _play_alert_sound():
+	if not alert_sound_playing and alert_sound.stream:
+		alert_sound.play()
+		alert_sound_playing = true
+
+func _stop_alert_sound():
+	if alert_sound_playing:
+		alert_sound.stop()
+		alert_sound_playing = false
+		
 func _physics_process(_delta: float) -> void:
 	if is_dead:
 		return
-
 	_move()
 	_animate()
 	move_and_slide()
@@ -30,11 +68,9 @@ func _move() -> void:
 		Input.get_axis("move_left", "move_right"),
 		Input.get_axis("move_up", "move_down")
 	)
-
 	if _direction != Vector2.ZERO:
 		_animation_tree.set("parameters/idle/blend_position", _direction)
 		_animation_tree.set("parameters/walk/blend_position", _direction)
-
 		velocity.x = lerp(velocity.x, _direction.normalized().x * _move_speed, _friction)
 		velocity.y = lerp(velocity.y, _direction.normalized().y * _move_speed, _friction)
 	else:
@@ -49,13 +85,8 @@ func _animate() -> void:
 func die() -> void:
 	is_dead = true
 	_state_machine.travel("death")
-
 	await get_tree().create_timer(1.0).timeout
-	
-
 	GameState.tentativas -= 1
-
-	# Atualiza o HUD se estiver presente
 	var hud := get_tree().current_scene.get_node_or_null("HUD")
 	if hud and hud.has_method("atualizar_tentativas"):
 		hud.atualizar_tentativas()
