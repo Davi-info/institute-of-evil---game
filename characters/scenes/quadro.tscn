@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq2hq52xkk06p"]
+
+[ext_resource type="Script" uid="uid://dg7jca8vk8jq5" path="res://characters/scripts/quadro.gd" id="1_xsqc2"]
+[ext_resource type="Texture2D" uid="uid://bfntrobr53p8y" path="res://characters/assets/ibpi_image.png" id="2_3uexf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uexf"]
+
+[node name="Quadro" type="Node2D"]
+scale = Vector2(0.00384125, 0.00454196)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_xsqc2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_3uexf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4.6565, 4.29971)
+texture = ExtResource("2_3uexf")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
