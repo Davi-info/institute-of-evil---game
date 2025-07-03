@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cnsep4u3pqr4"]
+[gd_scene load_steps=33 format=3 uid="uid://cnsep4u3pqr4"]
 
 [ext_resource type="Texture2D" uid="uid://cnk6i0n751or0" path="res://terrain/assets/room_builder.png" id="1_gwceb"]
 [ext_resource type="Script" uid="uid://chh2gm6x73hf" path="res://levels/level_1.gd" id="1_nmsli"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://ceeyt3otuh1q0" path="res://interface/pause_menu.tscn" id="16_lrvbd"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://sounds/lvl/MusicControllerLvl.tscn" id="18_oqlok"]
 [ext_resource type="Texture2D" uid="uid://cmco0df8vfduq" path="res://terrain/Easter egg/Easter egg Willamys.png" id="21_udfhf"]
-[ext_resource type="Texture2D" uid="uid://dsy3jl115h18j" path="res://terrain/Easter egg/Easter egg marcos e Diretor.png" id="22_i6od7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_betor"]
 texture = ExtResource("1_gwceb")
@@ -5497,18 +5496,13 @@ layer_4/tile_data = PackedInt32Array(-655346, 1, 53, -589810, 1, 54, -851962, 1,
 layer_5/name = "Porta"
 layer_5/tile_data = PackedInt32Array(-65514, 720899, 24, -65513, 786435, 24, 22, 720899, 25, 23, 786435, 25)
 
-[node name="EasterEggMarcosEDiretor" type="Sprite2D" parent="."]
-position = Vector2(123, -561)
-scale = Vector2(0.0177752, 0.0177753)
-texture = ExtResource("22_i6od7")
-
 [node name="EasterEggWillamys" type="Sprite2D" parent="."]
 position = Vector2(48, -1)
 scale = Vector2(0.0186966, 0.0186966)
 texture = ExtResource("21_udfhf")
 
 [node name="player" parent="." instance=ExtResource("7_nmsli")]
-position = Vector2(46, 70)
+position = Vector2(50, 70)
 
 [node name="inimigo" parent="." instance=ExtResource("14_vjtdm")]
 position = Vector2(-317, -180)
@@ -5585,6 +5579,7 @@ position = Vector2(216, 22)
 [node name="HUD" parent="." instance=ExtResource("16_bgw3c")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("18_oqlok")]
@@ -5632,6 +5627,20 @@ position = Vector2(-199, 12)
 
 [node name="Ponto5" type="Marker2D" parent="inimigo5/Waypoints" index="4"]
 position = Vector2(-115, 12)
+
+[node name="Sprite2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(151.75, 33)
+scale = Vector2(0.0564664, 0.0329752)
+script = null
 
 [editable path="inimigo"]
 [editable path="inimigo2"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ct8koxmmqdxqa"]
+[gd_scene load_steps=36 format=3 uid="uid://ct8koxmmqdxqa"]
 
 [ext_resource type="Script" uid="uid://brg3soqrjl3jg" path="res://characters/scripts/level_2.gd" id="1_5orea"]
 [ext_resource type="Texture2D" uid="uid://dmbjqumkun0y7" path="res://terrain/CoolSchool_for_MV_MZ/CoolSchool_tileset.png" id="2_bt44k"]
@@ -14,8 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://dwelwk5sc5i1c" path="res://terrain/interiors/Floor_3_16x16.png" id="11_w200a"]
 [ext_resource type="Texture2D" uid="uid://be4f3bb601ltr" path="res://terrain/interiors/Tileset_16x16_2.png" id="12_5orea"]
 [ext_resource type="Texture2D" uid="uid://dls2w1goh0jn8" path="res://terrain/interiors/Wall_1_16x16.png" id="12_uo0vl"]
-[ext_resource type="PackedScene" uid="uid://busc8s6ov4el0" path="res://characters/scenes/inimigo_fase2.tscn" id="15_0ourt"]
-[ext_resource type="PackedScene" uid="uid://dwfj8d7fshtis" path="res://characters/scenes/inimigo_fase3.tscn" id="16_uo0vl"]
+[ext_resource type="PackedScene" uid="uid://csk08sfgmcwkv" path="res://characters/scenes/inimigo_fase2.tscn" id="15_0ourt"]
+[ext_resource type="Texture2D" uid="uid://vxdmlcjwpoos" path="res://characters/assets/iconAtencao.png" id="15_dpc8t"]
+[ext_resource type="AudioStream" uid="uid://cli3tg6vh2c56" path="res://sounds/PLayer/suspensehorror.wav" id="16_ngvhw"]
+[ext_resource type="PackedScene" uid="uid://bgu3o0w1uy741" path="res://characters/scenes/inimigo_fase3.tscn" id="16_uo0vl"]
 [ext_resource type="PackedScene" uid="uid://b4u5o5lvnewvv" path="res://characters/scenes/inimigo_fase1.tscn" id="17_k2aru"]
 [ext_resource type="PackedScene" uid="uid://c85n4hxac1ira" path="res://characters/scenes/inimigo_fase4.tscn" id="18_k2aru"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://sounds/lvl/MusicControllerLvl.tscn" id="19_ndgrd"]
@@ -5264,8 +5266,18 @@ sources/7 = SubResource("TileSetAtlasSource_h351q")
 sources/8 = SubResource("TileSetAtlasSource_dpc8t")
 sources/9 = SubResource("TileSetAtlasSource_0ourt")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_itbe0"]
+radius = 76.0
+
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_5orea")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 3.0
+offset_top = -449.0
+offset_right = 1158.0
+offset_bottom = 387.0
+color = Color(0, 0, 0, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, -1)
@@ -5289,8 +5301,32 @@ layer_6/tile_data = PackedInt32Array(65549, 262155, 10, 917515, 262155, 10, 37, 
 layer_7/name = "Botao"
 layer_7/tile_data = PackedInt32Array(1179660, 786444, 0, 1245196, 786444, 1)
 
+<<<<<<< HEAD
 [node name="inimigo" parent="." instance=ExtResource("15_0ourt")]
 position = Vector2(905, -93)
+=======
+[node name="player" parent="." instance=ExtResource("7_gwceb")]
+position = Vector2(56, -11)
+
+[node name="AttentionIcon" type="Sprite2D" parent="player"]
+position = Vector2(11, -23)
+texture = ExtResource("15_dpc8t")
+
+[node name="DetectionArea" type="Area2D" parent="player"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/DetectionArea"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_itbe0")
+
+[node name="AlertSound" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("16_ngvhw")
+volume_db = -1.0
+
+[node name="inimigo" parent="." instance=ExtResource("15_0ourt")]
+position = Vector2(207, -50)
+>>>>>>> f88aa2ad3cd154458ba26324d42bdfef894c0c50
 
 [node name="inimigo2" parent="." instance=ExtResource("15_0ourt")]
 position = Vector2(486, 225)
@@ -5299,21 +5335,33 @@ position = Vector2(486, 225)
 position = Vector2(989, -58)
 
 [node name="inimigo4" parent="." instance=ExtResource("15_0ourt")]
+<<<<<<< HEAD
 position = Vector2(804, -17)
 
 [node name="inimigo5" parent="." instance=ExtResource("15_0ourt")]
 position = Vector2(204, -130)
+=======
+position = Vector2(205, 183)
+
+[node name="inimigo5" parent="." instance=ExtResource("15_0ourt")]
+position = Vector2(207, -125)
+>>>>>>> f88aa2ad3cd154458ba26324d42bdfef894c0c50
 
 [node name="inimigo6" parent="." instance=ExtResource("16_uo0vl")]
 position = Vector2(733, -217)
 
 [node name="inimigo7" parent="." instance=ExtResource("17_k2aru")]
+<<<<<<< HEAD
 position = Vector2(345, 51)
+=======
+position = Vector2(193, -100)
+>>>>>>> f88aa2ad3cd154458ba26324d42bdfef894c0c50
 
 [node name="inimigo8" parent="." instance=ExtResource("15_0ourt")]
 position = Vector2(488, -284)
 
 [node name="inimigo9" parent="." instance=ExtResource("18_k2aru")]
+<<<<<<< HEAD
 position = Vector2(578, -233)
 
 [node name="inimigo10" parent="." instance=ExtResource("18_k2aru")]
@@ -5323,3 +5371,14 @@ position = Vector2(342, -47)
 
 [node name="player" parent="." instance=ExtResource("7_gwceb")]
 position = Vector2(78, -15)
+=======
+position = Vector2(446, -140)
+
+[node name="inimigo10" parent="." instance=ExtResource("18_k2aru")]
+position = Vector2(488, -14)
+
+[node name="MusicControllerLvl" parent="." instance=ExtResource("19_ndgrd")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+>>>>>>> f88aa2ad3cd154458ba26324d42bdfef894c0c50

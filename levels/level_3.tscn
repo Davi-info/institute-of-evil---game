@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dgx206aqybkl6"]
+[gd_scene load_steps=52 format=3 uid="uid://dgx206aqybkl6"]
 
 [ext_resource type="Script" uid="uid://b4onwkhpsp42f" path="res://characters/scripts/level_3.gd" id="1_8swdu"]
 [ext_resource type="Texture2D" uid="uid://b7mnq8o44ixje" path="res://terrain/assets/caves-rails-tileset-beta-1.0.png" id="1_gew73"]
@@ -21,10 +21,13 @@
 [ext_resource type="Texture2D" uid="uid://i46xeknfhoeq" path="res://terrain/assets/Tile_27.png" id="21_16jej"]
 [ext_resource type="Texture2D" uid="uid://b3uyrlcgmqpvk" path="res://terrain/assets/Tile_49.png" id="22_c3ijv"]
 [ext_resource type="Texture2D" uid="uid://di10430p1lgm2" path="res://terrain/assets/Tile_50.png" id="24_b1cs7"]
+[ext_resource type="Texture2D" uid="uid://vxdmlcjwpoos" path="res://characters/assets/iconAtencao.png" id="25_e28pm"]
 [ext_resource type="Texture2D" uid="uid://cvm3gju6f21k1" path="res://terrain/assets/Tile_51.png" id="25_fxw2g"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://sounds/lvl/MusicControllerLvl.tscn" id="25_xe1ru"]
 [ext_resource type="Texture2D" uid="uid://i0n4canc878a" path="res://terrain/assets/Tileset.png" id="26_kyq6o"]
+[ext_resource type="AudioStream" uid="uid://cli3tg6vh2c56" path="res://sounds/PLayer/suspensehorror.wav" id="26_tv8m3"]
 [ext_resource type="Texture2D" uid="uid://c0b67q7w8kgcs" path="res://terrain/assets/Objects.png" id="27_4gw27"]
+[ext_resource type="PackedScene" uid="uid://b3oq6h8ujl1ag" path="res://characters/scenes/diretor.tscn" id="28_tv8m3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8l0e1"]
 texture = ExtResource("1_gew73")
@@ -3291,6 +3294,13 @@ sources/2 = SubResource("TileSetAtlasSource_8swdu")
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_8swdu")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -186.0
+offset_top = -171.0
+offset_right = 969.0
+offset_bottom = 665.0
+color = Color(0, 0, 0, 1)
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ofchu")
 format = 2
@@ -3308,7 +3318,23 @@ layer_4/tile_data = PackedInt32Array(524307, 393216, 6, 524308, 393216, 6, 52430
 [node name="player" parent="." instance=ExtResource("3_20opy")]
 position = Vector2(19, 25)
 
+[node name="AttentionIcon2" type="Sprite2D" parent="player"]
+position = Vector2(11, -23)
+texture = ExtResource("25_e28pm")
+
+[node name="DetectionArea2" type="Area2D" parent="player"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="AlertSound2" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("26_tv8m3")
+volume_db = -1.0
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("25_xe1ru")]
+
+[node name="Diretor" parent="." instance=ExtResource("28_tv8m3")]
+position = Vector2(417, 272)

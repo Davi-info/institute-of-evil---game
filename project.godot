@@ -23,13 +23,15 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"character": "res://characters/scenes/character.dch"
+"character": "res://characters/scenes/character.dch",
+"quadro": "res://Timeline/quadro.dch"
 }
 directories/dtl_directory={
+"quadro": "res://Timeline/quadro.dtl",
 "timeline": "res://timeline.dtl"
 }
-layout/style_list=["res://characters/scenes/textoNew_File.tres"]
-layout/default_style="res://characters/scenes/textoNew_File.tres"
+layout/style_list=["res://characters/font/New_File.tres"]
+layout/default_style="res://characters/font/New_File.tres"
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
