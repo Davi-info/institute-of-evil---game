@@ -58,7 +58,7 @@ func _ready() -> void:
 func _on_detection_area_body_entered(_body: Node2D) -> void:
 	
 	if _body.is_in_group('player'):
-		if has_line_of_sight_to(_body):
+		if has_line_of_sight_to(_body) and not _body.is_hidden:
 			_player_ref = _body
 	
 	if _body.is_in_group("player") and _body.has_node("AttentionIcon"):
@@ -89,12 +89,16 @@ func _on_detection_area_body_exited(_body: Node2D) -> void:
 			ja_falou = true
 				
 func has_line_of_sight_to(target: Node2D) -> bool:
+	if target.has_method("is_hidden") and target.is_hidden:
+		return false
+
 	var space_state = get_world_2d().direct_space_state
 	var query = PhysicsRayQueryParameters2D.create(global_position, target.global_position)
 	query.exclude = [self]
 	var result = space_state.intersect_ray(query)
 
 	return result.is_empty() or result.collider == target
+
 
 func fala_engracada():
 	print("Inimigo5 diz: Você não tem chance!")
@@ -124,11 +128,11 @@ func _physics_process(delta: float) -> void:
 				if global_position.distance_to(target) < POINT_THRESHOLD:
 					_patrol_index = (_patrol_index + 1) % _patrol_points.size()
 
-			if _player_ref and not _player_ref.is_dead:
+			if _player_ref and not _player_ref.is_dead and not _player_ref.is_hidden:
 				state = CHASING
 
 		CHASING:
-			if _player_ref and not _player_ref.is_dead:
+			if _player_ref and not _player_ref.is_dead and not _player_ref.is_hidden:
 				move_dir = global_position.direction_to(_player_ref.global_position)
 				var distance = global_position.distance_to(_player_ref.global_position)
 

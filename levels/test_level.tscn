@@ -1,9 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://dks8dk0cix0nc"]
+[gd_scene load_steps=20 format=3 uid="uid://dks8dk0cix0nc"]
 
 [ext_resource type="PackedScene" uid="uid://bkccprknuokgw" path="res://characters/scenes/character.tscn" id="1_46lwt"]
 [ext_resource type="PackedScene" uid="uid://b4u5o5lvnewvv" path="res://characters/scenes/inimigo_fase1.tscn" id="2_x25rp"]
-[ext_resource type="PackedScene" uid="uid://busc8s6ov4el0" path="res://characters/scenes/inimigo_fase2.tscn" id="3_w7r7j"]
-[ext_resource type="PackedScene" uid="uid://dwfj8d7fshtis" path="res://characters/scenes/inimigo_fase3.tscn" id="4_o6mel"]
+[ext_resource type="PackedScene" uid="uid://cnw2icjd105ik" path="res://characters/scripts/lixeira.tscn" id="3_gmgay"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x25rp"]
 animation = &"death"
@@ -104,19 +103,7 @@ parameters/death/blend_position = Vector2(0, 0.967033)
 parameters/idle/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(0, 0)
 
-[node name="inimigo2" parent="." instance=ExtResource("3_w7r7j")]
-position = Vector2(300, 18)
-
-[node name="Ponto2" parent="inimigo2/Waypoints" index="1"]
-position = Vector2(0, 153)
-
-[node name="inimigo3" parent="." instance=ExtResource("4_o6mel")]
-position = Vector2(243, 138)
-waypoints_path = NodePath("../inimigo/Waypoints")
-
-[node name="Ponto2" parent="inimigo3/Waypoints" index="1"]
-position = Vector2(1, -127)
+[node name="Lixeira" parent="." instance=ExtResource("3_gmgay")]
+position = Vector2(168, 171)
 
 [editable path="inimigo"]
-[editable path="inimigo2"]
-[editable path="inimigo3"]
