@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ct8koxmmqdxqa"]
+[gd_scene load_steps=36 format=3 uid="uid://ct8koxmmqdxqa"]
 
 [ext_resource type="Script" uid="uid://brg3soqrjl3jg" path="res://characters/scripts/level_2.gd" id="1_5orea"]
 [ext_resource type="Texture2D" uid="uid://dmbjqumkun0y7" path="res://terrain/CoolSchool_for_MV_MZ/CoolSchool_tileset.png" id="2_bt44k"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://be4f3bb601ltr" path="res://terrain/interiors/Tileset_16x16_2.png" id="12_5orea"]
 [ext_resource type="Texture2D" uid="uid://dls2w1goh0jn8" path="res://terrain/interiors/Wall_1_16x16.png" id="12_uo0vl"]
 [ext_resource type="PackedScene" uid="uid://csk08sfgmcwkv" path="res://characters/scenes/inimigo_fase2.tscn" id="15_0ourt"]
+[ext_resource type="Texture2D" uid="uid://vxdmlcjwpoos" path="res://characters/assets/iconAtencao.png" id="15_dpc8t"]
+[ext_resource type="AudioStream" uid="uid://cli3tg6vh2c56" path="res://sounds/PLayer/suspensehorror.wav" id="16_ngvhw"]
 [ext_resource type="PackedScene" uid="uid://bgu3o0w1uy741" path="res://characters/scenes/inimigo_fase3.tscn" id="16_uo0vl"]
 [ext_resource type="PackedScene" uid="uid://b4u5o5lvnewvv" path="res://characters/scenes/inimigo_fase1.tscn" id="17_k2aru"]
 [ext_resource type="PackedScene" uid="uid://duudhlwgmypxy" path="res://characters/scenes/inimigo_fase4.tscn" id="18_k2aru"]
@@ -5264,8 +5266,18 @@ sources/7 = SubResource("TileSetAtlasSource_h351q")
 sources/8 = SubResource("TileSetAtlasSource_dpc8t")
 sources/9 = SubResource("TileSetAtlasSource_0ourt")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_itbe0"]
+radius = 76.0
+
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_5orea")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 3.0
+offset_top = -449.0
+offset_right = 1158.0
+offset_bottom = 387.0
+color = Color(0, 0, 0, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, -1)
@@ -5292,8 +5304,24 @@ layer_7/tile_data = PackedInt32Array(1179660, 786444, 0, 1245196, 786444, 1)
 [node name="player" parent="." instance=ExtResource("7_gwceb")]
 position = Vector2(56, -11)
 
+[node name="AttentionIcon" type="Sprite2D" parent="player"]
+position = Vector2(11, -23)
+texture = ExtResource("15_dpc8t")
+
+[node name="DetectionArea" type="Area2D" parent="player"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/DetectionArea"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_itbe0")
+
+[node name="AlertSound" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("16_ngvhw")
+volume_db = -1.0
+
 [node name="inimigo" parent="." instance=ExtResource("15_0ourt")]
-position = Vector2(190, -37)
+position = Vector2(207, -50)
 
 [node name="inimigo2" parent="." instance=ExtResource("15_0ourt")]
 position = Vector2(285, -161)
@@ -5302,24 +5330,27 @@ position = Vector2(285, -161)
 position = Vector2(208, 0)
 
 [node name="inimigo4" parent="." instance=ExtResource("15_0ourt")]
-position = Vector2(151, -27)
+position = Vector2(205, 183)
 
 [node name="inimigo5" parent="." instance=ExtResource("15_0ourt")]
-position = Vector2(168, -33)
+position = Vector2(207, -125)
 
 [node name="inimigo6" parent="." instance=ExtResource("16_uo0vl")]
 position = Vector2(207, 40)
 
 [node name="inimigo7" parent="." instance=ExtResource("17_k2aru")]
-position = Vector2(180, 46)
+position = Vector2(193, -100)
 
 [node name="inimigo8" parent="." instance=ExtResource("15_0ourt")]
 position = Vector2(195, 106)
 
 [node name="inimigo9" parent="." instance=ExtResource("18_k2aru")]
-position = Vector2(127, -16)
+position = Vector2(446, -140)
 
 [node name="inimigo10" parent="." instance=ExtResource("18_k2aru")]
-position = Vector2(104, -25)
+position = Vector2(488, -14)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("19_ndgrd")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
