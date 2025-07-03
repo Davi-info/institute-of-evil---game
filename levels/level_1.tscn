@@ -5529,10 +5529,13 @@ shape = SubResource("CircleShape2D_7nvrk")
 
 [node name="AlertSound" type="AudioStreamPlayer2D" parent="player"]
 stream = ExtResource("17_udfhf")
-volume_db = 15.0
+volume_db = -1.0
 
 [node name="inimigo" parent="." instance=ExtResource("14_vjtdm")]
 position = Vector2(-317, -180)
+
+[node name="FalaInimigo" parent="inimigo" index="6"]
+stream = null
 
 [node name="Point1" parent="inimigo/Waypoints" index="0"]
 position = Vector2(-13, -1)
@@ -5549,6 +5552,9 @@ position = Vector2(-12, 51)
 [node name="inimigo2" parent="." instance=ExtResource("14_vjtdm")]
 position = Vector2(87, -492)
 
+[node name="FalaInimigo" parent="inimigo2" index="6"]
+stream = null
+
 [node name="Point1" parent="inimigo2/Waypoints" index="0"]
 position = Vector2(-9, -7)
 
@@ -5563,6 +5569,9 @@ position = Vector2(-10, 81)
 
 [node name="inimigo3" parent="." instance=ExtResource("14_vjtdm")]
 position = Vector2(568, -215)
+
+[node name="FalaInimigo" parent="inimigo3" index="6"]
+stream = null
 
 [node name="Point1" parent="inimigo3/Waypoints" index="0"]
 position = Vector2(0, -7)
@@ -5604,6 +5613,9 @@ color = Color(0, 0, 0, 1)
 [node name="inimigo4" parent="." instance=ExtResource("14_vjtdm")]
 position = Vector2(233, -118)
 
+[node name="FalaInimigo" parent="inimigo4" index="6"]
+stream = null
+
 [node name="Point1" parent="inimigo4/Waypoints" index="0"]
 position = Vector2(-32, 14)
 
@@ -5622,6 +5634,10 @@ position = Vector2(367, 14)
 [node name="Collision" parent="inimigo5/DetectionArea" index="0"]
 position = Vector2(-39, 10)
 shape = SubResource("RectangleShape2D_7nvrk")
+
+[node name="FalaInimigo" parent="inimigo5" index="6"]
+max_distance = 300.0
+attenuation = 1.97462
 
 [node name="Point1" parent="inimigo5/Waypoints" index="0"]
 position = Vector2(-115, 12)
