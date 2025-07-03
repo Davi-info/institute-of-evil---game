@@ -5647,7 +5647,7 @@ position = Vector2(216, -542)
 
 [node name="Quadro" parent="." instance=ExtResource("21_w75he")]
 position = Vector2(121, 2)
-scale = Vector2(0.00183725, 0.0021887)
+scale = Vector2(0.00411354, 0.00468912)
 
 [editable path="inimigo"]
 [editable path="inimigo2"]

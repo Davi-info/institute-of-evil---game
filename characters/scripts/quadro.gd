@@ -4,12 +4,9 @@ extends Node2D
 
 var player_na_area := false
 
-func _ready() -> void:
-	Dialogic.start(timeline_path)
-	
 func _process(delta: float) -> void:
 	if player_na_area and Input.is_action_just_pressed("interact"):
-		Dialogic.star(timeline_path)
+		Dialogic.start(timeline_path)
 
 func _on_body_entered(body):
 	if body.name == "Player":
