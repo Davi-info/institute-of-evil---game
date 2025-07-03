@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cnsep4u3pqr4"]
+[gd_scene load_steps=34 format=3 uid="uid://cnsep4u3pqr4"]
 
 [ext_resource type="Texture2D" uid="uid://cnk6i0n751or0" path="res://terrain/assets/room_builder.png" id="1_gwceb"]
 [ext_resource type="Script" uid="uid://chh2gm6x73hf" path="res://levels/level_1.gd" id="1_nmsli"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bouaq1aw0rx2o" path="res://interface/hud.tscn" id="16_bgw3c"]
 [ext_resource type="PackedScene" uid="uid://ceeyt3otuh1q0" path="res://interface/pause_menu.tscn" id="16_lrvbd"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://sounds/lvl/MusicControllerLvl.tscn" id="18_oqlok"]
+[ext_resource type="PackedScene" uid="uid://cnw2icjd105ik" path="res://characters/scripts/lixeira.tscn" id="20_jkxa6"]
 [ext_resource type="Texture2D" uid="uid://cmco0df8vfduq" path="res://terrain/Easter egg/Easter egg Willamys.png" id="21_udfhf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_betor"]
@@ -5628,19 +5629,20 @@ position = Vector2(-199, 12)
 [node name="Ponto5" type="Marker2D" parent="inimigo5/Waypoints" index="4"]
 position = Vector2(-115, 12)
 
-[node name="Sprite2D" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(151.75, 33)
-scale = Vector2(0.0564664, 0.0329752)
-script = null
+[node name="Lixeira" parent="." instance=ExtResource("20_jkxa6")]
+position = Vector2(136, 38)
+
+[node name="Lixeira2" parent="." instance=ExtResource("20_jkxa6")]
+position = Vector2(135, -93)
+
+[node name="Lixeira3" parent="." instance=ExtResource("20_jkxa6")]
+position = Vector2(-221, -93)
+
+[node name="Lixeira4" parent="." instance=ExtResource("20_jkxa6")]
+position = Vector2(538, -253)
+
+[node name="Lixeira5" parent="." instance=ExtResource("20_jkxa6")]
+position = Vector2(216, -542)
 
 [editable path="inimigo"]
 [editable path="inimigo2"]

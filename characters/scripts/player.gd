@@ -5,10 +5,15 @@ var _state_machine
 var is_dead: bool = false
 var _is_attacking: bool = false
 var alert_sound_playing: bool = false
+var is_hidden = false
+
+var near_trash_bin: bool = false
+var current_trash_bin: Node = null
 
 @onready var attention_icon = get_node("AttentionIcon")
 @onready var detection_area = get_node("DetectionArea")
 @onready var alert_sound = get_node("AlertSound") 
+@onready var sprite = $Sprite2D
 
 @export_category("Variables")
 @export var _move_speed: float = 64.0
@@ -18,6 +23,7 @@ var alert_sound_playing: bool = false
 @export_category("Objects")
 @export var _attack_timer: Timer
 @export var _animation_tree: AnimationTree
+
 
 func _ready() -> void:
 	if not alert_sound:
@@ -34,7 +40,7 @@ func _on_detection_area_body_entered(body):
 	if body is Inimigo:
 		attention_icon.visible = true
 		_play_alert_sound()
-		
+
 func _on_detection_area_body_exited(body):
 	if body is Inimigo:
 		var enemies_nearby = false
@@ -55,13 +61,33 @@ func _stop_alert_sound():
 	if alert_sound_playing:
 		alert_sound.stop()
 		alert_sound_playing = false
-		
+
+# NOVO: lidar com entrada e saída da área da lixeira
+func _on_trash_bin_area_entered(area):
+	near_trash_bin = true
+	current_trash_bin = area.get_parent()
+
+func _on_trash_bin_area_exited(area):
+	near_trash_bin = false
+	current_trash_bin = null
+
 func _physics_process(_delta: float) -> void:
 	if is_dead:
 		return
-	_move()
-	_animate()
-	move_and_slide()
+
+	if near_trash_bin and Input.is_action_just_pressed("interact"):
+		if not is_hidden:
+			set_hidden(true)
+		else:
+			set_hidden(false)
+
+	if not is_hidden:
+		_move()
+		_animate()
+		move_and_slide()
+	else:
+		velocity = Vector2.ZERO
+		move_and_slide()
 
 func _move() -> void:
 	var _direction := Vector2(
@@ -101,3 +127,11 @@ func die() -> void:
 				get_tree().change_scene_to_file("res://levels/level_3.tscn")
 	else:
 		get_tree().change_scene_to_file("res://interface/gameover.tscn")
+
+func set_hidden(value: bool):
+	is_hidden = value
+	visible = not value  # Esconde ou mostra o player inteiro
+
+	if value:
+		attention_icon.visible = false
+		_stop_alert_sound()
