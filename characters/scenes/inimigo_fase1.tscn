@@ -396,7 +396,7 @@ attenuation = 1.97462
 
 [node name="FalaInimigo" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_capql")
-volume_db = -15.0
+volume_db = -10.0
 attenuation = 1.93187
 
 [node name="Waypoints" type="Node2D" parent="."]

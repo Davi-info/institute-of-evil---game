@@ -34,8 +34,11 @@ func _ready() -> void:
 	if attention_icon:
 		attention_icon.visible = false
 
-	detection_area.body_entered.connect(_on_detection_area_body_entered)
-	detection_area.body_exited.connect(_on_detection_area_body_exited)
+	if not detection_area.body_entered.is_connected(_on_detection_area_body_entered):
+		detection_area.body_entered.connect(_on_detection_area_body_entered)
+
+	if not detection_area.body_exited.is_connected(_on_detection_area_body_exited):
+		detection_area.body_exited.connect(_on_detection_area_body_exited)
 	
 	if _animation_tree == null:
 		_animation_tree = $AnimationTree
