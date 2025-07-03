@@ -16,9 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://vxdmlcjwpoos" path="res://characters/assets/iconAtencao.png" id="14_7nvrk"]
 [ext_resource type="PackedScene" uid="uid://b4u5o5lvnewvv" path="res://characters/scenes/inimigo_fase1.tscn" id="14_vjtdm"]
 [ext_resource type="PackedScene" uid="uid://c2a16bjv4mnau" path="res://characters/scenes/acc.tscn" id="15_bgw3c"]
-[ext_resource type="AudioStream" uid="uid://po4tmjtf5lot" path="res://sounds/PLayer/suspense00_0.wav" id="15_jkxa6"]
 [ext_resource type="PackedScene" uid="uid://bouaq1aw0rx2o" path="res://interface/hud.tscn" id="16_bgw3c"]
 [ext_resource type="PackedScene" uid="uid://ceeyt3otuh1q0" path="res://interface/pause_menu.tscn" id="16_lrvbd"]
+[ext_resource type="AudioStream" uid="uid://cli3tg6vh2c56" path="res://sounds/PLayer/suspensehorror.wav" id="17_udfhf"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://sounds/lvl/MusicControllerLvl.tscn" id="18_oqlok"]
 [ext_resource type="Texture2D" uid="uid://cmco0df8vfduq" path="res://terrain/Easter egg/Easter egg Willamys.png" id="21_udfhf"]
 [ext_resource type="Texture2D" uid="uid://dsy3jl115h18j" path="res://terrain/Easter egg/Easter egg marcos e Diretor.png" id="22_i6od7"]
@@ -5526,11 +5526,10 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/DetectionArea"]
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_7nvrk")
-disabled = true
 
 [node name="AlertSound" type="AudioStreamPlayer2D" parent="player"]
-stream = ExtResource("15_jkxa6")
-volume_db = 10.0
+stream = ExtResource("17_udfhf")
+volume_db = 15.0
 
 [node name="inimigo" parent="." instance=ExtResource("14_vjtdm")]
 position = Vector2(-317, -180)
@@ -5598,7 +5597,6 @@ position = Vector2(216, 22)
 [node name="HUD" parent="." instance=ExtResource("16_bgw3c")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("18_oqlok")]

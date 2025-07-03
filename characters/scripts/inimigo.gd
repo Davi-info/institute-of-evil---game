@@ -63,7 +63,7 @@ func _on_detection_area_body_entered(_body: Node2D) -> void:
 		
 	if _body is Inimigo and attention_icon:
 		attention_icon.visible = true
-		
+	
 func _on_detection_area_body_exited(_body: Node2D) -> void:
 	if _body.is_in_group('player'):
 		_player_ref = null
@@ -93,16 +93,15 @@ func has_line_of_sight_to(target: Node2D) -> bool:
 
 	return result.is_empty() or result.collider == target
 
-
 func fala_engracada():
-	print("Inimigo diz: Você não tem chance!")
+	print("Inimigo5 diz: Você não tem chance!")
 
 	var som = get_node_or_null("FalaInimigo")
 	if som:
 		if som.stream != null:
 			som.play()
 		else:
-			print("ERRO: Nenhum arquivo de áudio configurado no Stream de FalaInimigo!")
+			print("ERRO: Nenhum áudio configurado no Stream de FalaInimigo!")
 	else:
 		print("ERRO: Nó FalaInimigo não encontrado no inimigo!")
 
