@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3oq6h8ujl1ag"]
+
+[ext_resource type="Texture2D" uid="uid://87tlbw7y1be6" path="res://characters/assets/diretor-Sheet.png" id="1_fjxmi"]
+
+[sub_resource type="Animation" id="Animation_yebiu"]
+resource_name = "Diretor_preso"
+length = 0.37
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_7f5hk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_hsxj5"]
+resource_name = "Diretor_solto"
+length = 0.37
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 1, 1.03333, 1.06667, 1.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 3, 4, 3, 4, 3, 3, 4, 5, 5]
+}
+
+[sub_resource type="Animation" id="Animation_77p81"]
+resource_name = "Grade_aberta"
+length = 0.0299
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c3wb1"]
+_data = {
+&"Diretor_preso": SubResource("Animation_yebiu"),
+&"Diretor_solto": SubResource("Animation_hsxj5"),
+&"Grade_aberta": SubResource("Animation_77p81"),
+&"RESET": SubResource("Animation_7f5hk")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i33ur"]
+size = Vector2(30, 30)
+
+[node name="Diretor" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CharacterBody2D")
+libraries = {
+&"": SubResource("AnimationLibrary_c3wb1")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fjxmi")
+hframes = 6
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i33ur")
