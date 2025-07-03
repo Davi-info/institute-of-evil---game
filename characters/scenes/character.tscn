@@ -1,10 +1,12 @@
-[gd_scene load_steps=42 format=4 uid="uid://bkccprknuokgw"]
+[gd_scene load_steps=45 format=4 uid="uid://bkccprknuokgw"]
 
 [ext_resource type="Script" uid="uid://bdt4s56qavxuu" path="res://characters/scripts/player.gd" id="1_d43pk"]
 [ext_resource type="Texture2D" uid="uid://bdgcr6e84bsk2" path="res://characters/assets/player def.png" id="2_d43pk"]
 [ext_resource type="AudioStream" uid="uid://cscjweh4c8yts" path="res://sounds/PLayer/sfx_death.ogg" id="3_4xkrw"]
 [ext_resource type="Texture2D" uid="uid://bu6w2b8ol4mia" path="res://characters/assets/light.png" id="3_830i6"]
 [ext_resource type="AudioStream" uid="uid://di2fqw1sm7exm" path="res://sounds/PLayer/1.ogg" id="5_3tlm5"]
+[ext_resource type="Texture2D" uid="uid://vxdmlcjwpoos" path="res://characters/assets/iconAtencao.png" id="6_0l03n"]
+[ext_resource type="AudioStream" uid="uid://cli3tg6vh2c56" path="res://sounds/PLayer/suspensehorror.wav" id="7_mxm01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkhd4"]
 size = Vector2(12, 4)
@@ -727,6 +729,9 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_0l03n")
 states/walk/position = Vector2(515, 175)
 graph_offset = Vector2(0, -13.6547)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_mxm01"]
+radius = 76.0
+
 [node name="player" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree") groups=["player"]]
 position = Vector2(217, 202)
 script = ExtResource("1_d43pk")
@@ -769,3 +774,19 @@ texture_scale = 0.01
 volume_db = -25.0
 
 [node name="morte" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AttentionIcon" type="Sprite2D" parent="."]
+position = Vector2(11, -23)
+texture = ExtResource("6_0l03n")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_mxm01")
+
+[node name="AlertSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_mxm01")
+volume_db = -1.0

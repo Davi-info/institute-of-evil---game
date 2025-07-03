@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://csk08sfgmcwkv"]
+[gd_scene load_steps=28 format=3 uid="uid://busc8s6ov4el0"]
 
 [ext_resource type="Script" uid="uid://h3rdgy7mdtdv" path="res://characters/scripts/inimigo.gd" id="1_dqejm"]
 [ext_resource type="Texture2D" uid="uid://m5rnw24mwmxs" path="res://characters/assets/Inspetor faseTESTE2.png" id="2_dqejm"]
 [ext_resource type="AudioStream" uid="uid://cc7l7rx7molv2" path="res://sounds/Inimigos/1.ogg" id="3_thvo2"]
+[ext_resource type="AudioStream" uid="uid://bih355o5p0kd1" path="res://sounds/Inimigos/Dar banana VOCAL.mp3" id="4_o775v"]
 
 [sub_resource type="Animation" id="Animation_rrcal"]
 length = 0.001
@@ -171,7 +172,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": [{
-"end_offset": 0.100658,
+"end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource("3_thvo2")
 }],
@@ -203,7 +204,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": [{
-"end_offset": 0.0884573,
+"end_offset": 0.103709,
 "start_offset": 0.0,
 "stream": ExtResource("3_thvo2")
 }],
@@ -267,7 +268,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": [{
-"end_offset": 0.0,
+"end_offset": 0.0915076,
 "start_offset": 0.0,
 "stream": ExtResource("3_thvo2")
 }],
@@ -341,10 +342,10 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_nmesb")
 states/walk/position = Vector2(556, 192)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7ogv"]
-size = Vector2(7, 4)
+size = Vector2(10.4697, 5.35215)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrcal"]
-size = Vector2(20, 63.1213)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpfsj"]
+size = Vector2(39.5703, 57.7655)
 
 [node name="inimigo" type="CharacterBody2D" node_paths=PackedStringArray("_texture", "_animation") groups=["inimigos"]]
 position = Vector2(196, 79)
@@ -375,7 +376,8 @@ parameters/walk/blend_position = Vector2(0, 0)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 show_behind_parent = true
-position = Vector2(0, -6)
+position = Vector2(-1.52588e-05, 0.5)
+scale = Vector2(0.573082, 0.934204)
 shape = SubResource("RectangleShape2D_d7ogv")
 
 [node name="DetectionArea" type="Area2D" parent="."]
@@ -383,14 +385,25 @@ position = Vector2(39, 2)
 
 [node name="Collision" type="CollisionShape2D" parent="DetectionArea"]
 show_behind_parent = true
-position = Vector2(-39, 16)
+position = Vector2(-39, 9.7152)
 scale = Vector2(1.01453, 1.01392)
-shape = SubResource("RectangleShape2D_rrcal")
+shape = SubResource("RectangleShape2D_jpfsj")
 
 [node name="Passos inimigos" type="AudioStreamPlayer2D" parent="."]
 volume_db = -10.0
 max_distance = 300.0
 attenuation = 1.97462
+
+[node name="FalaInimigo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_o775v")
+volume_db = -15.0
+attenuation = 1.93187
+
+[node name="Waypoints" type="Node2D" parent="."]
+
+[node name="Point1" type="Marker2D" parent="Waypoints"]
+
+[node name="Ponto2" type="Marker2D" parent="Waypoints"]
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

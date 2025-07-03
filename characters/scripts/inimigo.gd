@@ -211,4 +211,3 @@ func _animate(move_dir: Vector2) -> void:
 		_state_machine.travel("walk")
 	else:
 		_state_machine.travel("idle")
-	print("Direção animação: ", move_dir)
