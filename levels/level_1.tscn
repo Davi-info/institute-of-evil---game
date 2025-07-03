@@ -21,7 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://cli3tg6vh2c56" path="res://sounds/PLayer/suspensehorror.wav" id="17_udfhf"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://sounds/lvl/MusicControllerLvl.tscn" id="18_oqlok"]
 [ext_resource type="Texture2D" uid="uid://cmco0df8vfduq" path="res://terrain/Easter egg/Easter egg Willamys.png" id="21_udfhf"]
-[ext_resource type="Texture2D" uid="uid://dsy3jl115h18j" path="res://terrain/Easter egg/Easter egg marcos e Diretor.png" id="22_i6od7"]
+[ext_resource type="PackedScene" uid="uid://cdk08rd4oiopj" path="res://characters/scenes/sprite_2d.tscn" id="22_udfhf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_betor"]
 texture = ExtResource("1_gwceb")
@@ -5502,18 +5502,13 @@ layer_4/tile_data = PackedInt32Array(-655346, 1, 53, -589810, 1, 54, -851962, 1,
 layer_5/name = "Porta"
 layer_5/tile_data = PackedInt32Array(-65514, 720899, 24, -65513, 786435, 24, 22, 720899, 25, 23, 786435, 25)
 
-[node name="EasterEggMarcosEDiretor" type="Sprite2D" parent="."]
-position = Vector2(123, -561)
-scale = Vector2(0.0177752, 0.0177753)
-texture = ExtResource("22_i6od7")
-
 [node name="EasterEggWillamys" type="Sprite2D" parent="."]
 position = Vector2(48, -1)
 scale = Vector2(0.0186966, 0.0186966)
 texture = ExtResource("21_udfhf")
 
 [node name="player" parent="." instance=ExtResource("7_nmsli")]
-position = Vector2(46, 70)
+position = Vector2(50, 70)
 
 [node name="AttentionIcon" type="Sprite2D" parent="player"]
 position = Vector2(11, -23)
@@ -5524,7 +5519,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/DetectionArea"]
-position = Vector2(0, -10)
+position = Vector2(6, -9)
 shape = SubResource("CircleShape2D_7nvrk")
 
 [node name="AlertSound" type="AudioStreamPlayer2D" parent="player"]
@@ -5597,6 +5592,7 @@ position = Vector2(216, 22)
 [node name="HUD" parent="." instance=ExtResource("16_bgw3c")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("18_oqlok")]
@@ -5637,6 +5633,10 @@ position = Vector2(-199, 12)
 
 [node name="Ponto5" type="Marker2D" parent="inimigo5/Waypoints" index="4"]
 position = Vector2(-115, 12)
+
+[node name="Sprite2D" parent="." instance=ExtResource("22_udfhf")]
+position = Vector2(151.75, 33)
+scale = Vector2(0.0564664, 0.0329752)
 
 [editable path="inimigo"]
 [editable path="inimigo2"]
