@@ -13,7 +13,8 @@ var current_trash_bin: Node = null
 @onready var attention_icon = get_node("AttentionIcon")
 @onready var detection_area = get_node("DetectionArea")
 @onready var alert_sound = get_node("AlertSound") 
-@onready var sprite = $Sprite2D
+@onready var texture: Sprite2D = $Texture
+
 
 @export_category("Variables")
 @export var _move_speed: float = 64.0

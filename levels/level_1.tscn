@@ -5503,7 +5503,11 @@ position = Vector2(48, -1)
 scale = Vector2(0.0186966, 0.0186966)
 texture = ExtResource("21_udfhf")
 
-[node name="player" parent="." instance=ExtResource("7_nmsli")]
+[node name="Quadro" parent="." instance=ExtResource("21_w75he")]
+position = Vector2(124, -560)
+scale = Vector2(0.00411354, 0.00468912)
+
+[node name="Player" parent="." instance=ExtResource("7_nmsli")]
 position = Vector2(50, 70)
 
 [node name="inimigo" parent="." instance=ExtResource("14_vjtdm")]
@@ -5644,10 +5648,6 @@ position = Vector2(538, -253)
 
 [node name="Lixeira5" parent="." instance=ExtResource("20_jkxa6")]
 position = Vector2(216, -542)
-
-[node name="Quadro" parent="." instance=ExtResource("21_w75he")]
-position = Vector2(121, 2)
-scale = Vector2(0.00411354, 0.00468912)
 
 [editable path="inimigo"]
 [editable path="inimigo2"]

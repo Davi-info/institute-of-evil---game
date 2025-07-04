@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Institute of Evil"
-run/main_scene="uid://bkccprknuokgw"
+run/main_scene="uid://dbum7uvwdjp08"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]
