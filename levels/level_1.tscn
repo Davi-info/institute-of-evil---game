@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cnw2icjd105ik" path="res://characters/scripts/lixeira.tscn" id="20_jkxa6"]
 [ext_resource type="Texture2D" uid="uid://cmco0df8vfduq" path="res://terrain/Easter egg/Easter egg Willamys.png" id="21_udfhf"]
 [ext_resource type="PackedScene" uid="uid://bq2hq52xkk06p" path="res://characters/scenes/quadro.tscn" id="21_w75he"]
+[ext_resource type="PackedScene" uid="uid://l56uj5gq2u3y" path="res://characters/scenes/portal.tscn" id="22_udfhf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_betor"]
 texture = ExtResource("1_gwceb")
@@ -5468,9 +5469,6 @@ sources/7 = SubResource("TileSetAtlasSource_udfhf")
 sources/8 = SubResource("TileSetAtlasSource_i6od7")
 sources/10 = SubResource("TileSetAtlasSource_jkxa6")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nvrk"]
-size = Vector2(39.57, 57.765)
-
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_nmsli")
 
@@ -5497,6 +5495,9 @@ layer_4/name = "Objetos"
 layer_4/tile_data = PackedInt32Array(-655346, 1, 53, -589810, 1, 54, -851962, 1, 53, -786426, 1, 54, -655354, 65537, 53, -589818, 65537, 54, -851954, 65537, 53, -786418, 65537, 54, -720886, 131073, 53, -655350, 131073, 54, -983003, 196611, 9, -1048539, 196611, 8, -2293757, 720897, 44, -2228221, 720897, 45, -2162685, 720897, 46, -2293758, 655361, 44, -2228222, 655361, 45, -2162686, 655361, 46, -2228208, 655361, 45, -2162672, 655361, 46, -2228207, 720897, 45, -2162671, 720897, 46, -2293744, 655361, 44, -2293743, 720897, 44, -1114126, 655361, 68, -1048590, 655361, 69, -983054, 655361, 70, -1114125, 720897, 68, -1048589, 720897, 69, -983053, 720897, 70, -1114124, 786433, 68, -1048588, 786433, 69, -983052, 786433, 70, -1114123, 851969, 68, -1048587, 851969, 69, -983051, 851969, 70, -851991, 655361, 68, -786455, 655361, 69, -720919, 655361, 70, -851990, 720897, 68, -786454, 720897, 69, -720918, 720897, 70, -851989, 786433, 68, -786453, 786433, 69, -720917, 786433, 70, -851988, 851969, 68, -786452, 851969, 69, -720916, 851969, 70, -1114135, 786433, 68, -1048599, 786433, 69, -983063, 786433, 70, -1114134, 851969, 68, -1048598, 851969, 69, -983062, 851969, 70, -1114133, 917505, 68, -1048597, 917505, 69, -983061, 917505, 70, -1114132, 983041, 68, -1048596, 983041, 69, -983060, 983041, 70, -851980, 917505, 68, -786444, 917505, 69, -720908, 917505, 70, -851979, 983041, 68, -786443, 983041, 69, -720907, 983041, 70, -851982, 786433, 68, -786446, 786433, 69, -720910, 786433, 70, -851981, 851969, 68, -786445, 851969, 69, -720909, 851969, 70, -589843, 786433, 68, -524307, 786433, 69, -458771, 786433, 70, -589842, 851969, 68, -524306, 851969, 69, -458770, 851969, 70, -589841, 917505, 68, -524305, 917505, 69, -458769, 917505, 70, -589840, 983041, 68, -524304, 983041, 69, -458768, 983041, 70, -458764, 851972, 1, -393228, 851972, 2, -720914, 851971, 28, -655378, 851971, 29, -720913, 917507, 28, -655377, 917507, 29, -655383, 851971, 28, -589847, 851971, 29, -655382, 917507, 28, -589846, 917507, 29, -1900535, 327681, 46, -1834999, 327681, 47, -1900534, 393217, 46, -1834998, 393217, 47, -1769463, 327681, 45, -1769462, 393217, 45, -1769466, 327681, 44, -1769459, 327681, 44)
 layer_5/name = "Porta"
 layer_5/tile_data = PackedInt32Array(-65514, 720899, 24, -65513, 786435, 24, 22, 720899, 25, 23, 786435, 25)
+
+[node name="Portal" parent="." instance=ExtResource("22_udfhf")]
+position = Vector2(369, 23)
 
 [node name="EasterEggWillamys" type="Sprite2D" parent="."]
 position = Vector2(48, -1)
@@ -5604,32 +5605,6 @@ position = Vector2(-97, -113)
 [node name="Point4" type="Marker2D" parent="inimigo4/Waypoints" index="3"]
 position = Vector2(-30, -113)
 
-[node name="inimigo5" parent="." instance=ExtResource("14_vjtdm")]
-position = Vector2(367, 14)
-
-[node name="Collision" parent="inimigo5/DetectionArea" index="0"]
-position = Vector2(-39, 10)
-shape = SubResource("RectangleShape2D_7nvrk")
-
-[node name="FalaInimigo" parent="inimigo5" index="6"]
-max_distance = 300.0
-attenuation = 1.97462
-
-[node name="Point1" parent="inimigo5/Waypoints" index="0"]
-position = Vector2(-115, 12)
-
-[node name="Ponto2" parent="inimigo5/Waypoints" index="1"]
-position = Vector2(-199, 12)
-
-[node name="Ponto3" type="Marker2D" parent="inimigo5/Waypoints" index="2"]
-position = Vector2(-197, -53)
-
-[node name="Ponto4" type="Marker2D" parent="inimigo5/Waypoints" index="3"]
-position = Vector2(-199, 12)
-
-[node name="Ponto5" type="Marker2D" parent="inimigo5/Waypoints" index="4"]
-position = Vector2(-115, 12)
-
 [node name="Lixeira" parent="." instance=ExtResource("20_jkxa6")]
 position = Vector2(136, 38)
 
@@ -5653,4 +5628,3 @@ scale = Vector2(0.00411354, 0.00468912)
 [editable path="inimigo2"]
 [editable path="inimigo3"]
 [editable path="inimigo4"]
-[editable path="inimigo5"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ct8koxmmqdxqa"]
+[gd_scene load_steps=36 format=3 uid="uid://ct8koxmmqdxqa"]
 
 [ext_resource type="Script" uid="uid://brg3soqrjl3jg" path="res://characters/scripts/level_2.gd" id="1_5orea"]
 [ext_resource type="Texture2D" uid="uid://dmbjqumkun0y7" path="res://terrain/CoolSchool_for_MV_MZ/CoolSchool_tileset.png" id="2_bt44k"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b4u5o5lvnewvv" path="res://characters/scenes/inimigo_fase1.tscn" id="17_k2aru"]
 [ext_resource type="PackedScene" uid="uid://c85n4hxac1ira" path="res://characters/scenes/inimigo_fase4.tscn" id="18_k2aru"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://sounds/lvl/MusicControllerLvl.tscn" id="19_ndgrd"]
+[ext_resource type="PackedScene" uid="uid://l56uj5gq2u3y" path="res://characters/scenes/portal.tscn" id="22_ngvhw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n46q3"]
 texture = ExtResource("2_bt44k")
@@ -5335,15 +5336,19 @@ position = Vector2(733, -217)
 position = Vector2(193, -100)
 
 [node name="inimigo8" parent="." instance=ExtResource("15_0ourt")]
-position = Vector2(488, -284)
+position = Vector2(598, -215)
 
 [node name="inimigo9" parent="." instance=ExtResource("18_k2aru")]
 position = Vector2(446, -140)
 
 [node name="inimigo10" parent="." instance=ExtResource("18_k2aru")]
-position = Vector2(488, -14)
+position = Vector2(652, -24)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("19_ndgrd")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
+
+[node name="Portal" parent="." instance=ExtResource("22_ngvhw")]
+position = Vector2(817, -390)

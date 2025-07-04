@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dgx206aqybkl6"]
+[gd_scene load_steps=53 format=3 uid="uid://dgx206aqybkl6"]
 
 [ext_resource type="Script" uid="uid://b4onwkhpsp42f" path="res://characters/scripts/level_3.gd" id="1_8swdu"]
 [ext_resource type="Texture2D" uid="uid://b7mnq8o44ixje" path="res://terrain/assets/caves-rails-tileset-beta-1.0.png" id="1_gew73"]
@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://cli3tg6vh2c56" path="res://sounds/PLayer/suspensehorror.wav" id="26_tv8m3"]
 [ext_resource type="Texture2D" uid="uid://c0b67q7w8kgcs" path="res://terrain/assets/Objects.png" id="27_4gw27"]
 [ext_resource type="PackedScene" uid="uid://b3oq6h8ujl1ag" path="res://characters/scenes/diretor.tscn" id="28_tv8m3"]
+[ext_resource type="PackedScene" uid="uid://l56uj5gq2u3y" path="res://characters/scenes/portal.tscn" id="29_8nkwk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8l0e1"]
 texture = ExtResource("1_gew73")
@@ -3315,6 +3316,9 @@ layer_3/tile_data = PackedInt32Array(65576, 65536, 4, 65545, 131074, 0, 65546, 2
 layer_4/name = "Sombras"
 layer_4/tile_data = PackedInt32Array(524307, 393216, 6, 524308, 393216, 6, 524309, 393216, 6, 589843, 393216, 6, 589844, 393216, 6, 589845, 393216, 6, 720928, 393216, 6, 720929, 393216, 6, 720930, 393216, 6, 786464, 393216, 6, 786465, 393216, 6, 786466, 393216, 6, 65578, 393216, 6, 65579, 393216, 6, 65580, 393216, 6, 131114, 393216, 6, 131115, 393216, 6, 131116, 393216, 6, 196650, 393216, 6, 196651, 393216, 6, 196652, 393216, 6, 720897, 393216, 6, 720898, 393216, 6, 786433, 393216, 6, 786434, 393216, 6, 851969, 393216, 6, 851970, 393216, 6, 1048598, 393216, 6, 1048599, 393216, 6, 1048600, 393216, 6, 1114134, 393216, 6, 1114135, 393216, 6, 1114136, 393216, 6, 1835025, 393216, 6, 1900561, 393216, 6, 1966097, 393216, 6, 1835026, 393216, 6, 1900562, 393216, 6, 1966098, 393216, 6, 851979, 393216, 6, 917515, 393216, 6, 851980, 393216, 6, 917516, 393216, 6, 851981, 393216, 6, 917517, 393216, 6)
 
+[node name="Diretor" parent="." instance=ExtResource("28_tv8m3")]
+position = Vector2(417, 272)
+
 [node name="player" parent="." instance=ExtResource("3_20opy")]
 position = Vector2(19, 25)
 
@@ -3336,5 +3340,5 @@ color = Color(0, 0, 0, 1)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("25_xe1ru")]
 
-[node name="Diretor" parent="." instance=ExtResource("28_tv8m3")]
-position = Vector2(417, 272)
+[node name="Portal" parent="." instance=ExtResource("29_8nkwk")]
+position = Vector2(466, 280)
