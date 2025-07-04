@@ -732,7 +732,7 @@ graph_offset = Vector2(0, -13.6547)
 [sub_resource type="CircleShape2D" id="CircleShape2D_mxm01"]
 radius = 76.0
 
-[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree") groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree") groups=["player"]]
 position = Vector2(217, 202)
 script = ExtResource("1_d43pk")
 _animation_tree = NodePath("AnimationTree")
