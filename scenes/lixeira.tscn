@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnw2icjd105ik"]
+
+[ext_resource type="Script" uid="uid://ban05rigfxhwr" path="res://scripts/lixeira.gd" id="1_ktyah"]
+[ext_resource type="Texture2D" uid="uid://40sosw3wchfq" path="res://assets/lixeira.png" id="2_f58u1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6mw3"]
+size = Vector2(10, 12)
+
+[node name="Lixeira" type="Node2D"]
+script = ExtResource("1_ktyah")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_q6mw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.125, 2.08616e-07)
+scale = Vector2(0.0192871, 0.0195312)
+texture = ExtResource("2_f58u1")

@@ -16,21 +16,21 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]
 
-GameState="*res://characters/scripts/GameState.gd"
-MusicMenu="*res://sounds/menu/music_menu.tscn"
+GameState="*res://scripts/GameState.gd"
+MusicMenu="*res://scenes/music_menu.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
-"character": "res://characters/scenes/character.dch",
-"quadro": "res://Timeline/quadro.dch"
+"character": "res://timeline/character.dch",
+"quadro": "res://timeline/quadro.dch"
 }
 directories/dtl_directory={
-"quadro": "res://Timeline/quadro.dtl",
-"timeline": "res://timeline.dtl"
+"quadro": "res://timeline/quadro.dtl",
+"timeline": "res://timeline/timeline.dtl"
 }
-layout/style_list=["res://characters/font/New_File.tres"]
+layout/style_list=[]
 layout/default_style="res://characters/font/New_File.tres"
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
