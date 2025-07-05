@@ -19,7 +19,7 @@
 &"portraits": {
 "aluno": {
 "export_overrides": {
-"image": "\"player-front.png\""
+"image": "\"res://assets/player-front.png\""
 },
 "ignore_char_scale": false,
 "mirror": false,
@@ -28,5 +28,5 @@
 "scene": ""
 }
 },
-&"scale": 0.8
+&"scale": 1.0
 }

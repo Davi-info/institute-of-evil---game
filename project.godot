@@ -27,11 +27,12 @@ directories/dch_directory={
 "quadro": "res://timeline/quadro.dch"
 }
 directories/dtl_directory={
+" bloqueio": "res://timeline/ bloqueio.dtl",
 "quadro": "res://timeline/quadro.dtl",
 "timeline": "res://timeline/timeline.dtl"
 }
-layout/style_list=[]
-layout/default_style="res://characters/font/New_File.tres"
+layout/style_list=["res://assets/temas/dialogo.tres"]
+layout/default_style="res://assets/temas/dialogo.tres"
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true

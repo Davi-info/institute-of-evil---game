@@ -121,11 +121,11 @@ func die() -> void:
 	if GameState.tentativas > 0:
 		match GameState.fase_atual:
 			"fase1":
-				get_tree().change_scene_to_file("res://levels/level_1.tscn")
+				get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
 			"fase2":
-				get_tree().change_scene_to_file("res://levels/level_2.tscn")
+				get_tree().change_scene_to_file("res://scenes/levels/level_2.tscn")
 			"fase3":
-				get_tree().change_scene_to_file("res://levels/level_3.tscn")
+				get_tree().change_scene_to_file("res://scenes/levels/level_3.tscn")
 	else:
 		get_tree().change_scene_to_file("res://scenes/interface/gameover.tscn")
 
