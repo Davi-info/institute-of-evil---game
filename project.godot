@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 GameState="*res://scripts/GameState.gd"
 MusicMenu="*res://scenes/music_menu.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GameManager="*res://puzzles/GameManager.gd"
 
 [dialogic]
 
