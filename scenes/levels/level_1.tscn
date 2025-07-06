@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=46 format=3 uid="uid://cnsep4u3pqr4"]
+=======
+[gd_scene load_steps=43 format=3 uid="uid://cnsep4u3pqr4"]
+>>>>>>> 63af9d01b6badb7cd940836e4c4827cff3a44a32
 
 [ext_resource type="Script" uid="uid://chh2gm6x73hf" path="res://scripts/level_1.gd" id="1_ndtll"]
 [ext_resource type="Texture2D" uid="uid://cnk6i0n751or0" path="res://assets/terrain/interiors/room_builder.png" id="2_7h2jl"]
@@ -27,7 +31,10 @@
 [ext_resource type="Script" uid="uid://bgbtjt3f051a1" path="res://puzzles/ExitDoor.gd" id="25_0qwwm"]
 [ext_resource type="Texture2D" uid="uid://dqeg6rs0qjj7s" path="res://assets/porta.png" id="26_t4umt"]
 [ext_resource type="Script" uid="uid://cmhgow1dj1tg4" path="res://puzzles/NextLevelArea.gd" id="27_4yk0h"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://2ox4xaaydlrg" path="res://assets/coluna.png" id="28_x7jkp"]
+=======
+>>>>>>> 63af9d01b6badb7cd940836e4c4827cff3a44a32
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_betor"]
 texture = ExtResource("2_7h2jl")
@@ -5668,6 +5675,9 @@ size = Vector2(15, 24)
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_ndtll")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -398.0
 offset_top = -587.0
@@ -5780,10 +5790,6 @@ position = Vector2(216, 22)
 
 [node name="HUD" parent="." instance=ExtResource("20_svqqs")]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0, 0, 0, 1)
-
 [node name="MusicControllerLvl" parent="." instance=ExtResource("21_2to4m")]
 
 [node name="inimigo4" parent="." instance=ExtResource("17_ytidy")]
@@ -5805,7 +5811,7 @@ position = Vector2(-97, -113)
 position = Vector2(-30, -113)
 
 [node name="Lixeira" parent="." instance=ExtResource("22_kc3v0")]
-position = Vector2(136, 38)
+position = Vector2(189, 40)
 
 [node name="Lixeira2" parent="." instance=ExtResource("22_kc3v0")]
 position = Vector2(135, -93)
