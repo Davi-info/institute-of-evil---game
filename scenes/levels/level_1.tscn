@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cnsep4u3pqr4"]
+[gd_scene load_steps=43 format=3 uid="uid://cnsep4u3pqr4"]
 
 [ext_resource type="Script" uid="uid://chh2gm6x73hf" path="res://scripts/level_1.gd" id="1_ndtll"]
 [ext_resource type="Texture2D" uid="uid://cnk6i0n751or0" path="res://assets/terrain/interiors/room_builder.png" id="2_7h2jl"]
@@ -13,21 +13,20 @@
 [ext_resource type="Texture2D" uid="uid://dwelwk5sc5i1c" path="res://assets/terrain/interiors/Floor_3_16x16.png" id="10_4yk0h"]
 [ext_resource type="Texture2D" uid="uid://be4f3bb601ltr" path="res://assets/terrain/interiors/Tileset_16x16_2.png" id="11_vmrhw"]
 [ext_resource type="Texture2D" uid="uid://cq3kiihs54j8k" path="res://assets/terrain/interiors/libassetpack-tiled.png" id="12_cfnpk"]
-[ext_resource type="PackedScene" uid="uid://l56uj5gq2u3y" path="res://scenes/portal.tscn" id="13_wvtie"]
 [ext_resource type="Texture2D" uid="uid://cmco0df8vfduq" path="res://assets/terrain/easteregg/Easter egg Willamys.png" id="14_o8s4s"]
 [ext_resource type="PackedScene" uid="uid://bq2hq52xkk06p" path="res://scenes/quadro.tscn" id="15_ebb2h"]
 [ext_resource type="PackedScene" uid="uid://bkccprknuokgw" path="res://scenes/character.tscn" id="16_row31"]
 [ext_resource type="PackedScene" uid="uid://b4u5o5lvnewvv" path="res://scenes/inimigo_fase1.tscn" id="17_ytidy"]
 [ext_resource type="PackedScene" uid="uid://c2a16bjv4mnau" path="res://scenes/acc.tscn" id="18_hvllt"]
-[ext_resource type="Script" path="res://puzzles/AccDocument.gd" id="19_31oqk"]
+[ext_resource type="Script" uid="uid://dj3lbftfg4djl" path="res://puzzles/AccDocument.gd" id="19_31oqk"]
 [ext_resource type="PackedScene" uid="uid://ceeyt3otuh1q0" path="res://scenes/interface/pause_menu.tscn" id="19_dp4fg"]
 [ext_resource type="PackedScene" uid="uid://bouaq1aw0rx2o" path="res://scenes/interface/hud.tscn" id="20_svqqs"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://scenes/MusicControllerLvl.tscn" id="21_2to4m"]
 [ext_resource type="PackedScene" uid="uid://cnw2icjd105ik" path="res://scenes/lixeira.tscn" id="22_kc3v0"]
 [ext_resource type="Script" uid="uid://gfv8w4686qi2" path="res://puzzles/HUD.gd" id="24_x7jkp"]
-[ext_resource type="Script" path="res://puzzles/ExitDoor.gd" id="25_0qwwm"]
+[ext_resource type="Script" uid="uid://bgbtjt3f051a1" path="res://puzzles/ExitDoor.gd" id="25_0qwwm"]
 [ext_resource type="Texture2D" uid="uid://dqeg6rs0qjj7s" path="res://assets/porta.png" id="26_t4umt"]
-[ext_resource type="Script" path="res://puzzles/NextLevelArea.gd" id="27_4yk0h"]
+[ext_resource type="Script" uid="uid://cmhgow1dj1tg4" path="res://puzzles/NextLevelArea.gd" id="27_4yk0h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_betor"]
 texture = ExtResource("2_7h2jl")
@@ -5662,6 +5661,9 @@ size = Vector2(15, 20)
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_ndtll")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -398.0
 offset_top = -587.0
@@ -5684,9 +5686,6 @@ layer_3/tile_data = PackedInt32Array(-786399, 65537, 38, -720863, 65537, 39, -58
 layer_4/name = "Objetos"
 layer_4/tile_data = PackedInt32Array(-655346, 1, 53, -589810, 1, 54, -851962, 1, 53, -786426, 1, 54, -655354, 65537, 53, -589818, 65537, 54, -851954, 65537, 53, -786418, 65537, 54, -720886, 131073, 53, -655350, 131073, 54, -983003, 196611, 9, -1048539, 196611, 8, -2293757, 720897, 44, -2228221, 720897, 45, -2162685, 720897, 46, -2293758, 655361, 44, -2228222, 655361, 45, -2162686, 655361, 46, -2228208, 655361, 45, -2162672, 655361, 46, -2228207, 720897, 45, -2162671, 720897, 46, -2293744, 655361, 44, -2293743, 720897, 44, -1114126, 655361, 68, -1048590, 655361, 69, -983054, 655361, 70, -1114125, 720897, 68, -1048589, 720897, 69, -983053, 720897, 70, -1114124, 786433, 68, -1048588, 786433, 69, -983052, 786433, 70, -1114123, 851969, 68, -1048587, 851969, 69, -983051, 851969, 70, -851991, 655361, 68, -786455, 655361, 69, -720919, 655361, 70, -851990, 720897, 68, -786454, 720897, 69, -720918, 720897, 70, -851989, 786433, 68, -786453, 786433, 69, -720917, 786433, 70, -851988, 851969, 68, -786452, 851969, 69, -720916, 851969, 70, -1114135, 786433, 68, -1048599, 786433, 69, -983063, 786433, 70, -1114134, 851969, 68, -1048598, 851969, 69, -983062, 851969, 70, -1114133, 917505, 68, -1048597, 917505, 69, -983061, 917505, 70, -1114132, 983041, 68, -1048596, 983041, 69, -983060, 983041, 70, -851980, 917505, 68, -786444, 917505, 69, -720908, 917505, 70, -851979, 983041, 68, -786443, 983041, 69, -720907, 983041, 70, -851982, 786433, 68, -786446, 786433, 69, -720910, 786433, 70, -851981, 851969, 68, -786445, 851969, 69, -720909, 851969, 70, -589843, 786433, 68, -524307, 786433, 69, -458771, 786433, 70, -589842, 851969, 68, -524306, 851969, 69, -458770, 851969, 70, -589841, 917505, 68, -524305, 917505, 69, -458769, 917505, 70, -589840, 983041, 68, -524304, 983041, 69, -458768, 983041, 70, -458764, 851972, 1, -393228, 851972, 2, -720914, 851971, 28, -655378, 851971, 29, -720913, 917507, 28, -655377, 917507, 29, -655383, 851971, 28, -589847, 851971, 29, -655382, 917507, 28, -589846, 917507, 29, -1900535, 327681, 46, -1834999, 327681, 47, -1900534, 393217, 46, -1834998, 393217, 47, -1769463, 327681, 45, -1769462, 393217, 45, -1769466, 327681, 44, -1769459, 327681, 44)
 layer_5/name = "Porta"
-
-[node name="Portal" parent="." instance=ExtResource("13_wvtie")]
-position = Vector2(369, 23)
 
 [node name="EasterEggWillamys" type="Sprite2D" parent="."]
 position = Vector2(48, -1)
@@ -5777,10 +5776,6 @@ position = Vector2(216, 22)
 
 [node name="HUD" parent="." instance=ExtResource("20_svqqs")]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0, 0, 0, 1)
-
 [node name="MusicControllerLvl" parent="." instance=ExtResource("21_2to4m")]
 
 [node name="inimigo4" parent="." instance=ExtResource("17_ytidy")]
@@ -5802,7 +5797,7 @@ position = Vector2(-97, -113)
 position = Vector2(-30, -113)
 
 [node name="Lixeira" parent="." instance=ExtResource("22_kc3v0")]
-position = Vector2(136, 38)
+position = Vector2(189, 40)
 
 [node name="Lixeira2" parent="." instance=ExtResource("22_kc3v0")]
 position = Vector2(135, -93)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnw2icjd105ik"]
+[gd_scene load_steps=5 format=3 uid="uid://cnw2icjd105ik"]
 
 [ext_resource type="Script" uid="uid://ban05rigfxhwr" path="res://scripts/lixeira.gd" id="1_ktyah"]
 [ext_resource type="Texture2D" uid="uid://40sosw3wchfq" path="res://assets/lixeira.png" id="2_f58u1"]
+[ext_resource type="Texture2D" uid="uid://bvi8hj50rps8k" path="res://assets/light yellow.png" id="3_v02cv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6mw3"]
 size = Vector2(10, 12)
@@ -19,3 +20,9 @@ shape = SubResource("RectangleShape2D_q6mw3")
 position = Vector2(0.125, 2.08616e-07)
 scale = Vector2(0.0192871, 0.0195312)
 texture = ExtResource("2_f58u1")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(4.57764e-05, -0.74998)
+scale = Vector2(0.156198, 0.180099)
+energy = 0.59
+texture = ExtResource("3_v02cv")
