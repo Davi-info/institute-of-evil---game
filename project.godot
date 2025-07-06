@@ -28,9 +28,9 @@ directories/dch_directory={
 "quadro": "res://timeline/quadro.dch"
 }
 directories/dtl_directory={
-" bloqueio": "res://timeline/ bloqueio.dtl",
 "quadro": "res://timeline/quadro.dtl",
-"timeline": "res://timeline/timeline.dtl"
+"timeline": "res://timeline/timeline.dtl",
+"warning_not_all_items": "res://timeline/warning_not_all_items.dtl"
 }
 layout/style_list=["res://assets/temas/dialogo.tres"]
 layout/default_style="res://assets/temas/dialogo.tres"
