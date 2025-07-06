@@ -1,9 +1,8 @@
-[gd_scene load_steps=51 format=3 uid="uid://dgx206aqybkl6"]
+[gd_scene load_steps=50 format=3 uid="uid://dgx206aqybkl6"]
 
 [ext_resource type="Script" uid="uid://b4onwkhpsp42f" path="res://scripts/level_3.gd" id="1_8swdu"]
 [ext_resource type="Texture2D" uid="uid://b7mnq8o44ixje" path="res://assets/terrain/interiors/caves-rails-tileset-beta-1.0.png" id="1_gew73"]
 [ext_resource type="Texture2D" uid="uid://cnk6i0n751or0" path="res://assets/terrain/interiors/room_builder.png" id="2_bmgug"]
-[ext_resource type="PackedScene" uid="uid://bkccprknuokgw" path="res://scenes/character.tscn" id="3_20opy"]
 [ext_resource type="Texture2D" uid="uid://fe0qcx08k7ae" path="res://assets/terrain/interiors/16x16 Steel Tileset.png" id="3_mqvtj"]
 [ext_resource type="Texture2D" uid="uid://3t41q7ylqrds" path="res://assets/terrain/interiors/interiors.png" id="3_ofchu"]
 [ext_resource type="Texture2D" uid="uid://cwu33fhwy4dwf" path="res://assets/terrain/interiors/interiors1.png" id="4_jq78i"]
@@ -3319,9 +3318,6 @@ position = Vector2(466, 280)
 
 [node name="Diretor" parent="." instance=ExtResource("28_tv8m3")]
 position = Vector2(417, 272)
-
-[node name="Player" parent="." instance=ExtResource("3_20opy")]
-position = Vector2(516, 277)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
