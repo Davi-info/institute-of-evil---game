@@ -20,3 +20,8 @@ func get_collected_accs():
 
 func get_total_accs():
 	return total_accs
+
+func reset_game_state():
+	collected_accs = 0
+	emit_signal("acc_collected", collected_accs) # Para atualizar o HUD imediatamente
+	print("GameManager: Estado do jogo resetado. ACCs: ", collected_accs)

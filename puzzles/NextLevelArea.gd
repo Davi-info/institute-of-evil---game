@@ -8,15 +8,19 @@ func _ready():
 	# Inicialmente, esta área deve estar desabilitada para que o jogador não possa passar antes da porta abrir
 	monitorable = false # Não detecta corpos
 	monitoring = false  # Não emite sinais
+	print("NextLevelArea: Inicializado. Monitoramento desabilitado.")
+
 
 func _on_body_entered(body):
+	print("NextLevelArea: body_entered detectado. Corpo: ", body.name)
 	if body.name == "Player": # Verifica se o corpo que entrou é o jogador
-		print("Jogador entrou na área de transição. Carregando próxima cena...")
-		# Carrega a próxima cena
+		print("NextLevelArea: Jogador detectado. Carregando próxima cena: ", next_scene_path)
 		get_tree().change_scene_to_file(next_scene_path)
+	else:
+		print("NextLevelArea: Corpo não é o jogador. Nome: ", body.name)
 
 # Função para habilitar a área de transição quando a porta for aberta
 func enable_area():
 	monitorable = true
 	monitoring = true
-	print("Área de transição para o próximo nível habilitada.")
+	print("NextLevelArea: Área de transição para o próximo nível habilitada.")
