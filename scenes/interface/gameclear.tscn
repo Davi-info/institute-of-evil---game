@@ -1,0 +1,146 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgeqw7g055nl2"]
+
+[ext_resource type="Script" uid="uid://bll8c5hxnd0ke" path="res://scripts/gameclear.gd" id="1_r76tn"]
+[ext_resource type="Texture2D" uid="uid://17848a4xwb" path="res://assets/encerramento.png" id="2_soaf6"]
+[ext_resource type="Theme" uid="uid://dflyw1gojgi00" path="res://assets/temas/new_theme.tres" id="3_sxlje"]
+[ext_resource type="FontFile" uid="uid://ccgaq0p16rr5f" path="res://assets/fonts/RevMiniPixel.ttf" id="4_r76tn"]
+
+[sub_resource type="Animation" id="Animation_7roy0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Creditos:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Creditos:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(97.5, 181)]
+}
+
+[sub_resource type="Animation" id="Animation_p2bbu"]
+resource_name = "show_credits"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Creditos:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(97.5, 181), Vector2(97.5, 50)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(9.96667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"go_to_main_menu"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_668k2"]
+_data = {
+&"RESET": SubResource("Animation_7roy0"),
+&"show_credits": SubResource("Animation_p2bbu")
+}
+
+[node name="GameClear" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r76tn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_668k2")
+}
+autoplay = "transi"
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0214346, 0.0214346, 0.0214346, 1)
+
+[node name="Fundo" type="Sprite2D" parent="Background"]
+position = Vector2(159.5, 90)
+scale = Vector2(0.208984, 0.177734)
+texture = ExtResource("2_soaf6")
+
+[node name="Desfoque" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="Creditos" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.05
+anchor_top = 1.06111
+anchor_right = 0.63125
+anchor_bottom = 1.57222
+offset_left = 113.5
+offset_top = -10.0
+offset_right = 113.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_sxlje")
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CreditosTexto" type="RichTextLabel" parent="Creditos"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("4_r76tn")
+bbcode_enabled = true
+text = "[center]Obrigado por Jogar![/center]
+
+[center]Equipe: Daniel, Davi, Isaque, John, Waldiney[/center]"
+fit_content = true
