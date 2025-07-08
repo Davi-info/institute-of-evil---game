@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://7ocp4xk3py1f"]
+[gd_scene load_steps=64 format=3 uid="uid://7ocp4xk3py1f"]
 
 [ext_resource type="Script" uid="uid://chh2gm6x73hf" path="res://scripts/level_1.gd" id="1_ndtll"]
 [ext_resource type="Texture2D" uid="uid://cnk6i0n751or0" path="res://assets/terrain/interiors/room_builder.png" id="2_7h2jl"]
@@ -35,7 +35,10 @@
 [ext_resource type="Script" uid="uid://bxh4vltya4nhv" path="res://puzzles/Blackboard.gd" id="34_o8s4s"]
 [ext_resource type="Texture2D" uid="uid://bg6fok8vbw8u8" path="res://assets/blackboard.png" id="35_ebb2h"]
 [ext_resource type="Texture2D" uid="uid://8oikyjsyp1q5" path="res://assets/computer.png" id="36_row31"]
+[ext_resource type="Texture2D" uid="uid://1o5y5uhw5snr" path="res://assets/cod parte 1.png" id="37_hvllt"]
 [ext_resource type="Texture2D" uid="uid://chtf7xjnd6258" path="res://assets/globe.png" id="37_ytidy"]
+[ext_resource type="Texture2D" uid="uid://ckxb0cvitgv4b" path="res://assets/cod parte 2.png" id="38_dp4fg"]
+[ext_resource type="Texture2D" uid="uid://c4kbmxcrj03k1" path="res://assets/cod parte 3.png" id="39_svqqs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_betor"]
 texture = ExtResource("2_7h2jl")
@@ -5697,13 +5700,6 @@ size = Vector2(28, 26)
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_ndtll")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -327.0
-offset_top = -618.0
-offset_right = 824.0
-offset_bottom = 175.0
-color = Color(0, 0, 0, 1)
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_jkxa6")
 collision_animatable = true
@@ -5719,6 +5715,9 @@ layer_3/tile_data = PackedInt32Array(-786399, 65537, 38, -720863, 65537, 39, -58
 layer_4/name = "Objetos"
 layer_4/tile_data = PackedInt32Array(-655346, 1, 53, -589810, 1, 54, -851962, 1, 53, -786426, 1, 54, -655354, 65537, 53, -589818, 65537, 54, -851954, 65537, 53, -786418, 65537, 54, -720886, 131073, 53, -655350, 131073, 54, -2293757, 720897, 44, -2228221, 720897, 45, -2162685, 720897, 46, -2293758, 655361, 44, -2228222, 655361, 45, -2162686, 655361, 46, -2228208, 655361, 45, -2162672, 655361, 46, -2228207, 720897, 45, -2162671, 720897, 46, -2293744, 655361, 44, -2293743, 720897, 44, -1114126, 655361, 68, -1048590, 655361, 69, -983054, 655361, 70, -1114125, 720897, 68, -1048589, 720897, 69, -983053, 720897, 70, -1114124, 786433, 68, -1048588, 786433, 69, -983052, 786433, 70, -1114123, 851969, 68, -1048587, 851969, 69, -983051, 851969, 70, -1114135, 786433, 68, -1048599, 786433, 69, -983063, 786433, 70, -1114134, 851969, 68, -1048598, 851969, 69, -983062, 851969, 70, -1114133, 917505, 68, -1048597, 917505, 69, -983061, 917505, 70, -1114132, 983041, 68, -1048596, 983041, 69, -983060, 983041, 70, -851980, 917505, 68, -786444, 917505, 69, -720908, 917505, 70, -851979, 983041, 68, -786443, 983041, 69, -720907, 983041, 70, -851982, 786433, 68, -786446, 786433, 69, -720910, 786433, 70, -851981, 851969, 68, -786445, 851969, 69, -720909, 851969, 70, -589843, 786433, 68, -524307, 786433, 69, -458771, 786433, 70, -589842, 851969, 68, -524306, 851969, 69, -458770, 851969, 70, -589841, 917505, 68, -524305, 917505, 69, -458769, 917505, 70, -589840, 983041, 68, -524304, 983041, 69, -458768, 983041, 70, -720914, 851971, 28, -655378, 851971, 29, -720913, 917507, 28, -655377, 917507, 29, -655383, 851971, 28, -589847, 851971, 29, -655382, 917507, 28, -589846, 917507, 29, -1900535, 327681, 46, -1834999, 327681, 47, -1900534, 393217, 46, -1834998, 393217, 47, -1769463, 327681, 45, -1769462, 393217, 45, -1769466, 327681, 44, -1769459, 327681, 44, -851989, 786433, 68, -786453, 786433, 69, -720917, 786433, 70, -851988, 851969, 68, -786452, 851969, 69, -720916, 851969, 70)
 layer_5/name = "Porta"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
 
 [node name="ExitDoor" type="StaticBody2D" parent="."]
 script = ExtResource("25_0qwwm")
@@ -5754,9 +5753,6 @@ texture = ExtResource("14_o8s4s")
 [node name="Quadro" parent="." instance=ExtResource("15_ebb2h")]
 position = Vector2(124, -560)
 scale = Vector2(0.00411354, 0.00468912)
-
-[node name="Player" parent="." instance=ExtResource("16_row31")]
-position = Vector2(50, 70)
 
 [node name="inimigo" parent="." instance=ExtResource("17_ytidy")]
 position = Vector2(-317, -180)
@@ -5814,7 +5810,7 @@ position = Vector2(-5, 86)
 
 [node name="acc" parent="." instance=ExtResource("18_hvllt")]
 visible = false
-position = Vector2(158, -482)
+position = Vector2(90, -532)
 script = ExtResource("23_cfnpk")
 document_id = "acc1"
 
@@ -5830,17 +5826,9 @@ position = Vector2(630, -247)
 script = ExtResource("23_cfnpk")
 document_id = "acc1"
 
-[node name="acc4" parent="." instance=ExtResource("18_hvllt")]
-visible = false
-position = Vector2(216, 22)
-
 [node name="pause_menu" parent="." instance=ExtResource("19_dp4fg")]
 
 [node name="HUD" parent="." instance=ExtResource("20_svqqs")]
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0, 0, 0, 1)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("21_2to4m")]
 
@@ -5854,7 +5842,7 @@ position = Vector2(-221, -93)
 position = Vector2(550, -252)
 
 [node name="Lixeira5" parent="." instance=ExtResource("22_kc3v0")]
-position = Vector2(216, -542)
+position = Vector2(217, -543)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("24_x7jkp")
@@ -5997,6 +5985,24 @@ texture = ExtResource("36_row31")
 [node name="Sprite2D" type="Sprite2D" parent="Globe"]
 position = Vector2(-184, -119)
 texture = ExtResource("37_ytidy")
+
+[node name="CodParte1" type="Sprite2D" parent="."]
+position = Vector2(-249.672, -269.688)
+scale = Vector2(0.505388, 0.548897)
+texture = ExtResource("37_hvllt")
+
+[node name="CodParte2" type="Sprite2D" parent="."]
+position = Vector2(660, -144)
+scale = Vector2(0.370687, 0.336956)
+texture = ExtResource("38_dp4fg")
+
+[node name="CodParte3" type="Sprite2D" parent="."]
+position = Vector2(280, -559)
+scale = Vector2(0.413794, 0.489129)
+texture = ExtResource("39_svqqs")
+
+[node name="Player" parent="." instance=ExtResource("16_row31")]
+position = Vector2(50, 70)
 
 [editable path="inimigo"]
 [editable path="inimigo2"]

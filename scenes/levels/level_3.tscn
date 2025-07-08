@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dgx206aqybkl6"]
+[gd_scene load_steps=51 format=3 uid="uid://dgx206aqybkl6"]
 
 [ext_resource type="Script" uid="uid://b4onwkhpsp42f" path="res://scripts/level_3.gd" id="1_8swdu"]
 [ext_resource type="Texture2D" uid="uid://b7mnq8o44ixje" path="res://assets/terrain/interiors/caves-rails-tileset-beta-1.0.png" id="1_gew73"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://scenes/MusicControllerLvl.tscn" id="25_xe1ru"]
 [ext_resource type="Texture2D" uid="uid://i0n4canc878a" path="res://assets/terrain/interiors/Tileset.png" id="26_kyq6o"]
 [ext_resource type="Texture2D" uid="uid://c0b67q7w8kgcs" path="res://assets/terrain/interiors/Objects.png" id="27_4gw27"]
+[ext_resource type="PackedScene" uid="uid://ceeyt3otuh1q0" path="res://scenes/interface/pause_menu.tscn" id="27_n8qcm"]
 [ext_resource type="PackedScene" uid="uid://b3oq6h8ujl1ag" path="res://scenes/diretor.tscn" id="28_tv8m3"]
 [ext_resource type="PackedScene" uid="uid://l56uj5gq2u3y" path="res://scenes/portal.tscn" id="29_8nkwk"]
 
@@ -3320,7 +3321,8 @@ position = Vector2(466, 280)
 position = Vector2(417, 272)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("25_xe1ru")]
+
+[node name="pause_menu" parent="." instance=ExtResource("27_n8qcm")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ct8koxmmqdxqa"]
+[gd_scene load_steps=34 format=3 uid="uid://ct8koxmmqdxqa"]
 
 [ext_resource type="Script" uid="uid://brg3soqrjl3jg" path="res://scripts/level_2.gd" id="1_5orea"]
 [ext_resource type="Texture2D" uid="uid://dmbjqumkun0y7" path="res://assets/terrain/coolschool/CoolSchool_tileset.png" id="2_bt44k"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b4u5o5lvnewvv" path="res://scenes/inimigo_fase1.tscn" id="17_k2aru"]
 [ext_resource type="PackedScene" uid="uid://c85n4hxac1ira" path="res://scenes/inimigo_fase4.tscn" id="18_k2aru"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://scenes/MusicControllerLvl.tscn" id="19_ndgrd"]
+[ext_resource type="PackedScene" uid="uid://ceeyt3otuh1q0" path="res://scenes/interface/pause_menu.tscn" id="20_sibr7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n46q3"]
 texture = ExtResource("2_bt44k")
@@ -5268,7 +5269,7 @@ sources/9 = SubResource("TileSetAtlasSource_0ourt")
 script = ExtResource("1_5orea")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -6.0
+offset_left = -52.0
 offset_top = -401.0
 offset_right = 1149.0
 offset_bottom = 435.0
@@ -5370,6 +5371,8 @@ position = Vector2(0, -282)
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0, 0, 0, 1)
+
+[node name="pause_menu" parent="." instance=ExtResource("20_sibr7")]
 
 [editable path="inimigo"]
 [editable path="inimigo2"]

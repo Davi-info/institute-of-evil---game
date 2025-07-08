@@ -765,8 +765,8 @@ position_smoothing_enabled = true
 position_smoothing_speed = 1.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(4, -3.99999)
-scale = Vector2(50.2838, 31.7419)
+position = Vector2(-1.99998, -7)
+scale = Vector2(28.4622, 24.0741)
 texture = ExtResource("3_830i6")
 texture_scale = 0.01
 
