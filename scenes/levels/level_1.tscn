@@ -5718,6 +5718,7 @@ layer_4/tile_data = PackedInt32Array(-655346, 1, 53, -589810, 1, 54, -851962, 1,
 layer_5/name = "Porta"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="ExitDoor" type="StaticBody2D" parent="."]
@@ -5914,11 +5915,17 @@ position = Vector2(403, -179)
 [node name="inimigo5" parent="." instance=ExtResource("17_ytidy")]
 position = Vector2(483, -170)
 
+[node name="FalaInimigo" parent="inimigo5" index="6"]
+stream = null
+
 [node name="Ponto2" parent="inimigo5/Waypoints" index="1"]
 position = Vector2(-166, 4)
 
 [node name="inimigo4" parent="." instance=ExtResource("17_ytidy")]
 position = Vector2(-154, -171)
+
+[node name="FalaInimigo" parent="inimigo4" index="6"]
+stream = null
 
 [node name="Ponto2" parent="inimigo4/Waypoints" index="1"]
 position = Vector2(185, 6)
@@ -5964,6 +5971,10 @@ position = Vector2(-354, -197)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushableBookshelf/InteractionArea"]
 position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_row31")
+
+[node name="Seta" parent="PushableBookshelf" instance=ExtResource("19_svqqs")]
+position = Vector2(-353, -219)
+scale = Vector2(0.0103455, 0.0103455)
 
 [node name="Blackboard" type="StaticBody2D" parent="."]
 script = ExtResource("34_o8s4s")
