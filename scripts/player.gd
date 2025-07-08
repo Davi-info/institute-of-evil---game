@@ -15,6 +15,8 @@ var current_trash_bin: Node = null
 @onready var alert_sound = get_node("AlertSound") 
 @onready var texture: Sprite2D = $Texture
 
+# Carrega o script da estante para que o Godot conheça o tipo
+const PushableBookshelfType = preload("res://puzzles/PushableBookshelf.gd") # <--- ADICIONE ESTA LINHA
 
 @export_category("Variables")
 @export var _move_speed: float = 64.0
@@ -25,6 +27,8 @@ var current_trash_bin: Node = null
 #@export var _attack_timer: Timer
 @export var _animation_tree: AnimationTree
 
+# Adicione esta variável para controlar se o jogador está empurrando algo
+var is_pushing_object: bool = false
 
 func _ready() -> void:
 	if not alert_sound:
@@ -83,12 +87,34 @@ func _physics_process(_delta: float) -> void:
 			set_hidden(false)
 
 	if not is_hidden:
-		_move()
+		_move() # Esta função calcula a velocity do player
+		
+		# Nova lógica para empurrar a estante
+		# is_pushing_object = false # Remova esta linha se não for mais usada
+		for i in get_slide_collision_count():
+			var collision = get_slide_collision(i)
+			if collision.get_collider() is PushableBookshelfType:
+				var bookshelf = collision.get_collider()
+				var input_direction = Vector2(
+					Input.get_axis("move_left", "move_right"),
+					Input.get_axis("move_up", "move_down")
+				)
+				
+				if input_direction.y < 0 and collision.get_normal().y > 0.5: 
+					bookshelf.apply_push(Vector2(0, -1)) # Chama a função de movimento discreto
+					# is_pushing_object = true # Remova esta linha se não for mais usada
+					break # Só empurra uma estante por vez
+
+		# Remova este bloco se não for mais usada a redução de velocidade
+		# if is_pushing_object:
+		# 	velocity = velocity.normalized() * (_move_speed * 0.5) 
+		
 		_animate()
 		move_and_slide()
 	else:
 		velocity = Vector2.ZERO
 		move_and_slide()
+	
 
 func _move() -> void:
 	var _direction := Vector2(

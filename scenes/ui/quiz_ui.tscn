@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmokftj1fbxtg"]
+
+[ext_resource type="Script" uid="uid://cdv0p8tc556fk" path="res://puzzles/QuizUI.gd" id="1_liwsr"]
+
+[node name="QuizUI" type="CanvasLayer"]
+script = ExtResource("1_liwsr")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(400, 250)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuestionLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -134.0
+offset_top = 47.0
+offset_right = 136.0
+offset_bottom = 70.0
+grow_horizontal = 2
+text = "Qual é o valor binário do número 5"
+
+[node name="OptionsContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = -37.0
+offset_right = 159.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionAButton" type="Button" parent="Panel/OptionsContainer"]
+layout_mode = 2
+text = "0101"
+
+[node name="OptionBButton" type="Button" parent="Panel/OptionsContainer"]
+layout_mode = 2
+text = "1100"
+
+[node name="OptionCButton" type="Button" parent="Panel/OptionsContainer"]
+layout_mode = 2
+text = "1111"

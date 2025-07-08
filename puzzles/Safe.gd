@@ -9,7 +9,7 @@ var player_in_range = false
 var is_open = false
 
 # Preload da cena da UI do cofre
-var safe_input_ui_scene = preload("res://scenes/safe_input_ui.tscn")
+var safe_input_ui_scene = preload("res://scenes/ui/safe_input_ui.tscn")
 
 func _ready():
 	interaction_area.body_entered.connect(_on_interaction_area_body_entered)
@@ -30,12 +30,11 @@ func _process(delta):
 		open_safe_dialog()
 
 func open_safe_dialog():
-	if is_open: return # Não abre se já estiver aberto
+	if is_open: return
 
 	var safe_input_ui = safe_input_ui_scene.instantiate()
-	get_tree().root.add_child(safe_input_ui) # Adiciona a UI diretamente ao root para garantir que apareça sobre tudo
+	get_tree().root.add_child(safe_input_ui)
 
-	# Conecta o sinal da UI para receber o código digitado
 	safe_input_ui.code_entered.connect(_on_code_entered)
 
 func _on_code_entered(code_text: String):
@@ -45,15 +44,12 @@ func _on_code_entered(code_text: String):
 		release_acc1()
 	else:
 		print("Código incorreto. Tente novamente.")
-		# Opcional: feedback visual/sonoro de erro
-		# Você pode reabrir o diálogo ou dar uma nova chance
 
 func release_acc1():
-	var acc1_node = get_tree().current_scene.get_node_or_null("acc")
+	var acc1_node = get_tree().current_scene.get_node_or_null("acc") # Ou o nome do seu ACC1
 	if acc1_node:
-		acc1_node.visible = true
-		# Se o ACC já tem script de coleta, ele será coletado quando o jogador tocar
-		# Se não, você pode chamar GameManager.collect_acc() aqui diretamente
+		acc1_node.visible = true # Torna o ACC visível
+		acc1_node.enable_acc() # <--- ADICIONADA ESTA LINHA PARA HABILITAR O AREA2D DO ACC1
 		print("ACC1 liberado do cofre!")
 	else:
 		print("Erro: Nó ACC1 não encontrado na cena para ser liberado.")

@@ -347,13 +347,11 @@ size = Vector2(10.4697, 5.35215)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpfsj"]
 size = Vector2(39.5703, 57.7655)
 
-[node name="inimigo" type="CharacterBody2D" node_paths=PackedStringArray("_texture", "_animation") groups=["inimigos"]]
+[node name="inimigo" type="CharacterBody2D" groups=["inimigos"]]
 position = Vector2(196, 79)
 collision_layer = 10
 collision_mask = 2
 script = ExtResource("1_dqejm")
-_texture = NodePath("Sprite2D")
-_animation = NodePath("Animation")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0.772549, 0.0470588, 1)
