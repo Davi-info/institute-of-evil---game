@@ -9,4 +9,4 @@ func _ready():
 	_on_acc_collected(GameManager.get_collected_accs())
 
 func _on_acc_collected(current_accs):
-	acc_counter_label.text = "📜: %s/%s" % [current_accs, GameManager.get_total_accs()]
+	acc_counter_label.text = "📜 %s/%s" % [current_accs, GameManager.get_total_accs()]
