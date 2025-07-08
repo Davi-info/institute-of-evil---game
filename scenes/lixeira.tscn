@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnw2icjd105ik"]
+[gd_scene load_steps=6 format=3 uid="uid://cnw2icjd105ik"]
 
 [ext_resource type="Script" uid="uid://ban05rigfxhwr" path="res://scripts/lixeira.gd" id="1_ktyah"]
 [ext_resource type="Texture2D" uid="uid://40sosw3wchfq" path="res://assets/lixeira.png" id="2_f58u1"]
 [ext_resource type="Texture2D" uid="uid://bvi8hj50rps8k" path="res://assets/light yellow.png" id="3_v02cv"]
+[ext_resource type="PackedScene" uid="uid://dnrefmh1l3k8r" path="res://scenes/sprite_seta.tscn" id="4_qfd7f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6mw3"]
 size = Vector2(10, 12)
@@ -26,3 +27,7 @@ position = Vector2(4.57764e-05, -0.74998)
 scale = Vector2(0.156198, 0.180099)
 energy = 0.59
 texture = ExtResource("3_v02cv")
+
+[node name="Seta" parent="." instance=ExtResource("4_qfd7f")]
+position = Vector2(0, -11)
+scale = Vector2(0.00988769, 0.00988769)

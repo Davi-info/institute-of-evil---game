@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://7ocp4xk3py1f"]
+[gd_scene load_steps=65 format=3 uid="uid://7ocp4xk3py1f"]
 
 [ext_resource type="Script" uid="uid://chh2gm6x73hf" path="res://scripts/level_1.gd" id="1_ndtll"]
 [ext_resource type="Texture2D" uid="uid://cnk6i0n751or0" path="res://assets/terrain/interiors/room_builder.png" id="2_7h2jl"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b4u5o5lvnewvv" path="res://scenes/inimigo_fase1.tscn" id="17_ytidy"]
 [ext_resource type="PackedScene" uid="uid://c2a16bjv4mnau" path="res://scenes/acc.tscn" id="18_hvllt"]
 [ext_resource type="PackedScene" uid="uid://ceeyt3otuh1q0" path="res://scenes/interface/pause_menu.tscn" id="19_dp4fg"]
+[ext_resource type="PackedScene" uid="uid://dnrefmh1l3k8r" path="res://scenes/sprite_seta.tscn" id="19_svqqs"]
 [ext_resource type="PackedScene" uid="uid://bouaq1aw0rx2o" path="res://scenes/interface/hud.tscn" id="20_svqqs"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://scenes/MusicControllerLvl.tscn" id="21_2to4m"]
 [ext_resource type="PackedScene" uid="uid://cnw2icjd105ik" path="res://scenes/lixeira.tscn" id="22_kc3v0"]
@@ -5754,6 +5755,10 @@ texture = ExtResource("14_o8s4s")
 position = Vector2(124, -560)
 scale = Vector2(0.00411354, 0.00468912)
 
+[node name="Seta" parent="Quadro" instance=ExtResource("19_svqqs")]
+position = Vector2(0.000549793, -2559.12)
+scale = Vector2(2.35918, 2.0696)
+
 [node name="inimigo" parent="." instance=ExtResource("17_ytidy")]
 position = Vector2(-317, -180)
 
@@ -5875,6 +5880,10 @@ position = Vector2(101, -530)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Safe/InteractionArea"]
 position = Vector2(-1, -6)
 shape = SubResource("RectangleShape2D_t4umt")
+
+[node name="Seta" parent="Safe" instance=ExtResource("19_svqqs")]
+position = Vector2(102, -559)
+scale = Vector2(0.0103455, 0.0103455)
 
 [node name="Coluna1" type="StaticBody2D" parent="."]
 
