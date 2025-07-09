@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dgx206aqybkl6"]
+[gd_scene load_steps=54 format=3 uid="uid://dgx206aqybkl6"]
 
 [ext_resource type="Script" uid="uid://b4onwkhpsp42f" path="res://scripts/level_3.gd" id="1_8swdu"]
 [ext_resource type="Texture2D" uid="uid://b7mnq8o44ixje" path="res://assets/terrain/interiors/caves-rails-tileset-beta-1.0.png" id="1_gew73"]
@@ -24,9 +24,12 @@
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://scenes/MusicControllerLvl.tscn" id="25_xe1ru"]
 [ext_resource type="PackedScene" uid="uid://bkccprknuokgw" path="res://scenes/character.tscn" id="26_do6pa"]
 [ext_resource type="Texture2D" uid="uid://i0n4canc878a" path="res://assets/terrain/interiors/Tileset.png" id="26_kyq6o"]
+[ext_resource type="PackedScene" uid="uid://dnrefmh1l3k8r" path="res://scenes/sprite_seta.tscn" id="26_o5em7"]
 [ext_resource type="Texture2D" uid="uid://c0b67q7w8kgcs" path="res://assets/terrain/interiors/Objects.png" id="27_4gw27"]
 [ext_resource type="PackedScene" uid="uid://c85n4hxac1ira" path="res://scenes/inimigo_fase4.tscn" id="27_n8qcm"]
+[ext_resource type="AudioStream" uid="uid://dqj25qgig3oed" path="res://sounds/Inimigos/não entendi [vocals].mp3" id="28_k0dme"]
 [ext_resource type="PackedScene" uid="uid://b3oq6h8ujl1ag" path="res://scenes/diretor.tscn" id="28_tv8m3"]
+[ext_resource type="AudioStream" uid="uid://cgh1w0emjl0f2" path="res://sounds/Inimigos/Vocal - transferir habilidades.mp3" id="29_o5em7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8l0e1"]
 texture = ExtResource("1_gew73")
@@ -3294,10 +3297,10 @@ sources/2 = SubResource("TileSetAtlasSource_8swdu")
 script = ExtResource("1_8swdu")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -186.0
-offset_top = -171.0
-offset_right = 969.0
-offset_bottom = 665.0
+offset_left = -84.0
+offset_top = -291.0
+offset_right = 1071.0
+offset_bottom = 545.0
 color = Color(0, 0, 0, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -3318,7 +3321,6 @@ layer_4/tile_data = PackedInt32Array(524307, 393216, 6, 524308, 393216, 6, 52430
 position = Vector2(417, 272)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("25_xe1ru")]
@@ -3326,8 +3328,27 @@ color = Color(0, 0, 0, 1)
 [node name="Player" parent="." instance=ExtResource("26_do6pa")]
 position = Vector2(334, 148)
 
+[node name="Seta4" parent="." instance=ExtResource("26_o5em7")]
+position = Vector2(417, 260)
+scale = Vector2(0.0107042, 0.0107042)
+
+[node name="Seta" parent="." instance=ExtResource("26_o5em7")]
+position = Vector2(40, 477)
+scale = Vector2(0.0103455, 0.0103455)
+
+[node name="Seta2" parent="." instance=ExtResource("26_o5em7")]
+position = Vector2(648, 14)
+scale = Vector2(0.0103455, 0.0103455)
+
+[node name="Seta3" parent="." instance=ExtResource("26_o5em7")]
+position = Vector2(712, 479)
+scale = Vector2(0.0103455, 0.0103455)
+
 [node name="inimigo" parent="." instance=ExtResource("27_n8qcm")]
 position = Vector2(96, 154)
+
+[node name="FalaInimigo" parent="inimigo" index="6"]
+stream = null
 
 [node name="Ponto2" parent="inimigo/Waypoints" index="1"]
 position = Vector2(157, 0)
@@ -3335,11 +3356,17 @@ position = Vector2(157, 0)
 [node name="inimigo2" parent="." instance=ExtResource("27_n8qcm")]
 position = Vector2(464, 25)
 
+[node name="FalaInimigo" parent="inimigo2" index="6"]
+stream = null
+
 [node name="Ponto2" parent="inimigo2/Waypoints" index="1"]
 position = Vector2(0, 93)
 
 [node name="inimigo3" parent="." instance=ExtResource("27_n8qcm")]
 position = Vector2(31, 264)
+
+[node name="FalaInimigo" parent="inimigo3" index="6"]
+stream = ExtResource("28_k0dme")
 
 [node name="Ponto2" parent="inimigo3/Waypoints" index="1"]
 position = Vector2(0, 112)
@@ -3347,11 +3374,17 @@ position = Vector2(0, 112)
 [node name="inimigo4" parent="." instance=ExtResource("27_n8qcm")]
 position = Vector2(367, 469)
 
+[node name="FalaInimigo" parent="inimigo4" index="6"]
+stream = null
+
 [node name="Ponto2" parent="inimigo4/Waypoints" index="1"]
 position = Vector2(91, 3)
 
 [node name="inimigo5" parent="." instance=ExtResource("27_n8qcm")]
 position = Vector2(175, 338)
+
+[node name="FalaInimigo" parent="inimigo5" index="6"]
+stream = null
 
 [node name="Ponto2" parent="inimigo5/Waypoints" index="1"]
 position = Vector2(198, 0)
@@ -3359,11 +3392,17 @@ position = Vector2(198, 0)
 [node name="inimigo6" parent="." instance=ExtResource("27_n8qcm")]
 position = Vector2(534, 275)
 
+[node name="FalaInimigo" parent="inimigo6" index="6"]
+stream = ExtResource("29_o5em7")
+
 [node name="Ponto2" parent="inimigo6/Waypoints" index="1"]
 position = Vector2(87, 0)
 
 [node name="inimigo7" parent="." instance=ExtResource("27_n8qcm")]
 position = Vector2(701, 299)
+
+[node name="FalaInimigo" parent="inimigo7" index="6"]
+stream = null
 
 [node name="Ponto2" parent="inimigo7/Waypoints" index="1"]
 position = Vector2(0, 137)
@@ -3371,11 +3410,17 @@ position = Vector2(0, 137)
 [node name="inimigo8" parent="." instance=ExtResource("27_n8qcm")]
 position = Vector2(608, 179)
 
+[node name="FalaInimigo" parent="inimigo8" index="6"]
+stream = null
+
 [node name="Ponto2" parent="inimigo8/Waypoints" index="1"]
 position = Vector2(64, 0)
 
 [node name="inimigo9" parent="." instance=ExtResource("27_n8qcm")]
 position = Vector2(529, 425)
+
+[node name="FalaInimigo" parent="inimigo9" index="6"]
+stream = null
 
 [node name="Ponto2" parent="inimigo9/Waypoints" index="1"]
 position = Vector2(120, 0)
