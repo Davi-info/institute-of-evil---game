@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://7ocp4xk3py1f"]
+[gd_scene load_steps=66 format=3 uid="uid://7ocp4xk3py1f"]
 
 [ext_resource type="Script" uid="uid://chh2gm6x73hf" path="res://scripts/level_1.gd" id="1_ndtll"]
 [ext_resource type="Texture2D" uid="uid://cnk6i0n751or0" path="res://assets/terrain/interiors/room_builder.png" id="2_7h2jl"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://chtf7xjnd6258" path="res://assets/globe.png" id="37_ytidy"]
 [ext_resource type="Texture2D" uid="uid://ckxb0cvitgv4b" path="res://assets/cod parte 2.png" id="38_dp4fg"]
 [ext_resource type="Texture2D" uid="uid://c4kbmxcrj03k1" path="res://assets/cod parte 3.png" id="39_svqqs"]
+[ext_resource type="Texture2D" uid="uid://c233l0fbx3q70" path="res://assets/setaChao.png" id="41_svqqs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_betor"]
 texture = ExtResource("2_7h2jl")
@@ -5973,7 +5974,7 @@ position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_row31")
 
 [node name="Seta" parent="PushableBookshelf" instance=ExtResource("19_svqqs")]
-position = Vector2(-353, -219)
+position = Vector2(-353, -200)
 scale = Vector2(0.0103455, 0.0103455)
 
 [node name="Blackboard" type="StaticBody2D" parent="."]
@@ -5993,6 +5994,10 @@ position = Vector2(601, -260)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Blackboard/InteractionArea"]
 position = Vector2(-1, -6)
 shape = SubResource("RectangleShape2D_hvllt")
+
+[node name="Seta" parent="Blackboard" instance=ExtResource("19_svqqs")]
+position = Vector2(600, -272)
+scale = Vector2(0.00947925, 0.00947925)
 
 [node name="Computer" type="StaticBody2D" parent="."]
 
@@ -6020,6 +6025,16 @@ texture = ExtResource("38_dp4fg")
 position = Vector2(280, -559)
 scale = Vector2(0.413794, 0.489129)
 texture = ExtResource("39_svqqs")
+
+[node name="SetaChao" type="Sprite2D" parent="."]
+position = Vector2(-353, -175)
+scale = Vector2(0.0200195, 0.0200195)
+texture = ExtResource("41_svqqs")
+
+[node name="SetaChao2" type="Sprite2D" parent="."]
+position = Vector2(600, -250)
+scale = Vector2(0.013461, 0.013461)
+texture = ExtResource("41_svqqs")
 
 [node name="Player" parent="." instance=ExtResource("16_row31")]
 position = Vector2(50, 70)

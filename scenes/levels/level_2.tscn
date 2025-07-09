@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://be4f3bb601ltr" path="res://assets/terrain/interiors/Tileset_16x16_2.png" id="12_5orea"]
 [ext_resource type="Texture2D" uid="uid://dls2w1goh0jn8" path="res://assets/terrain/interiors/Wall_1_16x16.png" id="12_uo0vl"]
 [ext_resource type="PackedScene" uid="uid://busc8s6ov4el0" path="res://scenes/inimigo_fase2.tscn" id="15_0ourt"]
+[ext_resource type="AudioStream" uid="uid://dlxq7axxt6afm" path="res://sounds/Inimigos/queremos sua banana [vocals].mp3" id="16_lkn2k"]
 [ext_resource type="PackedScene" uid="uid://dwfj8d7fshtis" path="res://scenes/inimigo_fase3.tscn" id="16_uo0vl"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://scenes/MusicControllerLvl.tscn" id="19_ndgrd"]
 [ext_resource type="PackedScene" uid="uid://ceeyt3otuh1q0" path="res://scenes/interface/pause_menu.tscn" id="20_sibr7"]
@@ -5301,17 +5302,29 @@ position = Vector2(49, -14)
 [node name="inimigo" parent="." instance=ExtResource("15_0ourt")]
 position = Vector2(199, 244)
 
+[node name="FalaInimigo" parent="inimigo" index="6"]
+stream = ExtResource("16_lkn2k")
+max_distance = 300.0
+attenuation = 0.812251
+
 [node name="Ponto2" parent="inimigo/Waypoints" index="1"]
 position = Vector2(0, -346)
 
 [node name="inimigo2" parent="." instance=ExtResource("15_0ourt")]
 position = Vector2(486, 225)
 
+[node name="FalaInimigo" parent="inimigo2" index="6"]
+stream = null
+
 [node name="Ponto2" parent="inimigo2/Waypoints" index="1"]
 position = Vector2(0, -326)
 
 [node name="inimigo3" parent="." instance=ExtResource("16_uo0vl")]
 position = Vector2(982, -82)
+
+[node name="FalaInimigo" parent="inimigo3" index="6"]
+position = Vector2(0, -1)
+stream = null
 
 [node name="Ponto2" parent="inimigo3/Waypoints" index="1"]
 position = Vector2(0, 146)
@@ -5325,11 +5338,17 @@ position = Vector2(0, -113)
 [node name="inimigo5" parent="." instance=ExtResource("15_0ourt")]
 position = Vector2(344, -52)
 
+[node name="FalaInimigo" parent="inimigo5" index="6"]
+stream = null
+
 [node name="Ponto2" parent="inimigo5/Waypoints" index="1"]
 position = Vector2(0, 189)
 
 [node name="inimigo6" parent="." instance=ExtResource("16_uo0vl")]
 position = Vector2(809, -381)
+
+[node name="FalaInimigo" parent="inimigo6" index="6"]
+stream = null
 
 [node name="Ponto2" parent="inimigo6/Waypoints" index="1"]
 position = Vector2(0, 146)
@@ -5337,11 +5356,17 @@ position = Vector2(0, 146)
 [node name="inimigo7" parent="." instance=ExtResource("16_uo0vl")]
 position = Vector2(649, 138)
 
+[node name="FalaInimigo" parent="inimigo7" index="6"]
+stream = null
+
 [node name="Ponto2" parent="inimigo7/Waypoints" index="1"]
 position = Vector2(0, -138)
 
 [node name="inimigo8" parent="." instance=ExtResource("15_0ourt")]
 position = Vector2(450, -139)
+
+[node name="FalaInimigo" parent="inimigo8" index="6"]
+stream = null
 
 [node name="Ponto2" parent="inimigo8/Waypoints" index="1"]
 position = Vector2(-252, 9)
@@ -5349,8 +5374,23 @@ position = Vector2(-252, 9)
 [node name="inimigo9" parent="." instance=ExtResource("16_uo0vl")]
 position = Vector2(809, 146)
 
+[node name="FalaInimigo" parent="inimigo9" index="6"]
+stream = null
+
 [node name="Ponto2" parent="inimigo9/Waypoints" index="1"]
-position = Vector2(0, -307)
+position = Vector2(0, -108)
+
+[node name="Ponto3" type="Marker2D" parent="inimigo9/Waypoints" index="2"]
+position = Vector2(123, -108)
+
+[node name="inimigo10" parent="." instance=ExtResource("18_k2aru")]
+position = Vector2(808, 151)
+
+[node name="FalaInimigo" parent="inimigo10" index="6"]
+stream = null
+
+[node name="Ponto2" parent="inimigo10/Waypoints" index="1"]
+position = Vector2(0, -282)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("19_ndgrd")]
 
@@ -5359,6 +5399,7 @@ visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="pause_menu" parent="." instance=ExtResource("20_sibr7")]
+visible = true
 
 [editable path="inimigo"]
 [editable path="inimigo2"]
