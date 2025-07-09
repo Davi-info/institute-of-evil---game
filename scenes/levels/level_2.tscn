@@ -5310,8 +5310,8 @@ attenuation = 0.812251
 [node name="Ponto2" parent="inimigo/Waypoints" index="1"]
 position = Vector2(0, -346)
 
-[node name="inimigo2" parent="." instance=ExtResource("15_0ourt")]
-position = Vector2(486, 225)
+[node name="inimigo3" parent="." instance=ExtResource("16_uo0vl")]
+position = Vector2(982, -82)
 
 [node name="FalaInimigo" parent="inimigo2" index="6"]
 stream = null
@@ -5378,19 +5378,7 @@ position = Vector2(809, 146)
 stream = null
 
 [node name="Ponto2" parent="inimigo9/Waypoints" index="1"]
-position = Vector2(0, -108)
-
-[node name="Ponto3" type="Marker2D" parent="inimigo9/Waypoints" index="2"]
-position = Vector2(123, -108)
-
-[node name="inimigo10" parent="." instance=ExtResource("18_k2aru")]
-position = Vector2(808, 151)
-
-[node name="FalaInimigo" parent="inimigo10" index="6"]
-stream = null
-
-[node name="Ponto2" parent="inimigo10/Waypoints" index="1"]
-position = Vector2(0, -282)
+position = Vector2(0, -307)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("19_ndgrd")]
 
