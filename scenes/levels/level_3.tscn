@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://i46xeknfhoeq" path="res://assets/terrain/interiors/Tile_27.png" id="21_16jej"]
 [ext_resource type="Texture2D" uid="uid://b3uyrlcgmqpvk" path="res://assets/terrain/interiors/Tile_49.png" id="22_c3ijv"]
 [ext_resource type="Texture2D" uid="uid://di10430p1lgm2" path="res://assets/terrain/interiors/Tile_50.png" id="24_b1cs7"]
-[ext_resource type="Script" path="res://scripts/diretor_dialogo.gd" id="25_22mqa"]
+[ext_resource type="Script" uid="uid://8v2bmd4epfhg" path="res://scripts/diretor_dialogo.gd" id="25_22mqa"]
 [ext_resource type="Texture2D" uid="uid://cvm3gju6f21k1" path="res://assets/terrain/interiors/Tile_51.png" id="25_fxw2g"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://scenes/MusicControllerLvl.tscn" id="25_xe1ru"]
 [ext_resource type="PackedScene" uid="uid://bkccprknuokgw" path="res://scenes/character.tscn" id="26_do6pa"]
@@ -3326,6 +3326,7 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_o5em7")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="pause_menu" parent="." instance=ExtResource("32_6c6bd")]

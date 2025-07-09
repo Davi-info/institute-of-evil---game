@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://7ocp4xk3py1f"]
+[gd_scene load_steps=67 format=3 uid="uid://7ocp4xk3py1f"]
 
 [ext_resource type="Script" uid="uid://chh2gm6x73hf" path="res://scripts/level_1.gd" id="1_ndtll"]
 [ext_resource type="Texture2D" uid="uid://cnk6i0n751or0" path="res://assets/terrain/interiors/room_builder.png" id="2_7h2jl"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://dwelwk5sc5i1c" path="res://assets/terrain/interiors/Floor_3_16x16.png" id="10_4yk0h"]
 [ext_resource type="Texture2D" uid="uid://be4f3bb601ltr" path="res://assets/terrain/interiors/Tileset_16x16_2.png" id="11_vmrhw"]
 [ext_resource type="Texture2D" uid="uid://cq3kiihs54j8k" path="res://assets/terrain/interiors/libassetpack-tiled.png" id="12_cfnpk"]
-[ext_resource type="Texture2D" uid="uid://cmco0df8vfduq" path="res://assets/terrain/easteregg/Easter egg Willamys.png" id="14_o8s4s"]
 [ext_resource type="PackedScene" uid="uid://bq2hq52xkk06p" path="res://scenes/quadro.tscn" id="15_ebb2h"]
 [ext_resource type="PackedScene" uid="uid://bkccprknuokgw" path="res://scenes/character.tscn" id="16_row31"]
 [ext_resource type="PackedScene" uid="uid://b4u5o5lvnewvv" path="res://scenes/inimigo_fase1.tscn" id="17_ytidy"]
@@ -23,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bouaq1aw0rx2o" path="res://scenes/interface/hud.tscn" id="20_svqqs"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://scenes/MusicControllerLvl.tscn" id="21_2to4m"]
 [ext_resource type="PackedScene" uid="uid://cnw2icjd105ik" path="res://scenes/lixeira.tscn" id="22_kc3v0"]
-[ext_resource type="Script" path="res://puzzles/AccDocument2.gd" id="23_cfnpk"]
+[ext_resource type="Script" uid="uid://byg4ynkxnsiqn" path="res://puzzles/AccDocument2.gd" id="23_cfnpk"]
 [ext_resource type="Script" uid="uid://gfv8w4686qi2" path="res://puzzles/HUD.gd" id="24_x7jkp"]
 [ext_resource type="Script" uid="uid://bgbtjt3f051a1" path="res://puzzles/ExitDoor.gd" id="25_0qwwm"]
 [ext_resource type="Texture2D" uid="uid://dqeg6rs0qjj7s" path="res://assets/porta.png" id="26_t4umt"]
@@ -31,16 +30,18 @@
 [ext_resource type="Script" uid="uid://by52i8s301aya" path="res://puzzles/Safe.gd" id="28_0qwwm"]
 [ext_resource type="Texture2D" uid="uid://bwjvg2hhsvlel" path="res://assets/cofre.png" id="28_x7jkp"]
 [ext_resource type="Texture2D" uid="uid://2ox4xaaydlrg" path="res://assets/coluna.png" id="30_t4umt"]
-[ext_resource type="Script" path="res://puzzles/PushableBookshelf.gd" id="32_wvtie"]
+[ext_resource type="Script" uid="uid://cgbn3di2nrxc2" path="res://puzzles/PushableBookshelf.gd" id="32_wvtie"]
 [ext_resource type="Texture2D" uid="uid://xjnoiw186n1g" path="res://assets/estante.png" id="33_o8s4s"]
-[ext_resource type="Script" path="res://puzzles/Blackboard.gd" id="34_o8s4s"]
+[ext_resource type="Script" uid="uid://bxh4vltya4nhv" path="res://puzzles/Blackboard.gd" id="34_o8s4s"]
 [ext_resource type="Texture2D" uid="uid://bg6fok8vbw8u8" path="res://assets/blackboard.png" id="35_ebb2h"]
 [ext_resource type="Texture2D" uid="uid://8oikyjsyp1q5" path="res://assets/computer.png" id="36_row31"]
 [ext_resource type="Texture2D" uid="uid://1o5y5uhw5snr" path="res://assets/cod parte 1.png" id="37_hvllt"]
 [ext_resource type="Texture2D" uid="uid://chtf7xjnd6258" path="res://assets/globe.png" id="37_ytidy"]
 [ext_resource type="Texture2D" uid="uid://ckxb0cvitgv4b" path="res://assets/cod parte 2.png" id="38_dp4fg"]
 [ext_resource type="Texture2D" uid="uid://c4kbmxcrj03k1" path="res://assets/cod parte 3.png" id="39_svqqs"]
+[ext_resource type="PackedScene" uid="uid://duv21v7qt1w3e" path="res://scenes/quadro_2.tscn" id="40_svqqs"]
 [ext_resource type="Texture2D" uid="uid://c233l0fbx3q70" path="res://assets/setaChao.png" id="41_svqqs"]
+[ext_resource type="PackedScene" uid="uid://c8yeweus15gr" path="res://scenes/lareira.tscn" id="42_2to4m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_betor"]
 texture = ExtResource("2_7h2jl")
@@ -5747,11 +5748,6 @@ script = ExtResource("27_4yk0h")
 position = Vector2(1, -5)
 shape = SubResource("RectangleShape2D_cfnpk")
 
-[node name="EasterEggWillamys" type="Sprite2D" parent="."]
-position = Vector2(48, -1)
-scale = Vector2(0.0186966, 0.0186966)
-texture = ExtResource("14_o8s4s")
-
 [node name="Quadro" parent="." instance=ExtResource("15_ebb2h")]
 position = Vector2(124, -560)
 scale = Vector2(0.00411354, 0.00468912)
@@ -6035,8 +6031,14 @@ position = Vector2(600, -250)
 scale = Vector2(0.013461, 0.013461)
 texture = ExtResource("41_svqqs")
 
+[node name="quadro2" parent="." instance=ExtResource("40_svqqs")]
+position = Vector2(-11, 1)
+
 [node name="Player" parent="." instance=ExtResource("16_row31")]
 position = Vector2(50, 70)
+
+[node name="Node2D" parent="." instance=ExtResource("42_2to4m")]
+position = Vector2(193, -545)
 
 [editable path="inimigo"]
 [editable path="inimigo2"]

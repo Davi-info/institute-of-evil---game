@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8yeweus15gr"]
+
+[ext_resource type="Script" uid="uid://bl4vx2urqkw01" path="res://scripts/lareira.gd" id="1_l3atq"]
+[ext_resource type="Texture2D" uid="uid://bvi8hj50rps8k" path="res://assets/light yellow.png" id="2_behw8"]
+[ext_resource type="PackedScene" uid="uid://dnrefmh1l3k8r" path="res://scenes/sprite_seta.tscn" id="2_mmwq1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_behw8"]
+size = Vector2(48, 33)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_l3atq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_behw8")
+
+[node name="PointLight2D" type="PointLight2D" parent="Area2D"]
+energy = 0.38
+texture = ExtResource("2_behw8")
+
+[node name="Seta" parent="." instance=ExtResource("2_mmwq1")]
+position = Vector2(-1, -14)
+scale = Vector2(0.0175781, 0.0117187)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

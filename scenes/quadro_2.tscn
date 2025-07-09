@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://duv21v7qt1w3e"]
+
+[ext_resource type="Script" uid="uid://cgc16n0opehb4" path="res://scripts/quadro_2.gd" id="1_f6ice"]
+[ext_resource type="Texture2D" uid="uid://cmco0df8vfduq" path="res://assets/terrain/easteregg/Easter egg Willamys.png" id="2_wsmaf"]
+[ext_resource type="PackedScene" uid="uid://dnrefmh1l3k8r" path="res://scenes/sprite_seta.tscn" id="3_wsmaf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_haaly"]
+size = Vector2(20, 29)
+
+[node name="quadro2" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(47, -1)
+script = ExtResource("1_f6ice")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_haaly")
+
+[node name="EasterEggWillamys" type="Sprite2D" parent="."]
+position = Vector2(47, -1)
+scale = Vector2(0.0186966, 0.0186966)
+texture = ExtResource("2_wsmaf")
+
+[node name="Seta" parent="EasterEggWillamys" instance=ExtResource("3_wsmaf")]
+position = Vector2(8.7738e-05, -588.342)
+scale = Vector2(0.407306, 0.308791)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

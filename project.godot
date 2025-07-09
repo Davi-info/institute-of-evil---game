@@ -30,7 +30,10 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "diretor": "res://timeline/diretor.dtl",
+"lareira": "res://timeline/lareira.dtl",
+"player_fim": "res://timeline/player_fim.dtl",
 "quadro": "res://timeline/quadro.dtl",
+"quadro2": "res://timeline/quadro2.dtl",
 "timeline": "res://timeline/timeline.dtl",
 "warning_not_all_items": "res://timeline/warning_not_all_items.dtl"
 }
