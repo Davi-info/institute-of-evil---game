@@ -3321,12 +3321,13 @@ layer_4/tile_data = PackedInt32Array(524307, 393216, 6, 524308, 393216, 6, 52430
 position = Vector2(417, 272)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("25_xe1ru")]
 
 [node name="Player" parent="." instance=ExtResource("26_do6pa")]
-position = Vector2(334, 148)
+position = Vector2(31, 30)
 
 [node name="Seta4" parent="." instance=ExtResource("26_o5em7")]
 position = Vector2(417, 260)
