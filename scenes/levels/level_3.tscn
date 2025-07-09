@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dgx206aqybkl6"]
+[gd_scene load_steps=51 format=3 uid="uid://dgx206aqybkl6"]
 
 [ext_resource type="Script" uid="uid://b4onwkhpsp42f" path="res://scripts/level_3.gd" id="1_8swdu"]
 [ext_resource type="Texture2D" uid="uid://b7mnq8o44ixje" path="res://assets/terrain/interiors/caves-rails-tileset-beta-1.0.png" id="1_gew73"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bkccprknuokgw" path="res://scenes/character.tscn" id="26_do6pa"]
 [ext_resource type="Texture2D" uid="uid://i0n4canc878a" path="res://assets/terrain/interiors/Tileset.png" id="26_kyq6o"]
 [ext_resource type="Texture2D" uid="uid://c0b67q7w8kgcs" path="res://assets/terrain/interiors/Objects.png" id="27_4gw27"]
+[ext_resource type="PackedScene" uid="uid://c85n4hxac1ira" path="res://scenes/inimigo_fase4.tscn" id="27_n8qcm"]
 [ext_resource type="PackedScene" uid="uid://b3oq6h8ujl1ag" path="res://scenes/diretor.tscn" id="28_tv8m3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8l0e1"]
@@ -3323,4 +3324,68 @@ color = Color(0, 0, 0, 1)
 [node name="MusicControllerLvl" parent="." instance=ExtResource("25_xe1ru")]
 
 [node name="Player" parent="." instance=ExtResource("26_do6pa")]
-position = Vector2(31, 39)
+position = Vector2(334, 148)
+
+[node name="inimigo" parent="." instance=ExtResource("27_n8qcm")]
+position = Vector2(96, 154)
+
+[node name="Ponto2" parent="inimigo/Waypoints" index="1"]
+position = Vector2(157, 0)
+
+[node name="inimigo2" parent="." instance=ExtResource("27_n8qcm")]
+position = Vector2(464, 25)
+
+[node name="Ponto2" parent="inimigo2/Waypoints" index="1"]
+position = Vector2(0, 93)
+
+[node name="inimigo3" parent="." instance=ExtResource("27_n8qcm")]
+position = Vector2(31, 264)
+
+[node name="Ponto2" parent="inimigo3/Waypoints" index="1"]
+position = Vector2(0, 112)
+
+[node name="inimigo4" parent="." instance=ExtResource("27_n8qcm")]
+position = Vector2(367, 469)
+
+[node name="Ponto2" parent="inimigo4/Waypoints" index="1"]
+position = Vector2(91, 3)
+
+[node name="inimigo5" parent="." instance=ExtResource("27_n8qcm")]
+position = Vector2(175, 338)
+
+[node name="Ponto2" parent="inimigo5/Waypoints" index="1"]
+position = Vector2(198, 0)
+
+[node name="inimigo6" parent="." instance=ExtResource("27_n8qcm")]
+position = Vector2(534, 275)
+
+[node name="Ponto2" parent="inimigo6/Waypoints" index="1"]
+position = Vector2(87, 0)
+
+[node name="inimigo7" parent="." instance=ExtResource("27_n8qcm")]
+position = Vector2(701, 299)
+
+[node name="Ponto2" parent="inimigo7/Waypoints" index="1"]
+position = Vector2(0, 137)
+
+[node name="inimigo8" parent="." instance=ExtResource("27_n8qcm")]
+position = Vector2(608, 179)
+
+[node name="Ponto2" parent="inimigo8/Waypoints" index="1"]
+position = Vector2(64, 0)
+
+[node name="inimigo9" parent="." instance=ExtResource("27_n8qcm")]
+position = Vector2(529, 425)
+
+[node name="Ponto2" parent="inimigo9/Waypoints" index="1"]
+position = Vector2(120, 0)
+
+[editable path="inimigo"]
+[editable path="inimigo2"]
+[editable path="inimigo3"]
+[editable path="inimigo4"]
+[editable path="inimigo5"]
+[editable path="inimigo6"]
+[editable path="inimigo7"]
+[editable path="inimigo8"]
+[editable path="inimigo9"]
