@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dgx206aqybkl6"]
+[gd_scene load_steps=57 format=3 uid="uid://dgx206aqybkl6"]
 
 [ext_resource type="Script" uid="uid://b4onwkhpsp42f" path="res://scripts/level_3.gd" id="1_8swdu"]
 [ext_resource type="Texture2D" uid="uid://b7mnq8o44ixje" path="res://assets/terrain/interiors/caves-rails-tileset-beta-1.0.png" id="1_gew73"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://i46xeknfhoeq" path="res://assets/terrain/interiors/Tile_27.png" id="21_16jej"]
 [ext_resource type="Texture2D" uid="uid://b3uyrlcgmqpvk" path="res://assets/terrain/interiors/Tile_49.png" id="22_c3ijv"]
 [ext_resource type="Texture2D" uid="uid://di10430p1lgm2" path="res://assets/terrain/interiors/Tile_50.png" id="24_b1cs7"]
+[ext_resource type="Script" path="res://scripts/diretor_dialogo.gd" id="25_22mqa"]
 [ext_resource type="Texture2D" uid="uid://cvm3gju6f21k1" path="res://assets/terrain/interiors/Tile_51.png" id="25_fxw2g"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://scenes/MusicControllerLvl.tscn" id="25_xe1ru"]
 [ext_resource type="PackedScene" uid="uid://bkccprknuokgw" path="res://scenes/character.tscn" id="26_do6pa"]
@@ -30,6 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://dqj25qgig3oed" path="res://sounds/Inimigos/não entendi [vocals].mp3" id="28_k0dme"]
 [ext_resource type="PackedScene" uid="uid://b3oq6h8ujl1ag" path="res://scenes/diretor.tscn" id="28_tv8m3"]
 [ext_resource type="AudioStream" uid="uid://cgh1w0emjl0f2" path="res://sounds/Inimigos/Vocal - transferir habilidades.mp3" id="29_o5em7"]
+[ext_resource type="PackedScene" uid="uid://ceeyt3otuh1q0" path="res://scenes/interface/pause_menu.tscn" id="32_6c6bd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8l0e1"]
 texture = ExtResource("1_gew73")
@@ -3293,15 +3295,11 @@ sources/46 = SubResource("TileSetAtlasSource_4gw27")
 sources/49 = SubResource("TileSetAtlasSource_mb3d3")
 sources/2 = SubResource("TileSetAtlasSource_8swdu")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5em7"]
+size = Vector2(46, 37)
+
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_8swdu")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -84.0
-offset_top = -291.0
-offset_right = 1071.0
-offset_bottom = 545.0
-color = Color(0, 0, 0, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ofchu")
@@ -3320,14 +3318,23 @@ layer_4/tile_data = PackedInt32Array(524307, 393216, 6, 524308, 393216, 6, 52430
 [node name="Diretor" parent="." instance=ExtResource("28_tv8m3")]
 position = Vector2(417, 272)
 
+[node name="Area2D" type="Area2D" parent="Diretor"]
+script = ExtResource("25_22mqa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diretor/Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_o5em7")
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0, 0, 0, 1)
 
-[node name="MusicControllerLvl" parent="." instance=ExtResource("25_xe1ru")]
+[node name="pause_menu" parent="." instance=ExtResource("32_6c6bd")]
 
 [node name="Player" parent="." instance=ExtResource("26_do6pa")]
-position = Vector2(31, 30)
+position = Vector2(334, 148)
+
+[node name="MusicControllerLvl" parent="." instance=ExtResource("25_xe1ru")]
 
 [node name="Seta4" parent="." instance=ExtResource("26_o5em7")]
 position = Vector2(417, 260)
@@ -3425,6 +3432,9 @@ stream = null
 
 [node name="Ponto2" parent="inimigo9/Waypoints" index="1"]
 position = Vector2(120, 0)
+
+[connection signal="body_entered" from="Diretor/Area2D" to="Diretor/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Diretor/Area2D" to="Diretor/Area2D" method="_on_body_exited"]
 
 [editable path="inimigo"]
 [editable path="inimigo2"]
