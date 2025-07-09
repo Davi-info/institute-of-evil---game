@@ -19,15 +19,18 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 GameState="*res://scripts/GameState.gd"
 MusicMenu="*res://scenes/music_menu.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GameManager="*res://puzzles/GameManager.gd"
 
 [dialogic]
 
 directories/dch_directory={
 "character": "res://timeline/character.dch",
+"diretor": "res://timeline/diretor.dch",
 "quadro": "res://timeline/quadro.dch"
 }
 directories/dtl_directory={
 " bloqueio": "res://timeline/ bloqueio.dtl",
+"diretor": "res://timeline/diretor.dtl",
 "quadro": "res://timeline/quadro.dtl",
 "timeline": "res://timeline/timeline.dtl"
 }
