@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bouaq1aw0rx2o" path="res://scenes/interface/hud.tscn" id="20_svqqs"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://scenes/MusicControllerLvl.tscn" id="21_2to4m"]
 [ext_resource type="PackedScene" uid="uid://cnw2icjd105ik" path="res://scenes/lixeira.tscn" id="22_kc3v0"]
-[ext_resource type="Script" uid="uid://byg4ynkxnsiqn" path="res://puzzles/AccDocument2.gd" id="23_cfnpk"]
+[ext_resource type="Script" path="res://puzzles/AccDocument2.gd" id="23_cfnpk"]
 [ext_resource type="Script" uid="uid://gfv8w4686qi2" path="res://puzzles/HUD.gd" id="24_x7jkp"]
 [ext_resource type="Script" uid="uid://bgbtjt3f051a1" path="res://puzzles/ExitDoor.gd" id="25_0qwwm"]
 [ext_resource type="Texture2D" uid="uid://dqeg6rs0qjj7s" path="res://assets/porta.png" id="26_t4umt"]
@@ -31,9 +31,9 @@
 [ext_resource type="Script" uid="uid://by52i8s301aya" path="res://puzzles/Safe.gd" id="28_0qwwm"]
 [ext_resource type="Texture2D" uid="uid://bwjvg2hhsvlel" path="res://assets/cofre.png" id="28_x7jkp"]
 [ext_resource type="Texture2D" uid="uid://2ox4xaaydlrg" path="res://assets/coluna.png" id="30_t4umt"]
-[ext_resource type="Script" uid="uid://cgbn3di2nrxc2" path="res://puzzles/PushableBookshelf.gd" id="32_wvtie"]
+[ext_resource type="Script" path="res://puzzles/PushableBookshelf.gd" id="32_wvtie"]
 [ext_resource type="Texture2D" uid="uid://xjnoiw186n1g" path="res://assets/estante.png" id="33_o8s4s"]
-[ext_resource type="Script" uid="uid://bxh4vltya4nhv" path="res://puzzles/Blackboard.gd" id="34_o8s4s"]
+[ext_resource type="Script" path="res://puzzles/Blackboard.gd" id="34_o8s4s"]
 [ext_resource type="Texture2D" uid="uid://bg6fok8vbw8u8" path="res://assets/blackboard.png" id="35_ebb2h"]
 [ext_resource type="Texture2D" uid="uid://8oikyjsyp1q5" path="res://assets/computer.png" id="36_row31"]
 [ext_resource type="Texture2D" uid="uid://1o5y5uhw5snr" path="res://assets/cod parte 1.png" id="37_hvllt"]
@@ -5718,7 +5718,6 @@ layer_4/tile_data = PackedInt32Array(-655346, 1, 53, -589810, 1, 54, -851962, 1,
 layer_5/name = "Porta"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="ExitDoor" type="StaticBody2D" parent="."]
