@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://ct8koxmmqdxqa"]
+[gd_scene load_steps=32 format=3 uid="uid://ct8koxmmqdxqa"]
 
 [ext_resource type="Script" uid="uid://brg3soqrjl3jg" path="res://scripts/level_2.gd" id="1_5orea"]
 [ext_resource type="Texture2D" uid="uid://dmbjqumkun0y7" path="res://assets/terrain/coolschool/CoolSchool_tileset.png" id="2_bt44k"]
@@ -16,8 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://dls2w1goh0jn8" path="res://assets/terrain/interiors/Wall_1_16x16.png" id="12_uo0vl"]
 [ext_resource type="PackedScene" uid="uid://busc8s6ov4el0" path="res://scenes/inimigo_fase2.tscn" id="15_0ourt"]
 [ext_resource type="PackedScene" uid="uid://dwfj8d7fshtis" path="res://scenes/inimigo_fase3.tscn" id="16_uo0vl"]
-[ext_resource type="PackedScene" uid="uid://b4u5o5lvnewvv" path="res://scenes/inimigo_fase1.tscn" id="17_k2aru"]
-[ext_resource type="PackedScene" uid="uid://c85n4hxac1ira" path="res://scenes/inimigo_fase4.tscn" id="18_k2aru"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://scenes/MusicControllerLvl.tscn" id="19_ndgrd"]
 [ext_resource type="PackedScene" uid="uid://ceeyt3otuh1q0" path="res://scenes/interface/pause_menu.tscn" id="20_sibr7"]
 
@@ -5312,17 +5310,17 @@ position = Vector2(486, 225)
 [node name="Ponto2" parent="inimigo2/Waypoints" index="1"]
 position = Vector2(0, -326)
 
-[node name="inimigo3" parent="." instance=ExtResource("15_0ourt")]
-position = Vector2(989, -58)
+[node name="inimigo3" parent="." instance=ExtResource("16_uo0vl")]
+position = Vector2(982, -82)
 
 [node name="Ponto2" parent="inimigo3/Waypoints" index="1"]
-position = Vector2(-3, 127)
+position = Vector2(0, 146)
 
-[node name="Ponto3" type="Marker2D" parent="inimigo3/Waypoints" index="2"]
-position = Vector2(-140, 127)
+[node name="inimigo4" parent="." instance=ExtResource("16_uo0vl")]
+position = Vector2(646, -91)
 
-[node name="Ponto4" type="Marker2D" parent="inimigo3/Waypoints" index="3"]
-position = Vector2(-3, 127)
+[node name="Ponto2" parent="inimigo4/Waypoints" index="1"]
+position = Vector2(0, -113)
 
 [node name="inimigo5" parent="." instance=ExtResource("15_0ourt")]
 position = Vector2(344, -52)
@@ -5336,11 +5334,11 @@ position = Vector2(809, -381)
 [node name="Ponto2" parent="inimigo6/Waypoints" index="1"]
 position = Vector2(0, 146)
 
-[node name="inimigo7" parent="." instance=ExtResource("17_k2aru")]
-position = Vector2(646, 150)
+[node name="inimigo7" parent="." instance=ExtResource("16_uo0vl")]
+position = Vector2(649, 138)
 
 [node name="Ponto2" parent="inimigo7/Waypoints" index="1"]
-position = Vector2(0, -157)
+position = Vector2(0, -138)
 
 [node name="inimigo8" parent="." instance=ExtResource("15_0ourt")]
 position = Vector2(450, -139)
@@ -5348,27 +5346,16 @@ position = Vector2(450, -139)
 [node name="Ponto2" parent="inimigo8/Waypoints" index="1"]
 position = Vector2(-252, 9)
 
-[node name="inimigo9" parent="." instance=ExtResource("18_k2aru")]
-position = Vector2(647, -96)
-
-[node name="DetectionArea" parent="inimigo9" index="4"]
-position = Vector2(39, -9)
+[node name="inimigo9" parent="." instance=ExtResource("16_uo0vl")]
+position = Vector2(809, 146)
 
 [node name="Ponto2" parent="inimigo9/Waypoints" index="1"]
-position = Vector2(0, -108)
-
-[node name="Ponto3" type="Marker2D" parent="inimigo9/Waypoints" index="2"]
-position = Vector2(123, -108)
-
-[node name="inimigo10" parent="." instance=ExtResource("18_k2aru")]
-position = Vector2(808, 151)
-
-[node name="Ponto2" parent="inimigo10/Waypoints" index="1"]
-position = Vector2(0, -282)
+position = Vector2(0, -307)
 
 [node name="MusicControllerLvl" parent="." instance=ExtResource("19_ndgrd")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="pause_menu" parent="." instance=ExtResource("20_sibr7")]
@@ -5376,9 +5363,9 @@ color = Color(0, 0, 0, 1)
 [editable path="inimigo"]
 [editable path="inimigo2"]
 [editable path="inimigo3"]
+[editable path="inimigo4"]
 [editable path="inimigo5"]
 [editable path="inimigo6"]
 [editable path="inimigo7"]
 [editable path="inimigo8"]
 [editable path="inimigo9"]
-[editable path="inimigo10"]
