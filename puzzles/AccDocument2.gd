@@ -11,8 +11,11 @@ func _ready():
 	monitorable = false # Não detecta corpos
 	monitoring = false  # Não emite sinais
 
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+	if not is_connected("body_entered", Callable(self, "_on_body_entered")):
+		body_entered.connect(_on_body_entered)
+		
+	if not is_connected("body_exited", Callable(self, "_on_body_exited")):
+		body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
 	if body.name == "Player":

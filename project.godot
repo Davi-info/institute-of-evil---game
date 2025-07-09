@@ -25,9 +25,11 @@ GameManager="*res://puzzles/GameManager.gd"
 
 directories/dch_directory={
 "character": "res://timeline/character.dch",
+"diretor": "res://timeline/diretor.dch",
 "quadro": "res://timeline/quadro.dch"
 }
 directories/dtl_directory={
+"diretor": "res://timeline/diretor.dtl",
 "quadro": "res://timeline/quadro.dtl",
 "timeline": "res://timeline/timeline.dtl",
 "warning_not_all_items": "res://timeline/warning_not_all_items.dtl"
