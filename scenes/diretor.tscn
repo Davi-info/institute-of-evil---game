@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3oq6h8ujl1ag"]
+[gd_scene load_steps=10 format=3 uid="uid://b3oq6h8ujl1ag"]
 
 [ext_resource type="Script" uid="uid://bm3k8yld0ici5" path="res://scripts/diretor.gd" id="1_7f5hk"]
 [ext_resource type="Texture2D" uid="uid://87tlbw7y1be6" path="res://assets/diretor.png" id="1_fjxmi"]
+[ext_resource type="AudioStream" uid="uid://bqe4wqr68wone" path="res://sounds/diretor/Socorro.mp3" id="3_5vuje"]
+[ext_resource type="AudioStream" uid="uid://4r2t3qk6mxfr" path="res://sounds/diretor/Socorro, vá, rápido!.mp3" id="4_ijirc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i33ur"]
 size = Vector2(30, 30)
@@ -18,7 +20,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [6]
 }
 
 [sub_resource type="Animation" id="Animation_5vuje"]
@@ -49,10 +51,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.166667, 0.233333, 0.3, 0.366667, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.166667, 0.233333, 0.3, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 0, 1, 1, 2, 2, 0]
+"values": [0, 0, 1, 1, 2, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5vuje"]
@@ -73,8 +75,20 @@ shape = SubResource("RectangleShape2D_i33ur")
 texture = ExtResource("1_fjxmi")
 hframes = 6
 vframes = 2
+frame = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_5vuje")
 }
+
+[node name="Audiofala1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5vuje")
+max_distance = 300.0
+attenuation = 2.0
+
+[node name="Audiofala2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ijirc")
+volume_db = -7.0
+
+[node name="Timerfala" type="Timer" parent="."]

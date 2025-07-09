@@ -7,6 +7,6 @@
 
 [node name="Musiclvl" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_afj2r")
-volume_db = -15.0
+volume_db = -7.0
 autoplay = true
 script = ExtResource("2_afj2r")

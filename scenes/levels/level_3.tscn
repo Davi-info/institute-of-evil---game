@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://di10430p1lgm2" path="res://assets/terrain/interiors/Tile_50.png" id="24_b1cs7"]
 [ext_resource type="Script" uid="uid://8v2bmd4epfhg" path="res://scripts/diretor_dialogo.gd" id="25_22mqa"]
 [ext_resource type="Texture2D" uid="uid://cvm3gju6f21k1" path="res://assets/terrain/interiors/Tile_51.png" id="25_fxw2g"]
-[ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://scenes/MusicControllerLvl.tscn" id="25_xe1ru"]
 [ext_resource type="PackedScene" uid="uid://bkccprknuokgw" path="res://scenes/character.tscn" id="26_do6pa"]
 [ext_resource type="Texture2D" uid="uid://i0n4canc878a" path="res://assets/terrain/interiors/Tileset.png" id="26_kyq6o"]
 [ext_resource type="PackedScene" uid="uid://dnrefmh1l3k8r" path="res://scenes/sprite_seta.tscn" id="26_o5em7"]
@@ -31,6 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://dqj25qgig3oed" path="res://sounds/Inimigos/não entendi [vocals].mp3" id="28_k0dme"]
 [ext_resource type="PackedScene" uid="uid://b3oq6h8ujl1ag" path="res://scenes/diretor.tscn" id="28_tv8m3"]
 [ext_resource type="AudioStream" uid="uid://cgh1w0emjl0f2" path="res://sounds/Inimigos/Vocal - transferir habilidades.mp3" id="29_o5em7"]
+[ext_resource type="AudioStream" uid="uid://b66wcgh5ol6xe" path="res://sounds/lvl/background lvl3.mp3" id="32_2qmps"]
 [ext_resource type="PackedScene" uid="uid://ceeyt3otuh1q0" path="res://scenes/interface/pause_menu.tscn" id="32_6c6bd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8l0e1"]
@@ -3334,8 +3334,6 @@ color = Color(0, 0, 0, 1)
 [node name="Player" parent="." instance=ExtResource("26_do6pa")]
 position = Vector2(29, 31)
 
-[node name="MusicControllerLvl" parent="." instance=ExtResource("25_xe1ru")]
-
 [node name="Seta4" parent="." instance=ExtResource("26_o5em7")]
 position = Vector2(417, 260)
 scale = Vector2(0.0107042, 0.0107042)
@@ -3432,6 +3430,11 @@ stream = null
 
 [node name="Ponto2" parent="inimigo9/Waypoints" index="1"]
 position = Vector2(120, 0)
+
+[node name="background lvl3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("32_2qmps")
+volume_db = -7.0
+autoplay = true
 
 [connection signal="body_entered" from="Diretor/Area2D" to="Diretor/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Diretor/Area2D" to="Diretor/Area2D" method="_on_body_exited"]
