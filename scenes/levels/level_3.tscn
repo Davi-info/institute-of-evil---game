@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dgx206aqybkl6"]
+[gd_scene load_steps=58 format=3 uid="uid://dgx206aqybkl6"]
 
 [ext_resource type="Script" uid="uid://b4onwkhpsp42f" path="res://scripts/level_3.gd" id="1_8swdu"]
 [ext_resource type="Texture2D" uid="uid://b7mnq8o44ixje" path="res://assets/terrain/interiors/caves-rails-tileset-beta-1.0.png" id="1_gew73"]
@@ -32,6 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://cgh1w0emjl0f2" path="res://sounds/Inimigos/Vocal - transferir habilidades.mp3" id="29_o5em7"]
 [ext_resource type="AudioStream" uid="uid://b66wcgh5ol6xe" path="res://sounds/lvl/background lvl3.mp3" id="32_2qmps"]
 [ext_resource type="PackedScene" uid="uid://ceeyt3otuh1q0" path="res://scenes/interface/pause_menu.tscn" id="32_6c6bd"]
+[ext_resource type="PackedScene" uid="uid://cnw2icjd105ik" path="res://scenes/lixeira.tscn" id="33_2qmps"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8l0e1"]
 texture = ExtResource("1_gew73")
@@ -3315,6 +3316,39 @@ layer_3/tile_data = PackedInt32Array(65576, 65536, 4, 65545, 131074, 0, 65546, 2
 layer_4/name = "Sombras"
 layer_4/tile_data = PackedInt32Array(524307, 393216, 6, 524308, 393216, 6, 524309, 393216, 6, 589843, 393216, 6, 589844, 393216, 6, 589845, 393216, 6, 720928, 393216, 6, 720929, 393216, 6, 720930, 393216, 6, 786464, 393216, 6, 786465, 393216, 6, 786466, 393216, 6, 65578, 393216, 6, 65579, 393216, 6, 65580, 393216, 6, 131114, 393216, 6, 131115, 393216, 6, 131116, 393216, 6, 196650, 393216, 6, 196651, 393216, 6, 196652, 393216, 6, 720897, 393216, 6, 720898, 393216, 6, 786433, 393216, 6, 786434, 393216, 6, 851969, 393216, 6, 851970, 393216, 6, 1048598, 393216, 6, 1048599, 393216, 6, 1048600, 393216, 6, 1114134, 393216, 6, 1114135, 393216, 6, 1114136, 393216, 6, 1835025, 393216, 6, 1900561, 393216, 6, 1966097, 393216, 6, 1835026, 393216, 6, 1900562, 393216, 6, 1966098, 393216, 6, 851979, 393216, 6, 917515, 393216, 6, 851980, 393216, 6, 917516, 393216, 6, 851981, 393216, 6, 917517, 393216, 6)
 
+[node name="Lixeira9" parent="." instance=ExtResource("33_2qmps")]
+position = Vector2(152, 284)
+
+[node name="Lixeira10" parent="." instance=ExtResource("33_2qmps")]
+position = Vector2(563, 137)
+
+[node name="Lixeira11" parent="." instance=ExtResource("33_2qmps")]
+position = Vector2(229, 480)
+
+[node name="Lixeira" parent="." instance=ExtResource("33_2qmps")]
+position = Vector2(16, 374)
+
+[node name="Lixeira2" parent="." instance=ExtResource("33_2qmps")]
+position = Vector2(327, 332)
+
+[node name="Lixeira3" parent="." instance=ExtResource("33_2qmps")]
+position = Vector2(422, 485)
+
+[node name="Lixeira4" parent="." instance=ExtResource("33_2qmps")]
+position = Vector2(176, 124)
+
+[node name="Lixeira5" parent="." instance=ExtResource("33_2qmps")]
+position = Vector2(498, 67)
+
+[node name="Lixeira6" parent="." instance=ExtResource("33_2qmps")]
+position = Vector2(584, 419)
+
+[node name="Lixeira8" parent="." instance=ExtResource("33_2qmps")]
+position = Vector2(319, 198)
+
+[node name="Lixeira7" parent="." instance=ExtResource("33_2qmps")]
+position = Vector2(656, 268)
+
 [node name="Diretor" parent="." instance=ExtResource("28_tv8m3")]
 position = Vector2(417, 272)
 
@@ -3326,7 +3360,6 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_o5em7")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="pause_menu" parent="." instance=ExtResource("32_6c6bd")]
@@ -3375,7 +3408,7 @@ position = Vector2(31, 264)
 stream = ExtResource("28_k0dme")
 
 [node name="Ponto2" parent="inimigo3/Waypoints" index="1"]
-position = Vector2(0, 112)
+position = Vector2(0, 204)
 
 [node name="inimigo4" parent="." instance=ExtResource("27_n8qcm")]
 position = Vector2(367, 469)
@@ -3385,15 +3418,6 @@ stream = null
 
 [node name="Ponto2" parent="inimigo4/Waypoints" index="1"]
 position = Vector2(91, 3)
-
-[node name="inimigo5" parent="." instance=ExtResource("27_n8qcm")]
-position = Vector2(175, 338)
-
-[node name="FalaInimigo" parent="inimigo5" index="6"]
-stream = null
-
-[node name="Ponto2" parent="inimigo5/Waypoints" index="1"]
-position = Vector2(198, 0)
 
 [node name="inimigo6" parent="." instance=ExtResource("27_n8qcm")]
 position = Vector2(534, 275)
@@ -3436,6 +3460,18 @@ stream = ExtResource("32_2qmps")
 volume_db = -7.0
 autoplay = true
 
+[node name="inimigo5" parent="." instance=ExtResource("27_n8qcm")]
+position = Vector2(157, 444)
+
+[node name="Ponto2" parent="inimigo5/Waypoints" index="1"]
+position = Vector2(98, 0)
+
+[node name="inimigo10" parent="." instance=ExtResource("27_n8qcm")]
+position = Vector2(174, 333)
+
+[node name="Ponto2" parent="inimigo10/Waypoints" index="1"]
+position = Vector2(202, 0)
+
 [connection signal="body_entered" from="Diretor/Area2D" to="Diretor/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Diretor/Area2D" to="Diretor/Area2D" method="_on_body_exited"]
 
@@ -3443,8 +3479,9 @@ autoplay = true
 [editable path="inimigo2"]
 [editable path="inimigo3"]
 [editable path="inimigo4"]
-[editable path="inimigo5"]
 [editable path="inimigo6"]
 [editable path="inimigo7"]
 [editable path="inimigo8"]
 [editable path="inimigo9"]
+[editable path="inimigo5"]
+[editable path="inimigo10"]

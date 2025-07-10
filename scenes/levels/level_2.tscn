@@ -5585,7 +5585,6 @@ position = Vector2(0, -307)
 [node name="MusicControllerLvl" parent="." instance=ExtResource("19_ndgrd")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="pause_menu" parent="." instance=ExtResource("20_sibr7")]
