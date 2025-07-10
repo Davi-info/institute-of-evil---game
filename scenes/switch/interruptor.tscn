@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://fd0ihe3qkde2"]
+
+[ext_resource type="Script" uid="uid://can1cii33mj38" path="res://puzzles/interruptor.gd" id="1_2d5sr"]
+[ext_resource type="Texture2D" uid="uid://bo8222omxe4o0" path="res://assets/switchoff.png" id="2_q2pva"]
+[ext_resource type="Texture2D" uid="uid://dtnk6cdtbc6ye" path="res://assets/switchon.png" id="3_rsvhl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwuyr"]
+size = Vector2(19, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2d5sr"]
+size = Vector2(27, 27)
+
+[node name="Interruptor" type="StaticBody2D"]
+script = ExtResource("1_2d5sr")
+textura_desativado = ExtResource("2_q2pva")
+textura_ativado = ExtResource("3_rsvhl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_q2pva")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_kwuyr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_2d5sr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
