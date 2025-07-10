@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://j4u05xh7ri27"]
+
+[ext_resource type="Script" uid="uid://boh0sqtsld3g1" path="res://scripts/dialogo_das_notas.gd" id="1_y5r0p"]
+[ext_resource type="PackedScene" uid="uid://dnrefmh1l3k8r" path="res://scenes/sprite_seta.tscn" id="2_n1gur"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jie55"]
+size = Vector2(29, 30)
+
+[node name="dialogo_das_notas" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_y5r0p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_jie55")
+
+[node name="Seta" parent="." instance=ExtResource("2_n1gur")]
+position = Vector2(0, -12)
+scale = Vector2(0.00683593, 0.00585935)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

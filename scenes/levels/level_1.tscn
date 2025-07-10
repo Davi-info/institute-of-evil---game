@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://7ocp4xk3py1f"]
+[gd_scene load_steps=70 format=3 uid="uid://7ocp4xk3py1f"]
 
 [ext_resource type="Script" uid="uid://chh2gm6x73hf" path="res://scripts/level_1.gd" id="1_ndtll"]
 [ext_resource type="Texture2D" uid="uid://cnk6i0n751or0" path="res://assets/terrain/interiors/room_builder.png" id="2_7h2jl"]
@@ -42,6 +42,9 @@
 [ext_resource type="PackedScene" uid="uid://duv21v7qt1w3e" path="res://scenes/quadro_2.tscn" id="40_svqqs"]
 [ext_resource type="Texture2D" uid="uid://c233l0fbx3q70" path="res://assets/setaChao.png" id="41_svqqs"]
 [ext_resource type="PackedScene" uid="uid://c8yeweus15gr" path="res://scenes/lareira.tscn" id="42_2to4m"]
+[ext_resource type="PackedScene" uid="uid://dw7hvcm52m84e" path="res://scenes/armario.tscn" id="43_kc3v0"]
+[ext_resource type="PackedScene" uid="uid://j4u05xh7ri27" path="res://scenes/dialogo_das_notas.tscn" id="44_prmli"]
+[ext_resource type="PackedScene" uid="uid://ban0id51dfxfq" path="res://scenes/estante.tscn" id="45_dwx2n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_betor"]
 texture = ExtResource("2_7h2jl")
@@ -6039,6 +6042,21 @@ position = Vector2(50, 70)
 
 [node name="Node2D" parent="." instance=ExtResource("42_2to4m")]
 position = Vector2(193, -545)
+
+[node name="armario" parent="." instance=ExtResource("43_kc3v0")]
+position = Vector2(689, -256)
+
+[node name="dialogo_das_notas" parent="." instance=ExtResource("44_prmli")]
+position = Vector2(660, -140)
+
+[node name="dialogo_das_notas2" parent="." instance=ExtResource("44_prmli")]
+position = Vector2(-250, -267)
+
+[node name="dialogo_das_notas3" parent="." instance=ExtResource("44_prmli")]
+position = Vector2(279, -555)
+
+[node name="Node2D2" parent="." instance=ExtResource("45_dwx2n")]
+position = Vector2(-352, -196)
 
 [editable path="inimigo"]
 [editable path="inimigo2"]

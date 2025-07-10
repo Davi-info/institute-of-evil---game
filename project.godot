@@ -30,8 +30,12 @@ directories/dch_directory={
 "quadro": "res://timeline/quadro.dch"
 }
 directories/dtl_directory={
+"armario": "res://timeline/armario.dtl",
+"armario_2": "res://timeline/armario_2.dtl",
 "diretor": "res://timeline/diretor.dtl",
+"estante": "res://timeline/estante.dtl",
 "lareira": "res://timeline/lareira.dtl",
+"notas": "res://timeline/notas.dtl",
 "player_fim": "res://timeline/player_fim.dtl",
 "quadro": "res://timeline/quadro.dtl",
 "quadro2": "res://timeline/quadro2.dtl",

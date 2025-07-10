@@ -3366,15 +3366,12 @@ color = Color(0, 0, 0, 1)
 
 [node name="pause_menu" parent="." instance=ExtResource("32_6c6bd")]
 
-[node name="Player" parent="." instance=ExtResource("26_do6pa")]
-position = Vector2(29, 31)
-
 [node name="Seta4" parent="." instance=ExtResource("26_o5em7")]
 position = Vector2(417, 260)
 scale = Vector2(0.0107042, 0.0107042)
 
 [node name="Seta" parent="." instance=ExtResource("26_o5em7")]
-position = Vector2(40, 477)
+position = Vector2(55, 454)
 scale = Vector2(0.0103455, 0.0103455)
 
 [node name="Seta2" parent="." instance=ExtResource("26_o5em7")]
@@ -3482,6 +3479,9 @@ position = Vector2(709, 486)
 
 [node name="Interruptor3" parent="." groups=["interruptores"] instance=ExtResource("34_gtyp3")]
 position = Vector2(650, 25)
+
+[node name="Player" parent="." instance=ExtResource("26_do6pa")]
+position = Vector2(29, 31)
 
 [connection signal="body_entered" from="Diretor/Area2D" to="Diretor/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Diretor/Area2D" to="Diretor/Area2D" method="_on_body_exited"]

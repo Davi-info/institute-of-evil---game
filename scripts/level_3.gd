@@ -17,6 +17,12 @@ func _ready() -> void:
 	MusicMenu.stop_music()
 	GameState.fase_atual = "fase3"
 	Dialogic.start("player_fim")
+	
+	var hud_scene = preload("res://scenes/interface/hud.tscn")
+	var hud = hud_scene.instantiate()
+	hud.name = "HUD"
+	add_child(hud)
+	
 	# --- FIM: Seu código original ---
 
 	# --- INÍCIO: Lógica do Puzzle (adicionada dentro do _ready) ---

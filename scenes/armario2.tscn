@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk1i7uam4vlgb"]
+
+[ext_resource type="Script" uid="uid://310ipkynu8a5" path="res://armario_2.gd" id="1_vnfuw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0j3oh"]
+size = Vector2(45.5, 45)
+
+[node name="armario2" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_vnfuw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_0j3oh")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
