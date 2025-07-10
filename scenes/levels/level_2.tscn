@@ -16,8 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://be4f3bb601ltr" path="res://assets/terrain/interiors/Tileset_16x16_2.png" id="12_5orea"]
 [ext_resource type="Texture2D" uid="uid://dls2w1goh0jn8" path="res://assets/terrain/interiors/Wall_1_16x16.png" id="12_uo0vl"]
 [ext_resource type="PackedScene" uid="uid://busc8s6ov4el0" path="res://scenes/inimigo_fase2.tscn" id="15_0ourt"]
+[ext_resource type="Texture2D" uid="uid://xjnoiw186n1g" path="res://assets/estante.png" id="15_1c1qw"]
+[ext_resource type="PackedScene" uid="uid://dnrefmh1l3k8r" path="res://scenes/sprite_seta.tscn" id="16_1a10c"]
 [ext_resource type="AudioStream" uid="uid://dlxq7axxt6afm" path="res://sounds/Inimigos/queremos sua banana [vocals].mp3" id="16_p4se4"]
 [ext_resource type="PackedScene" uid="uid://dwfj8d7fshtis" path="res://scenes/inimigo_fase3.tscn" id="16_uo0vl"]
+[ext_resource type="Script" uid="uid://dsfyjc7ge2lur" path="res://scripts/pushable_bookshelf.gd" id="16_wikm6"]
+[ext_resource type="Script" uid="uid://bk2sgj6arekq0" path="res://scripts/pushable_bookshelf2.gd" id="19_1a10c"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://scenes/MusicControllerLvl.tscn" id="19_ndgrd"]
 [ext_resource type="PackedScene" uid="uid://ceeyt3otuh1q0" path="res://scenes/interface/pause_menu.tscn" id="20_sibr7"]
 [ext_resource type="PackedScene" uid="uid://dul0uus36ley8" path="res://scenes/buttons/runesequence.tscn" id="21_lkn2k"]
@@ -5460,6 +5464,12 @@ size = Vector2(25, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwjag"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6ket"]
+size = Vector2(29, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xworo"]
+size = Vector2(27, 36)
+
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_5orea")
 
@@ -5489,8 +5499,65 @@ layer_5/name = "Portas"
 layer_6/name = "Esconde"
 layer_7/name = "Botao"
 
+[node name="Quadro" parent="." instance=ExtResource("23_mx6s3")]
+position = Vector2(592, 32)
+scale = Vector2(0.0042377, 0.00448413)
+
+[node name="CollisionShape2D" parent="Quadro/Area2D" index="0"]
+position = Vector2(0, 3041.83)
+scale = Vector2(1, 1)
+
+[node name="quadro2" parent="." instance=ExtResource("24_7d3nu")]
+position = Vector2(835, -126)
+
+[node name="PushableBookshelf" type="CharacterBody2D" parent="."]
+position = Vector2(898, -23)
+script = ExtResource("16_wikm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="PushableBookshelf"]
+position = Vector2(-352, -201)
+texture = ExtResource("15_1c1qw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushableBookshelf"]
+position = Vector2(-353.5, -200)
+shape = SubResource("RectangleShape2D_r6ket")
+
+[node name="InteractionArea" type="Area2D" parent="PushableBookshelf"]
+position = Vector2(-354, -197)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushableBookshelf/InteractionArea"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_xworo")
+
+[node name="Seta" parent="PushableBookshelf" instance=ExtResource("16_1a10c")]
+position = Vector2(-353, -200)
+scale = Vector2(0.0103455, 0.0103455)
+
+[node name="PushableBookshelf2" type="CharacterBody2D" parent="."]
+position = Vector2(1438, 102)
+script = ExtResource("19_1a10c")
+
+[node name="Sprite2D" type="Sprite2D" parent="PushableBookshelf2"]
+position = Vector2(-352, -201)
+texture = ExtResource("15_1c1qw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushableBookshelf2"]
+position = Vector2(-353.5, -200)
+shape = SubResource("RectangleShape2D_r6ket")
+
+[node name="InteractionArea" type="Area2D" parent="PushableBookshelf2"]
+position = Vector2(-354, -197)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushableBookshelf2/InteractionArea"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_xworo")
+
+[node name="Seta" parent="PushableBookshelf2" instance=ExtResource("16_1a10c")]
+position = Vector2(-353, -200)
+scale = Vector2(0.0103455, 0.0103455)
+
 [node name="Player" parent="." instance=ExtResource("7_gwceb")]
-position = Vector2(49, -14)
+position = Vector2(549, -22)
 
 [node name="inimigo" parent="." instance=ExtResource("15_0ourt")]
 position = Vector2(199, 244)
