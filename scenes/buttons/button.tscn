@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://5kmxnyp2hidb"]
+
+[ext_resource type="Texture2D" uid="uid://brcfqq15er6pm" path="res://assets/Pack.png" id="1_505xd"]
+[ext_resource type="Script" uid="uid://bmht4tedsdfon" path="res://puzzles/buttons/button.gd" id="2_0j123"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0j123"]
+
+[node name="Button" type="Sprite2D"]
+texture = ExtResource("1_505xd")
+hframes = 8
+vframes = 11
+frame = 8
+script = ExtResource("2_0j123")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0j123")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_player_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_player_exited"]

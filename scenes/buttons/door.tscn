@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6corbph7nv4w"]
+
+[ext_resource type="Texture2D" uid="uid://cn5bd7eyjjvo5" path="res://assets/door 2.png" id="1_1lhng"]
+[ext_resource type="Script" uid="uid://dccrt21hv7puc" path="res://puzzles/buttons/door.gd" id="2_qapnf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpc73"]
+size = Vector2(30, 26)
+
+[node name="Door" type="Sprite2D"]
+texture = ExtResource("1_1lhng")
+hframes = 2
+script = ExtResource("2_qapnf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="DoorCollision" type="CollisionShape2D" parent="StaticBody2D"]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_kpc73")

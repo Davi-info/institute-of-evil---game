@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dul0uus36ley8"]
+
+[ext_resource type="Script" uid="uid://lhgoe588qlat" path="res://puzzles/buttons/rune_sequence.gd" id="1_di0k8"]
+[ext_resource type="PackedScene" uid="uid://5kmxnyp2hidb" path="res://scenes/buttons/button.tscn" id="2_npqwb"]
+[ext_resource type="Script" uid="uid://co3p5hdu26vka" path="res://puzzles/buttons/button2.gd" id="3_eobi5"]
+[ext_resource type="Script" uid="uid://bpnvdb738eao5" path="res://puzzles/buttons/button3.gd" id="4_67e0v"]
+[ext_resource type="Script" uid="uid://f1x7e7ycf8cx" path="res://puzzles/buttons/button4.gd" id="5_b0b2o"]
+
+[node name="RuneSequence" type="Node2D"]
+script = ExtResource("1_di0k8")
+
+[node name="Button" parent="." instance=ExtResource("2_npqwb")]
+position = Vector2(533, 224)
+
+[node name="Button2" parent="." instance=ExtResource("2_npqwb")]
+position = Vector2(876, -68)
+frame = 9
+script = ExtResource("3_eobi5")
+
+[node name="Button3" parent="." instance=ExtResource("2_npqwb")]
+position = Vector2(224, -38)
+frame = 10
+script = ExtResource("4_67e0v")
+
+[node name="Button4" parent="." instance=ExtResource("2_npqwb")]
+position = Vector2(540, -196)
+frame = 15
+script = ExtResource("5_b0b2o")
+
+[connection signal="button_pressed" from="Button" to="." method="_on_button_button_pressed"]
+[connection signal="button_pressed" from="Button2" to="." method="_on_button_2_button_pressed"]
+[connection signal="button_pressed" from="Button3" to="." method="_on_button_3_button_pressed"]
+[connection signal="button_pressed" from="Button4" to="." method="_on_button_4_button_pressed"]
