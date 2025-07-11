@@ -3,6 +3,7 @@ extends Node2D
 func _ready() -> void:
 	MusicMenu.stop_music()
 	GameState.fase_atual = "fase2"
+	GameManager2.reset_game_state()
 	Dialogic.start("timfala_fase2")
 	
 	var hud_scene = preload("res://scenes/interface/hud.tscn")
