@@ -3308,6 +3308,13 @@ size = Vector2(46, 35)
 script = ExtResource("1_8swdu")
 diretor = NodePath("Diretor")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -323.0
+offset_top = -213.0
+offset_right = 1153.0
+offset_bottom = 763.0
+color = Color(0, 0, 0, 1)
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ofchu")
 format = 2
@@ -3373,7 +3380,6 @@ position = Vector2(0, 15.5)
 shape = SubResource("RectangleShape2D_ju8vr")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="pause_menu" parent="." instance=ExtResource("32_6c6bd")]
@@ -3474,11 +3480,17 @@ autoplay = true
 [node name="inimigo5" parent="." instance=ExtResource("27_n8qcm")]
 position = Vector2(157, 444)
 
+[node name="FalaInimigo" parent="inimigo5" index="6"]
+stream = null
+
 [node name="Ponto2" parent="inimigo5/Waypoints" index="1"]
 position = Vector2(98, 0)
 
 [node name="inimigo10" parent="." instance=ExtResource("27_n8qcm")]
 position = Vector2(174, 333)
+
+[node name="FalaInimigo" parent="inimigo10" index="6"]
+stream = null
 
 [node name="Ponto2" parent="inimigo10/Waypoints" index="1"]
 position = Vector2(202, 0)

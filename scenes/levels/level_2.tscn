@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://ct8koxmmqdxqa"]
+[gd_scene load_steps=50 format=3 uid="uid://ct8koxmmqdxqa"]
 
 [ext_resource type="Script" uid="uid://brg3soqrjl3jg" path="res://scripts/level_2.gd" id="1_5orea"]
 [ext_resource type="Texture2D" uid="uid://cyo85jpb3o8fb" path="res://assets/grasstileset.png" id="2_7d3nu"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://busc8s6ov4el0" path="res://scenes/inimigo_fase2.tscn" id="15_0ourt"]
 [ext_resource type="PackedScene" uid="uid://cnw2icjd105ik" path="res://scenes/lixeira.tscn" id="16_r6ket"]
 [ext_resource type="PackedScene" uid="uid://dwfj8d7fshtis" path="res://scenes/inimigo_fase3.tscn" id="16_uo0vl"]
+[ext_resource type="AudioStream" uid="uid://dlxq7axxt6afm" path="res://sounds/Inimigos/queremos sua banana [vocals].mp3" id="17_rvwo1"]
 [ext_resource type="PackedScene" uid="uid://wtasjtowb23u" path="res://scenes/MusicControllerLvl.tscn" id="19_ndgrd"]
 [ext_resource type="PackedScene" uid="uid://ceeyt3otuh1q0" path="res://scenes/interface/pause_menu.tscn" id="20_sibr7"]
 [ext_resource type="PackedScene" uid="uid://dul0uus36ley8" path="res://scenes/buttons/runesequence.tscn" id="21_lkn2k"]
@@ -5490,6 +5491,9 @@ position = Vector2(184, 40)
 [node name="inimigo" parent="." instance=ExtResource("15_0ourt")]
 position = Vector2(168, 225)
 
+[node name="FalaInimigo" parent="inimigo" index="6"]
+stream = ExtResource("17_rvwo1")
+
 [node name="Ponto2" parent="inimigo/Waypoints" index="1"]
 position = Vector2(0, -313)
 
@@ -5577,6 +5581,7 @@ position = Vector2(0, -307)
 [node name="MusicControllerLvl" parent="." instance=ExtResource("19_ndgrd")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="pause_menu" parent="." instance=ExtResource("20_sibr7")]
@@ -5596,6 +5601,7 @@ scale = Vector2(1.56667, 1)
 script = ExtResource("22_1c1qw")
 
 [node name="AccCounterLabel" type="Label" parent="CanvasLayer"]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 text = "📜 0/4"
@@ -5691,6 +5697,9 @@ position = Vector2(49, -17)
 
 [node name="inimigo10" parent="." instance=ExtResource("16_uo0vl")]
 position = Vector2(738, -300)
+
+[node name="FalaInimigo" parent="inimigo10" index="6"]
+stream = null
 
 [node name="Ponto2" parent="inimigo10/Waypoints" index="1"]
 position = Vector2(-216, 0)
