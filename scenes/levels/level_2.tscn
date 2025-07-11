@@ -5599,8 +5599,6 @@ position = Vector2(0, -307)
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
 
-[node name="pause_menu" parent="." instance=ExtResource("20_sibr7")]
-
 [node name="RuneSequence" parent="." node_paths=PackedStringArray("door") instance=ExtResource("21_lkn2k")]
 position = Vector2(66, -28)
 door = NodePath("../Doors/Door")
@@ -5725,6 +5723,8 @@ position = Vector2(1070, -116)
 [node name="Seta" parent="." instance=ExtResource("31_rvwo1")]
 position = Vector2(1071, -123)
 scale = Vector2(0.0112305, 0.00585938)
+
+[node name="pause_menu" parent="." instance=ExtResource("20_sibr7")]
 
 [editable path="inimigo"]
 [editable path="inimigo2"]

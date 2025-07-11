@@ -40,6 +40,7 @@ directories/dtl_directory={
 "quadro": "res://timeline/quadro.dtl",
 "quadro2": "res://timeline/quadro2.dtl",
 "timeline": "res://timeline/timeline.dtl",
+"timfala_fase2": "res://timeline/fala_fase2.dtl",
 "warning_not_all_items": "res://timeline/warning_not_all_items.dtl"
 }
 layout/style_list=["res://assets/temas/dialogo.tres"]
@@ -79,6 +80,9 @@ audio/channel_defaults={
 }
 variables={}
 glossary/default_case_sensitive=true
+text/autocolor_names=true
+text/autoadvance_enabled=true
+text/autoadvance_fixed_delay=10.0
 
 [display]
 
