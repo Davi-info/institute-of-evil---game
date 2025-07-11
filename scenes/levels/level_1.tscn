@@ -5729,7 +5729,6 @@ layer_4/tile_data = PackedInt32Array(-655346, 1, 53, -589810, 1, 54, -851962, 1,
 layer_5/name = "Porta"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="ExitDoor" type="StaticBody2D" parent="."]
