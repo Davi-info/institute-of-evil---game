@@ -5729,7 +5729,6 @@ layer_4/tile_data = PackedInt32Array(-655346, 1, 53, -589810, 1, 54, -851962, 1,
 layer_5/name = "Porta"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="ExitDoor" type="StaticBody2D" parent="."]
@@ -5936,9 +5935,6 @@ position = Vector2(-96, 1)
 [node name="Lixeira" parent="." instance=ExtResource("22_kc3v0")]
 position = Vector2(205, 40)
 
-[node name="Lixeira8" parent="." instance=ExtResource("22_kc3v0")]
-position = Vector2(136, -312)
-
 [node name="PushableBookshelf" type="CharacterBody2D" parent="."]
 script = ExtResource("32_wvtie")
 push_distance_tiles = 0.25
@@ -6066,16 +6062,9 @@ position = Vector2(279, -555)
 [node name="Node2D2" parent="." instance=ExtResource("45_dwx2n")]
 position = Vector2(-352, -196)
 
-[node name="inimigo7" parent="." instance=ExtResource("17_ytidy")]
-position = Vector2(158, -361)
-
-[node name="Ponto2" parent="inimigo7/Waypoints" index="1"]
-position = Vector2(0, 104)
-
 [editable path="inimigo"]
 [editable path="inimigo2"]
 [editable path="inimigo3"]
 [editable path="inimigo5"]
 [editable path="inimigo4"]
 [editable path="inimigo6"]
-[editable path="inimigo7"]
