@@ -3380,7 +3380,6 @@ position = Vector2(0, 15.5)
 shape = SubResource("RectangleShape2D_ju8vr")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="pause_menu" parent="." instance=ExtResource("32_6c6bd")]
